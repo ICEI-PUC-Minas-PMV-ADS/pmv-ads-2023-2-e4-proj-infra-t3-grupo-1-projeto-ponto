@@ -79,30 +79,34 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O funcionário poderá fazer login no sistema | ALTA | 
+|RF-002| O funcionário deve poder registrar sua entrada e saída no trabalho | ALTA |
+|RF-003| O funcionário deve ser capaz de visualizar todos os registros de pontos anteriores | MÉDIA |
+|RF-004| O sistema deve calcular e exibir o total de horas trabalhadas pelo funcionário em um determinado mês | ALTA |
+|RF-005| O funcionário poderá visualizar seu contracheque | BAIXA |
+|RF-006| O RH pode criar uma conta para empresa | ALTA |
+|RF-007| O RH pode fazer login no sistema | ALTA |
+|RF-008| O RH deve poder fazer um CRUD dos departamentos no sistema | MÉDIA |
+|RF-009| O RH deve poder fazer um CRUD das justificativas no sistema | MÉDIA |
+|RF-010| O RH pode fazer filtros nos usuários pelo nome ou departamento | MÉDIA |
+|RF-011| O RH pode fazer filtros nos registros de ponto por um período de dias determinado | MÉDIA |
+|RF-012| O RH deve poder fazer um CRUD dos usuários (empregados) no sistema | ALTA |
+|RF-013| O RH deve ter acesso à visualização dos registros de pontos de todos os usuários | ALTA |
+|RF-014| O RH deve poder corrigir os registros de pontos, incluindo adição de justificativa e inclusão, alteração, exclusão de horários incorretos | ALTA |
+|RF-015| O RH poderá fazer um CRUD do contracheque do empregado | BAIXA |
+|RF-016| O RH poderá fazer um CRUD dos cargos da empresa | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|RNF-001| Os dados sensíveis, como informações de login, devem ser armazenados de forma segura| MÉDIA | 
+|RNF-002| O sistema deve ser responsivo e lidar com muitos registros de pontos e usuários |  BAIXA | 
+|RNF-002| O tempo de resposta para ações como bater o ponto e exibir registros de pontos deve ser rápido |  BAIXA | 
+|RNF-002| A interface do usuário deve ser intuitiva e fácil de usar, tanto no aplicativo web (React) quanto no aplicativo mobile (React Native) |  BAIXA | 
+|RNF-002| O sistema deve estar disponível a maior parte do tempo, minimizando o tempo de inatividade não planejado |  BAIXA | 
+|RNF-002| A aplicação deve ser compatível com diferentes navegadores e dispositivos |  BAIXA | 
 
 ## Restrições
 
@@ -111,7 +115,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| O projeto projeto não pode em hipótese alguma ser terceirizado  |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
@@ -131,6 +135,10 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 > - [Lucidchart](https://www.lucidchart.com/)
 > - [Astah](https://astah.net/)
 > - [Diagrams](https://app.diagrams.net/)
+
+# Arquitetura Distribuída do projeto
+![Arquitetura Distribuida](img/arquitetura-distribuida.jpg)
+
 
 # Matriz de Rastreabilidade
 
