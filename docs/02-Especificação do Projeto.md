@@ -179,17 +179,17 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o Trello, estruturado com as seguintes listas:
 
-  > Propriedades das Tarefas: É a etiqueta das tarefas, ou a prioridade em que serão apresentadas sendo alta cor vermelha, média cor amarela ou baixa cor verde.
+> - Propriedades das Tarefas: É a etiqueta das tarefas, ou a prioridade em que serão apresentadas sendo alta cor vermelha, média cor amarela ou baixa cor verde.
 
-  > Backlog: Lista ordenada de todos os requisitos que se tem conhecimento de que precisam estar no produto. Cada tarefa está associada a um 'milestone', que pressupõe uma entrega final.
+> - Backlog: Lista ordenada de todos os requisitos que se tem conhecimento de que precisam estar no produto. Cada tarefa está associada a um 'milestone', que pressupõe uma entrega final.
 
-  > A Fazer: Tarefas que estão disponíveis para os desenvolvedores fazer e ninguém assumiu ainda, ou seja está separada para entrega e aguardadndo o desenvolvedor assumir a resposabilidade por ela;
+> - A Fazer: Tarefas que estão disponíveis para os desenvolvedores fazer e ninguém assumiu ainda, ou seja está separada para entrega e aguardadndo o desenvolvedor assumir a resposabilidade por ela;
 
-  > Em Andamento: Quando uma tarefa do Sprint Backlog tiver sido iniciada, ela é movida para cá;
+> - Em Andamento: Quando uma tarefa do Sprint Backlog tiver sido iniciada, ela é movida para cá;
 
-  > Concluído: todas as tarefas do sprint que já foram concluídas pela equipe de desenvolvimento.
+> - Concluído: todas as tarefas do sprint que já foram concluídas pela equipe de desenvolvimento.
 
-  > Lembrete: uma aba com as datas das próximas entregas e a referência delas.
+> - Lembrete: uma aba com as datas das próximas entregas e a referência delas.
 
 O quadro de organização da equipe está diponível no Trello através do link: https://trello.com/b/Wo9S7t1j/kanban-aplica%C3%A7%C3%A3o-distribu%C3%ADda-ponto-digital e está apresentado no seu estado atual na figura abaixo.
 ![QuadroKanbanPonto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/ef258e80-17f4-4a5d-9692-2360bf71aca1)
@@ -199,5 +199,5 @@ O quadro de organização da equipe está diponível no Trello através do link:
 
 O orçamento foi desenvolvido para fins educacionais, e apresenta, de forma fictícia, valores estimados para os serviços e equipamentos necessários.
 
-![Orçamento]![orcamentoponto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/0d94f1e3-0b74-4b6b-bd8c-ece618d2cd09)
+![orcamentoponto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/0d94f1e3-0b74-4b6b-bd8c-ece618d2cd09)
 
