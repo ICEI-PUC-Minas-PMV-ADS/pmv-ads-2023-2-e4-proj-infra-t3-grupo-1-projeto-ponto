@@ -1,23 +1,24 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto Eixo 4`
 
-`SEMESTRE`
+`4º Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto em desenvolvimento é um sistema de registro de entrada e saída de horário de trabalho, projetado para simplificar o controle de ponto dos funcionários de uma empresa. Este sistema permitirá que os funcionários realizem facilmente seus registros de entrada e saída, além de visualizarem um histórico completo de seus registros. Além disso, o sistema gerará contracheques para os funcionários, proporcionando uma visão clara e transparente de seus rendimentos e horas trabalhadas. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Anderson Marques Rosa
+* Bruno César Feza Rodrigues
+* Felipe Jorge Buzelin
+* Matheus Estevam Nunes Cordeiro
+* Samara Martins Oliveira
 
 ## Orientador
 
-* Nome completo do professor 1
+* Leonardo Vilela Cardoso
 
 ## Instruções de utilização
 
