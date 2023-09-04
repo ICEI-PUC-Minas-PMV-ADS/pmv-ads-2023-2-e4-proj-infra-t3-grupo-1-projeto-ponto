@@ -9,7 +9,7 @@ Este projeto tem como objetivo apresentar a concepção, desenvolvimento e imple
 ## Problema
 A gestão adequada do registro de ponto dos funcionários é um desafio contínuo enfrentado por muitas organizações. A dependência de métodos manuais, como o uso de planilhas ou cartões de ponto físicos, frequentemente resulta em imprecisões, erros de cálculo e falta de transparência. Essa falta de eficiência e confiabilidade no controle de ponto pode levar a uma série de problemas e questões que afetam tanto a empresa quanto seus colaboradores.
 
-Sendo entendidada essa realidade, nosso projeto visa resolver o seguinte problema: *como trazer mais praticidade e segurança para o modelo de registro e gestão de pontos dos colaboradores*.
+Sendo entendidada essa realidade, nosso projeto visa resolver o seguinte problema: *como trazer mais praticidade e segurança para o modelo de registro e gestão de pontos dos colaboradores?*
 
 ## Objetivos
 
