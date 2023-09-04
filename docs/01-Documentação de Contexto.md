@@ -13,12 +13,13 @@ Sendo entendidada essa realidade, nosso projeto visa resolver o seguinte problem
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Temos como objetivo a criação de um sistema que permitirá à empresa o controle preciso do registro de pontos dos seus funcionários, assim como uma aplicação que traga praticidade e segurança para os colaboradores. 
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos Específicos :
+• Desenvolver uma interface intuitiva e fácil de usar para que facilite o processo de gerir e registrar os pontos dos colaboradores; 
+• Criar um sistema de busca avançado que permita ao R.H. da empresa, filtrar e encontrar facilmente os usuários, seus departamentos e os períodos de dias cujos quais o ponto foi registrado no sistema;
+• Oferecer aos colaboradores a opção de calcular e exibir o total de horas trabalhadas, trazendo também um calculo de horas extras; 
+• Oferecer ao R.H. a opção de correção dos registros de pontos, incluindo adição de justificativa e inclusão, alteração, exclusão de horários incorretos.
 
 ## Justificativa
 
