@@ -1,6 +1,10 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Nos dias atuais, a gestão eficiente de recursos humanos é um dos pilares fundamentais para o sucesso de qualquer organização. Acompanhar o desempenho dos funcionários, reconhecer seus esforços e recompensar suas contribuições desempenha um papel crucial na manutenção de uma equipe motivada e produtiva. Além de um aumento significativo na demanda e execução de trabalhos remotos que nos distancia do sistema arcaico de assinar o ponto presencialmente como comprovante  de chegada ou saída da empresa. 
+
+Segundo o FGV 33% das empresas brasileiras mantém o home office adotado no período da pandemia, outro dado importante a se analisar é a preferência dos trabalhadores por trabalhos remotos, sendo o Workforce Confidence Index do Linkedin uma pesquisa que trouxe como resultado que 28% das pessoas entrevistadas preferem o modelo de trabalho remoto. Por se tratar de uma realidade totalmente nova, os números ainda são modestos, mas é notável um avanço desse sistema e a sua preferência tanto por empresa, quanto funcionários. Com base nesse contexto atual, a criação de um sistema automatizado para bater e gerir os pontos dos funcionários surge como uma alternativa plausível para a modernização e eficácia da gestão de pessoas, trazendo mais praticidade para o empregado e empregador. 
+
+Este projeto tem como objetivo apresentar a concepção, desenvolvimento e implementação de um sistema que permitirá à empresa controlar com precisão o registro de entrada e saída dos seus colaboradores. Ao automatizar o processo de controle de ponto, o sistema não apenas simplificará as operações administrativas, mas também proporcionará uma visão mais abrangente e em tempo real das horas trabalhadas, permitindo uma gestão mais estratégica e eficiente da mão-de-obra.
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
