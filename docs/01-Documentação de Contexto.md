@@ -7,16 +7,8 @@ Segundo o FGV 33% das empresas brasileiras mantém o home office adotado no per�
 Este projeto tem como objetivo apresentar a concepção, desenvolvimento e implementação de um sistema que permitirá à empresa controlar com precisão o registro de entrada e saída dos seus colaboradores. Ao automatizar o processo de controle de ponto, o sistema não apenas simplificará as operações administrativas, mas também proporcionará uma visão mais abrangente e em tempo real das horas trabalhadas, permitindo uma gestão mais estratégica e eficiente da mão-de-obra.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A gestão adequada do registro de ponto dos funcionários é um desafio contínuo enfrentado por muitas organizações. A dependência de métodos manuais, como o uso de planilhas ou cartões de ponto físicos, frequentemente resulta em imprecisões, erros de cálculo e falta de transparência. Essa falta de eficiência e confiabilidade no controle de ponto pode levar a uma série de problemas e questões que afetam tanto a empresa quanto seus colaboradores.
+Sendo entendidada essa realidade, nosso projeto visa resolver o seguinte problema: *como trazer mais praticidade e segurança para o modelo de registro e gestão de pontos dos colaboradores*.
 
 ## Objetivos
 
