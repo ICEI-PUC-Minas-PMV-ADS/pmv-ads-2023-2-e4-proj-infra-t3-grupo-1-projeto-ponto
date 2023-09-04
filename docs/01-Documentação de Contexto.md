@@ -16,6 +16,7 @@ Sendo entendidada essa realidade, nosso projeto visa resolver o seguinte problem
 Temos como objetivo a criação de um sistema que permitirá à empresa o controle preciso do registro de pontos dos seus funcionários, assim como uma aplicação que traga praticidade e segurança para os colaboradores. 
 
 >**Objetivos Específicos:**
+>
 >• Desenvolver uma interface intuitiva e fácil de usar para que facilite o processo de gerir e registrar os pontos dos colaboradores;
 > 
 >• Criar um sistema de busca avançado que permita ao R.H. da empresa, filtrar e encontrar facilmente os usuários, seus departamentos e os períodos de dias cujos quais o ponto foi registrado no sistema;
