@@ -44,23 +44,67 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Várias empresas atualmente possuem alguns problemas relacionados a horas de jornadas dos seus colaboradores. Isso porque possuem um sistema não muito eficaz e que não seja capaz de minimizar falhas nos registros de horas trabalhadas, ou porque ainda não se tem nenhum sistema que controle e faça esta gestão. Como forma de melhoria, o registro de ponto via App e controle via Web traz grandes melhorias para a empresa como um todo, e minimiza erros em relatórios e na remuneração dos seus colaboradores.  
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A proposta desenvolvida no projeto, trata-se de um sistema via aplicativo para registro de horas trabalhadas, ou como conhecido popularmente “Registro de Ponto”, e também de um sistema via Web para acompanhamento e gestão de todos os processos. O aplicativo disponível para os colaboradores contém funções como Registrar Ponto, Visualizar Horas Trabalhadas, Visualizar Demonstrativo de Pagamento, entre outras. Já o sistema Web disponível para a liderança da empresa vem acompanhado de várias funções para controle e organização de processos. Uma opção de melhoria seria o aplicativo disponibilizar um recurso de reconhecimento facial e de localização no momento do registro do ponto. Esse processo traz maior “controle” para a liderança de cada empresa.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Cadastro de Colaboradores
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+Referente ao RF-006 e RF-007: 
 
-![Processo 1](img/02-bpmn-proc1.png)
+O Usuário Master (RH) poderá realizar login do sistema Web e fazer o cadastro da sua empresa e colaboradores.
 
-### Processo 2 – NOME DO PROCESSO
+![Processo 1](img/1CadColaboradores.png)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+### Processo 2 – Registro de Ponto
 
-![Processo 2](img/02-bpmn-proc2.png)
+Referente ao RF-001 e RF-002:
+
+Este processo permite o Usuário colaborador fazer login e registrar o seu ponto via aplicativo. 
+
+![Processo 2](img/2RegPonto.png)
+
+### Processo 3 – Colaborador Vizualizando Registro de Ponto
+
+Referente ao RF-003:
+
+Este processo permite o Usuário colaborador visualizar todos os seus registros de pontos anteriormente, não dependendo do RH para repassar tal informação. Isso aumenta o controle do mesmo e garante que não haja imprevistos.
+
+![Processo 3](img/3VisualRegistro.png)
+
+### Processo 4 – CRUD - Demonstrativo de Pagamento
+
+Referente ao RF-010 e RF-015:
+
+Este processo permite o Usuário Master (RH) filtrar o seus colaboradores por nome ou pelos seus respectivos departamentos. E também gerar o Demonstrativo de Pagamento de cada colaborador por meio da adição, edição e exclusão de informações.
+
+![Processo 4](img/4CrudDemonstrativo.png)
+
+### Processo 5 – Visualizar Demonstrativo de Pagamento
+
+Referente ao RF-005:
+
+Este processo permite o Usuário colaborador visualizar o seu Demonstrativo de Pagamento que foi gerado pelo RH.
+
+![Processo 5](img/5VisualDemonstrativo.png)
+
+### Processo 6 – CRUD - Cadastros
+
+Referente ao RF-008, RF-012 e RF-016:
+
+Este processo permite o Usuário Master (RH) adicionar, editar e excluir dados referente aos Departamentos, Colaboradores e Cargos. 
+
+![Processo 6](img/6CrudCadastros.png)
+
+### Processo 7 – Correção de Registros
+
+Referente ao RF-009, RF-011, RF-013 e RF-014:
+
+Este processo permite o Usuário Master (RH) visualizar os registros de ponto de todos os colaboradores por meio de um filtro e período. Permite também fazer correções e exclusões, assim também como adicionar justificativas.
+
+![Processo 7](img/7CoRegistros.png)
 
 ## Indicadores de Desempenho
 
