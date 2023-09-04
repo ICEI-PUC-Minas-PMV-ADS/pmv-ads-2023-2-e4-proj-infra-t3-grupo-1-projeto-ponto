@@ -12,9 +12,9 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
 | `USUÁRIO` |`MOTIVAÇÕES`| `FRUSTRAÇÕES` | `HOBBIES / APLICATIVOS` |
 |----------------------|--------------------|--------------------|------------------------|
 |![gab](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/e675b298-9bca-462d-b7e1-49d35ee1ab2b)
-**Gabriel Toledo** **30** anos, Designer Gráfico. | Está tendo sua primeira experiência com trabalho hibrído. |Sempre encontra inconscitências nos seus registros de horário, dessa forma não recebe as horas extras corretamente | Ler livros, Assistir seriados e filmes, jogos de computador / Linkedin, Trello, Figma |
+**Gabriel Velasquez** **30** anos, Designer Gráfico. | Está tendo sua primeira experiência com trabalho hibrído. |Sempre encontra inconscitências nos seus registros de horário, dessa forma não recebe as horas extras corretamente | Ler livros, Assistir seriados e filmes, jogos de computador / Linkedin, Trello, Figma |
 |||||
-| ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188517763-8b38fbd8-b895-40b6-9445-8b502df909a7.png)
+|![raf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/4a6adaef-8006-4fc2-a13c-1981dba1121c)
  **Rafael Lange** **25** anos, Cadeirante, ocupa um cargo PCD em uma grande empresa, mas almeja ir para área de desenvolvedor e trabalhar para fora do país.| Trabalhar para fora e ganhar em dólar.| Por sua condição, trabalhos presenciais se tornam um verdadeiro desafio.| Ler, escrever / Github, Udemy, Youtube |
  |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188518367-be31ef98-9519-4e53-ae34-a3d3971a4a7b.png)
