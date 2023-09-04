@@ -24,7 +24,7 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
  **Gabriela Cândido** **40** anos Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
  |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188519572-4bfca75a-6303-452d-9665-98fddf884164.png)
- **Rogério Miranda** **51** anos, Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais | Jornais locais, Linkedin|
+ **Rogério Miranda** **51** anos, Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais / Jornais locais, Linkedin|
 
 
 ## Histórias de Usuários
