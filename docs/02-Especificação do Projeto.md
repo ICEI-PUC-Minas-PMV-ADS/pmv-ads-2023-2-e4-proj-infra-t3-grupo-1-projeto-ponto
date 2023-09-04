@@ -23,7 +23,6 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
 |![ali](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/4b285abb-ffd0-4809-9413-01d74f5a80ad)
  **Gabriela Cândido** **40** anos Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
  |||||
-
 |![ali2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/1c1fd241-740c-497a-b3b0-c6699c4f1d91)
  **Rogério Orima** **51** anos, Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais / Jornais locais, Linkedin|
 
