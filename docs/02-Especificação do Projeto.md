@@ -20,7 +20,7 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
 |![rafs](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/66b30913-bee7-46ea-a344-763ea05433c9)
  **Aline Fukushima** **20** anos Estudante, está criando uma startup com amigos a partir de um projeto de faculdade. |Está enfrentando as dificuldades de gerir uma empresa e busca alternativas modernas para gerenciar seus funcionários.| Não sabe como gerir os horários de seus funcionários de forma eficaz |Assistir documentários, ler tabloides de noticia / Instagram, Linkedin|
   |||||
-| ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188519162-c06372d1-7ba8-4d0d-8b32-15f046ba8895.png)
+|![ali](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/4b285abb-ffd0-4809-9413-01d74f5a80ad)
  **Gabriela Cândido** **40** anos Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
  |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188519572-4bfca75a-6303-452d-9665-98fddf884164.png)
