@@ -12,19 +12,19 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
 | `USUÁRIO` |`MOTIVAÇÕES`| `FRUSTRAÇÕES` | `HOBBIES / APLICATIVOS` |
 |----------------------|--------------------|--------------------|------------------------|
 |![gab](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/e675b298-9bca-462d-b7e1-49d35ee1ab2b)
-**Gabriel Velasquez** **30** anos, Designer Gráfico. | Está tendo sua primeira experiência com trabalho hibrído. |Sempre encontra inconscitências nos seus registros de horário, dessa forma não recebe as horas extras corretamente | Ler livros, Assistir seriados e filmes, jogos de computador / Linkedin, Trello, Figma |
+**Gabriel Velasquez,** **30 anos.** Designer Gráfico. | Está tendo sua primeira experiência com trabalho hibrído. |Sempre encontra inconscitências nos seus registros de horário, dessa forma não recebe as horas extras corretamente | Ler livros, Assistir seriados e filmes, jogos de computador / Linkedin, Trello, Figma |
 |||||
 |![raf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/4a6adaef-8006-4fc2-a13c-1981dba1121c)
- **Rafael Lange** **25** anos, Cadeirante, ocupa um cargo PCD em uma grande empresa, mas almeja ir para área de desenvolvedor e trabalhar para fora do país.| Trabalhar para fora e ganhar em dólar.| Por sua condição, trabalhos presenciais se tornam um verdadeiro desafio.| Ler, escrever / Github, Udemy, Youtube |
+ **Rafael Lange,** **25 anos.** Cadeirante, ocupa um cargo PCD em uma grande empresa, mas almeja ir para área de desenvolvedor e trabalhar para fora do país.| Trabalhar para fora e ganhar em dólar.| Por sua condição, trabalhos presenciais se tornam um verdadeiro desafio.| Ler, escrever / Github, Udemy, Youtube |
  |||||
 |![rafs](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/66b30913-bee7-46ea-a344-763ea05433c9)
- **Aline Osawa** **20** anos Estudante, está criando uma startup com amigos a partir de um projeto de faculdade. |Está enfrentando as dificuldades de gerir uma empresa e busca alternativas modernas para gerenciar seus funcionários.| Não sabe como gerir os horários de seus funcionários de forma eficaz |Assistir documentários, ler tabloides de noticia / Instagram, Linkedin|
+ **Aline Osawa,** **20 anos.** Estudante, está criando uma startup com amigos a partir de um projeto de faculdade. |Está enfrentando as dificuldades de gerir uma empresa e busca alternativas modernas para gerenciar seus funcionários.| Não sabe como gerir os horários de seus funcionários de forma eficaz |Assistir documentários, ler tabloides de noticia / Instagram, Linkedin|
   |||||
 |![ali](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/4b285abb-ffd0-4809-9413-01d74f5a80ad)
- **Gabriela Cândido** **40** anos Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
+ **Gabriela Cândido,** **40 anos.** Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
  |||||
 |![ali2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/1c1fd241-740c-497a-b3b0-c6699c4f1d91)
- **Rogério Orima** **51** anos, Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais / Jornais locais, Linkedin|
+ **Rogério Orima,** **51 anos.** Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais / Jornais locais, Linkedin|
 
 
 ## Histórias de Usuários
