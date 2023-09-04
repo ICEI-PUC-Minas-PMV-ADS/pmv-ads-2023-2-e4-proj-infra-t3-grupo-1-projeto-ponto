@@ -120,16 +120,15 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+O nosso diagrama apresenta dois atores (Colaborador e RH), e representa a sequência de suas ações.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
+O usuário colaborador poderá registrar a entrada, intervalo, e saída das suas jornadas de trabalho. Ele também terá acesso para visualizar as suas horas acumuladas durante um período, visualizar todos os seus registros de ponto, e também o seu Demonstrativo de Pagamento. Porém, para ter esses acessos ele deverá realizar um login no App. O usuário e senha de cada colaborador será fornecido pelo RH.
 
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+O segundo usuário, RH, poderá cadastrar a empresa na qual trabalha, departamentos e colaboradores. Ele terá acesso para visualizar os registros de ponto de todos os colaboradores, assim como editar, excluir e adicionar horários e justificativas. O sistema também permite o usuário RH gerar o Demonstrativo de Pagamento de cada colaborador. Todas as ações do usuário RH serão feiras via Web, e sua senha para acesso ao sistema será fornecida pelos desenvolvedores do software.
+
+O diagrama está representado na figura abaixo:
+
+![Diagrama de caso de uso UML](img/casoDeUso.png)
 
 # Arquitetura Distribuída do projeto
 ![Arquitetura Distribuida](img/arquitetura-distribuida.jpg)
