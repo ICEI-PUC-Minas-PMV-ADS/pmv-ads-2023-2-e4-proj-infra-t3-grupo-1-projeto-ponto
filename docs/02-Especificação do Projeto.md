@@ -18,16 +18,13 @@ As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a 
  **Rafael Lange** **25** anos, Cadeirante, ocupa um cargo PCD em uma grande empresa, mas almeja ir para área de desenvolvedor e trabalhar para fora do país.| Trabalhar para fora e ganhar em dólar.| Por sua condição, trabalhos presenciais se tornam um verdadeiro desafio.| Ler, escrever / Github, Udemy, Youtube |
  |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188518367-be31ef98-9519-4e53-ae34-a3d3971a4a7b.png)
- **Aline Fukushima** **20** Estudante, está criando uma startup com amigos a partir de um projeto de faculdade. |Está enfrentando as dificuldades de gerir uma empresa e busca alternativas modernas para gerenciar seus funcionários.| Não sabe como gerir os horários de seus funcionários de forma eficaz |Assistir documentários, ler tabloides de noticia / Instagram, Linkedin|
+ **Aline Fukushima** **20** anos Estudante, está criando uma startup com amigos a partir de um projeto de faculdade. |Está enfrentando as dificuldades de gerir uma empresa e busca alternativas modernas para gerenciar seus funcionários.| Não sabe como gerir os horários de seus funcionários de forma eficaz |Assistir documentários, ler tabloides de noticia / Instagram, Linkedin|
   |||||
-| ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188518773-c7167451-3d91-4a68-85f1-5cbcc767a5b7.png)
- **Joana Alencar** **28** Auxiliar de produção, busca mudar de área após nova formação acadêmica.|Ingressar no mercado de programação,	Ampliar renda salarial,	Independência financeira, Conhecer novos jogos|Instabilidade financeira, Pouco poder de compra, Dificuldade de socialização|Jogar videogame, Navegar pelas redes sociais, Leitura Geek, Stardew Valley, The Sims, Fall Guys.
-|||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188519162-c06372d1-7ba8-4d0d-8b32-15f046ba8895.png)
- **Gabriela Cândido** **35** anos Recepcionista, busca migrar para programação e frequenta cursos online sobre o assunto.|Ampliar renda salarial, Independência financeira, Morar em outro país, Mudar de profissão|Problemas familiares, Insegurança pessoal|Ler livros, Ir à academia, Praticar yoga, Jogar no celular, Candy Crush, Summoners War, Clash Royalle.
+ **Gabriela Cândido** **40** anos Trabalha no R.H. de um grande hospital.| Está buscando alternativas de otimizar o seu trabalho e vai sugerir para o hospital um método mais eficaz de gestão de pontos dos funcionários. | Todo o processo de gestão dos horários dos funcionários é feito de forma manual, com isso tem um trabalho muito grande e enfrenta vários problemas com falhas nos registros. |Ler livros, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook|
  |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188519572-4bfca75a-6303-452d-9665-98fddf884164.png)
- **Rogério Miranda** **46** anos, Professor, busca aperfeiçoamento na área a partir de cursos online.|Ampliar círculo social, Fazer Doutorado, Aprender novas tecnologias|Dificuldade com relacionamento amoroso, Sente-se ultrapassado tecnologicamente|Ler livros, Praticar Artes Marciais, Escrever, Jogar jogos que estimulem o raciocínio, Xadrez, Sudoku, Poker
+ **Rogério Miranda** **51** anos, Microempresário no ramo de alimentação.| Adquiriu recentemente um negócio e precisa automatizar sua gestão de horários, visto que sua empresa não possui o setor de R.H. | Tem pouca experiência como empreendedor, mas entende das dificuldades em gerir funcionários. | Ler livros, Praticar Artes Marciais | Jornais locais, Linkedin|
 
 
 ## Histórias de Usuários
