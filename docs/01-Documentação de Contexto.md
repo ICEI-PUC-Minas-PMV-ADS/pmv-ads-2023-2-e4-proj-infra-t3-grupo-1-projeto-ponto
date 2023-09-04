@@ -27,12 +27,13 @@ Temos como objetivo a criação de um sistema que permitirá à empresa o contro
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A implementação de um sistema automatizado para o controle de ponto de funcionários é uma iniciativa de suma importância para as organizações modernas. Essa justificativa se baseia em uma série de razões essenciais que destacam a necessidade e os benefícios associados a seguir:
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+**• Precisão e Redução de Erros:** A gestão manual do registro de ponto está sujeita a erros humanos e imprecisões, o que pode resultar em disputas trabalhistas, custos adicionais e insatisfação dos funcionários. Um sistema automatizado garante um registro preciso e confiável, minimizando a ocorrência de erros e garantindo que as horas de trabalho sejam calculadas com exatidão.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+**• Conformidade Legal:** Cumprir as leis trabalhistas é imperativo para qualquer organização. Automatizar o controle de ponto facilita a conformidade com as regulamentações locais e nacionais, garantindo que as horas extras sejam registradas e compensadas adequadamente, o que, por sua vez, reduz o risco de litígios e penalidades legais.
+
+**• Eficiência Operacional:** A automação do controle de ponto economiza tempo e recursos significativos. As tarefas manuais de revisão e correção de registros são eliminadas, permitindo que a equipe de recursos humanos se concentre em atividades estratégicas e de valor agregado, em vez de processos administrativos demorados.
 
 ## Público-Alvo
 
