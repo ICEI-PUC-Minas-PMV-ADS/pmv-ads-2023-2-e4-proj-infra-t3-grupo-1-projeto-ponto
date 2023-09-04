@@ -33,11 +33,11 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Gabriel Toledo   | Ter minhas horas extras corretamente remuneradas.        | Para melhorar meu desempenho e motivação na empresa.|
+|Gabriel Velasquez   | Ter minhas horas extras corretamente remuneradas.        | Para melhorar meu desempenho e motivação na empresa.|
 |Rafael Lange  |Trabalhar para fora do país.|Para ser melhor remunerado.|
-|Aline Fukushima  |Modernizar meu sistema de gerir os pontos dos colaboradores. | Para garantir mais praticidade e segurança aos funcionários.|
+|Aline Osawa  |Modernizar meu sistema de gerir os pontos dos colaboradores. | Para garantir mais praticidade e segurança aos funcionários.|
 |Gabriela Cândido       |Soluções mais eficazes e inovadoras de gestão de pontos de funcionários. | Otimizar meu trabalho de R.H.|
-|Rogério Miranda      | Melhor gerir meus poucos funcionários  | Evitar qualquer tipo de processo trabalhista.  |
+|Rogério Orima     | Melhor gerir meus poucos funcionários  | Evitar qualquer tipo de processo trabalhista.  |
 
 
 ## Modelagem do Processo de Negócio 
