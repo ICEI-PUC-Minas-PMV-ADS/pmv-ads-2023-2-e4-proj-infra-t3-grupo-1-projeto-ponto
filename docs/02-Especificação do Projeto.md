@@ -11,7 +11,7 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 As ***personas*** que ilustram nosso público-alvo são mostradas nas tabelas a seguir: 
 | `USUÁRIO` |`MOTIVAÇÕES`| `FRUSTRAÇÕES` | `HOBBIES / APLICATIVOS` |
 |----------------------|--------------------|--------------------|------------------------|
-|![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188516668-8a3b2ab4-a799-4d6d-8d8a-7b1edd0332db.png)
+|![gab](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/e675b298-9bca-462d-b7e1-49d35ee1ab2b)
 **Gabriel Toledo** **30** anos, Designer Gráfico. | Está tendo sua primeira experiência com trabalho hibrído. |Sempre encontra inconscitências nos seus registros de horário, dessa forma não recebe as horas extras corretamente | Ler livros, Assistir seriados e filmes, jogos de computador / Linkedin, Trello, Figma |
 |||||
 | ![SemMensagensDeErros](https://user-images.githubusercontent.com/100388026/188517763-8b38fbd8-b895-40b6-9445-8b502df909a7.png)
