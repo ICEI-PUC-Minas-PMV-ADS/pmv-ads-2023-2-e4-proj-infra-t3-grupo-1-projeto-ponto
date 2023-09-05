@@ -193,36 +193,40 @@ A matriz deve contemplar todos os elementos relevantes que fazem parte do sistem
 
 
 # Gerenciamento de Projeto
-
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
-
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+O projeto possui datas de entregas pré-definidas pela universidade, dessa forma, o gerenciamento de tempo deve coincidir com as datas estipuladas de maneira coerente.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![gerenctempo](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/b4b551f3-c1ec-45dd-b563-8ae9fd76b489)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
-
-![Gráfico de Gantt](img/02-grafico-gantt.png)
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+### Divisão de Papéis
 
-![Simple Project Timeline](img/02-project-timeline.png)
+- **Product Owner:** Profº Leonardo Vilela Cardoso
+- **Scrum Master:** Felipe Jorge Buzelin
+
+**Equipe de Desenvolvimento:**
+- Anderson Marques Rosa
+- Matheus Estevam Nunes Cordeiro
+- Samara Martins Oliveira
+               
+**Equipe de Design:**
+- Bruno Cesar Feza Rodrigues
 
 
 ## Gerenciamento de Tarefas
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o Trello, estruturado com as seguintes listas:
 
-- Propriedades das Tarefas: É a etiqueta das tarefas, ou a prioridade em que serão apresentadas sendo alta cor vermelha, média cor amarela ou baixa cor verde.
-- Backlog: Lista ordenada de todos os requisitos que se tem conhecimento de que precisam estar no produto. Cada tarefa está associada a um 'milestone', que pressupõe uma entrega final.
-- A Fazer: Tarefas que estão disponíveis para os desenvolvedores fazer e ninguém assumiu ainda, ou seja está separada para entrega e aguardadndo o desenvolvedor assumir a resposabilidade por ela;
-- Em Andamento: Quando uma tarefa do Sprint Backlog tiver sido iniciada, ela é movida para cá;
-- Concluído: todas as tarefas do sprint que já foram concluídas pela equipe de desenvolvimento.
-- Lembrete: uma aba com as datas das próximas entregas e a referência delas.
+- **Propriedades das Tarefas**: É a etiqueta das tarefas, ou a prioridade em que serão apresentadas sendo alta cor vermelha, média cor amarela ou baixa cor verde.
+- **Backlog**: Lista ordenada de todos os requisitos que se tem conhecimento de que precisam estar no produto. Cada tarefa está associada a um 'milestone', que pressupõe uma entrega final.
+- **Design**: Itens referentes ao design do projeto, quando concluídos, deverão conter uma imagem demonstrativa;
+- **A Fazer**: Tarefas que estão disponíveis para os desenvolvedores fazer e ninguém assumiu ainda, ou seja está separada para entrega e aguardadndo o desenvolvedor assumir a resposabilidade por ela;
+- **Em Andamento**: Quando uma tarefa do Backlog tiver sido iniciada, ela é movida para cá;
+- **Concluído**: todas as tarefas do sprint que já foram concluídas pela equipe de desenvolvimento.
+- **Lembrete**: uma aba com as datas das próximas entregas e a referência delas.
 
 O quadro de organização da equipe está diponível no Trello através do link: https://trello.com/b/Wo9S7t1j/kanban-aplica%C3%A7%C3%A3o-distribu%C3%ADda-ponto-digital e está apresentado no seu estado atual na figura abaixo.
 ![QuadroKanbanPonto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/ef258e80-17f4-4a5d-9692-2360bf71aca1)
