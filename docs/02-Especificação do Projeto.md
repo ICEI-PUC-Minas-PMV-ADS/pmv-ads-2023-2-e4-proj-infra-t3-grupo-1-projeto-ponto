@@ -142,10 +142,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| Os dados sensíveis, como informações de login, devem ser armazenados de forma segura| MÉDIA | 
 |RNF-002| O sistema deve ser responsivo e lidar com muitos registros de pontos e usuários |  BAIXA | 
-|RNF-002| O tempo de resposta para ações como bater o ponto e exibir registros de pontos deve ser rápido |  BAIXA | 
-|RNF-002| A interface do usuário deve ser intuitiva e fácil de usar, tanto no aplicativo web (React) quanto no aplicativo mobile (React Native) |  BAIXA | 
-|RNF-002| O sistema deve estar disponível a maior parte do tempo, minimizando o tempo de inatividade não planejado |  BAIXA | 
-|RNF-002| A aplicação deve ser compatível com diferentes navegadores e dispositivos |  BAIXA | 
+|RNF-003| O tempo de resposta para ações como bater o ponto e exibir registros de pontos deve ser rápido |  BAIXA | 
+|RNF-004| A interface do usuário deve ser intuitiva e fácil de usar, tanto no aplicativo web (React) quanto no aplicativo mobile (React Native) |  BAIXA | 
+|RNF-005| O sistema deve estar disponível a maior parte do tempo, minimizando o tempo de inatividade não planejado |  BAIXA | 
+|RNF-006| A aplicação deve ser compatível com diferentes navegadores e dispositivos |  BAIXA | 
 
 ## Restrições
 
