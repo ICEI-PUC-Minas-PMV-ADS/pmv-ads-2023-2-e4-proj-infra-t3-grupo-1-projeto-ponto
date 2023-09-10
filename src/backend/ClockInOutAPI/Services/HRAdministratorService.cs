@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using ClockInOutAPI.Data;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.HRAdministratorDTOs;
 using ClockInOutAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

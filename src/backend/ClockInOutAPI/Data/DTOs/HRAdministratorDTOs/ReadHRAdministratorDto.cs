@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.HRAdministratorDTOs
 {
 	public class ReadHRAdministratorDto
 	{
-        public string Id { get; set; }
+        public int Id { get; set; }
+
         public string FullName { get; set; }
 
         public string Email { get; set; }

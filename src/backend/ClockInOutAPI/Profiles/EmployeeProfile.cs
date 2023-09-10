@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.EmployeeDTOs;
 using ClockInOutAPI.Models;
 
 namespace ClockInOutAPI.Profiles

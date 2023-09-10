@@ -3,6 +3,7 @@ using System;
 using ClockInOutAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClockInOutAPI.Migrations
 {
     [DbContext(typeof(ClockInOutContext))]
-    partial class ClockInOutContextModelSnapshot : ModelSnapshot
+    [Migration("20230906121308_AddTypeLog")]
+    partial class AddTypeLog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,7 +190,7 @@ namespace ClockInOutAPI.Migrations
                     b.Property<int?>("JustificationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LogTypeValue")
+                    b.Property<int>("LogType")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Timestamp")

@@ -3,6 +3,8 @@ using ClockInOutAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ClockInOutAPI.Services;
+using AutoMapper;
+using ClockInOutAPI.Data.DTOs.TimeLogDTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,13 +19,15 @@ builder.Services.AddDbContext<ClockInOutContext>
     });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
+        
 //services
 //builder.Services.AddScoped<DepartamentService>();
 builder.Services.AddScoped<EmployeeService>();
 builder.Services.AddScoped<HRAdministratorService>();
 builder.Services.AddScoped<PositionService>();
 builder.Services.AddScoped<DepartamentService>();
+builder.Services.AddScoped<TimeLogService>();
+builder.Services.AddScoped<JustificationService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

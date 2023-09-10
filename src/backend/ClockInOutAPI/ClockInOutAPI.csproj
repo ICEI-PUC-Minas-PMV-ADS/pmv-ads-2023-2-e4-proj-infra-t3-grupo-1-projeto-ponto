@@ -14,17 +14,17 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.3" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.10" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.10" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.10" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.2" />
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +33,13 @@
     <None Remove="Data\" />
     <None Remove="Services\" />
     <None Remove="Profiles\" />
-    <None Remove="Data\Dtos\" />
+    <None Remove="Data\Dtos\DepartamentDTO\" />
+    <None Remove="Data\DTOs\JustificationDTOs\" />
+    <None Remove="Data\DTOs\PositionDTOs\" />
+    <None Remove="Data\DTOs\HRAdministratorDTOs\" />
+    <None Remove="Data\DTOs\EmployeeDTOs\" />
+    <None Remove="Data\DTOs\DepartamentDTOs\" />
+    <None Remove="Data\DTOs\TimeLogDTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -41,6 +47,11 @@
     <Folder Include="Data\" />
     <Folder Include="Services\" />
     <Folder Include="Profiles\" />
-    <Folder Include="Data\Dtos\" />
+    <Folder Include="Data\DTOs\JustificationDTOs\" />
+    <Folder Include="Data\DTOs\PositionDTOs\" />
+    <Folder Include="Data\DTOs\HRAdministratorDTOs\" />
+    <Folder Include="Data\DTOs\EmployeeDTOs\" />
+    <Folder Include="Data\DTOs\DepartamentDTOs\" />
+    <Folder Include="Data\DTOs\TimeLogDTOs\" />
   </ItemGroup>
 </Project>

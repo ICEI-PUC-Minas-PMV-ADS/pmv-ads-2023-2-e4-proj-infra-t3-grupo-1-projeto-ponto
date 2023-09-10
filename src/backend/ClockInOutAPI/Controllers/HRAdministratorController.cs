@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using ClockInOutAPI.Services;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.HRAdministratorDTOs;
 using ClockInOutAPI.Models;
 
 namespace ClockInOutAPI.Controllers

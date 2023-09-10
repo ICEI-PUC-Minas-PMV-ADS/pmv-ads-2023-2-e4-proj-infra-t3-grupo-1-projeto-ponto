@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.HRAdministratorDTOs
 {
 	public class CreateHRAdministratorDto
 	{

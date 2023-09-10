@@ -11,7 +11,8 @@ namespace ClockInOutAPI.Models
 
         public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Position> Positions { get; set; }
-        public virtual ICollection<Department> Departments { get; set; }
+        public virtual ICollection<Departament> Departaments { get; set; }
+        public virtual ICollection<Justification> Justifications { get; set; }
 
     }
 }

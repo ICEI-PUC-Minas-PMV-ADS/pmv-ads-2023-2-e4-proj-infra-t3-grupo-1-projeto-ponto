@@ -1,14 +1,26 @@
 ﻿using System;
+using ClockInOutAPI.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.EmployeeDTOs
 {
-	public class UpdateEmployeeDto
+	public class CreateEmployeeDto
 	{
+        [Required(ErrorMessage = "Nome completo é obrigatório")]
+        [MinLength(3)]
+        public string FullName { get; set; }
+
         [Required(ErrorMessage = "Email é obrigatório")]
         public string Email { get; set; }
+
         [Required]
-        public string FullName { get; set; }
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Required]
+        [Compare("Password")]
+        public string RePassword { get; set; }
+
         [Required]
         public DateOnly BirthDate { get; set; }
         [Required]
@@ -18,11 +30,12 @@ namespace ClockInOutAPI.Data.Dtos
         [Required]
         public int DailyWorkingHours { get; set; }
         [Required]
-        public string HRAdministratorId { get; set; }
+        public int HRAdministratorId { get; set; }
         [Required]
         public int PositionId { get; set; }
         [Required]
         public int DepartamentId { get; set; }
+
     }
 }
 

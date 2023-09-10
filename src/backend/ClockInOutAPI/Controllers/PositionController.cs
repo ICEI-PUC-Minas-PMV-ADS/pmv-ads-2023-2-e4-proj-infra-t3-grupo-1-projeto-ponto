@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using ClockInOutAPI.Services;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.PositionDTOs;
 using ClockInOutAPI.Models;
 
 namespace ClockInOutAPI.Controllers
@@ -28,7 +28,7 @@ namespace ClockInOutAPI.Controllers
         [HttpGet("{positionId}")]
         public async Task<IActionResult> GetPositionById(int positionId)
         {
-            var positionDto = await _positionService.GetSpecificPosition(positionId);
+            var positionDto = await _positionService.GetPositionById(positionId);
             if(positionDto != null)
             {
                 return Ok(positionDto);

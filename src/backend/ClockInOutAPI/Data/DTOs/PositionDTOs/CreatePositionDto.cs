@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.PositionDTOs
 {
 	public class CreatePositionDto
 	{
@@ -10,7 +10,7 @@ namespace ClockInOutAPI.Data.Dtos
         [Required]
         public double HrValue { get; set; }
         [Required]
-        public string HRAdministratorId { get; set; }
+        public int HRAdministratorId { get; set; }
     }
 }
 

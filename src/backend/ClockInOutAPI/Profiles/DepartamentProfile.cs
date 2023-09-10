@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.DepartamentDTOs;
 using ClockInOutAPI.Models;
 
 namespace ClockInOutAPI.Profiles
@@ -9,9 +9,9 @@ namespace ClockInOutAPI.Profiles
 	{
 		public DepartamentProfile()
 		{
-			CreateMap<CreateDepartamentDto, Department>();
-			CreateMap<UpdateDepartamentDto, Department>();
-			CreateMap<Department, ReadDepartamentDto>();
+			CreateMap<CreateDepartamentDto, Departament>();
+			CreateMap<UpdateDepartamentDto, Departament>();
+			CreateMap<Departament, ReadDepartamentDto>();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 using AutoMapper;
 using ClockInOutAPI.Data;
 using ClockInOutAPI.Models;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.PositionDTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClockInOutAPI.Services
@@ -33,9 +33,9 @@ namespace ClockInOutAPI.Services
 			return positionsDto;
 		}
 
-		public async Task<ReadPositionDto> GetSpecificPosition(int id)
+		public async Task<ReadPositionDto> GetPositionById(int positionId)
 		{
-			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == id);
+			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == positionId);
 			if(position != null)
 			{
 				ReadPositionDto positionDto = _mapper.Map<ReadPositionDto>(position);
@@ -44,9 +44,9 @@ namespace ClockInOutAPI.Services
 			return null;
 		}
 
-		public async Task<bool> UpdatePosition(int id, UpdatePositionDto positionDto)
+		public async Task<bool> UpdatePosition(int positionId, UpdatePositionDto positionDto)
 		{
-			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == id);
+			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == positionId);
 			if (position == null) return false;
 
 			_mapper.Map(positionDto, position);
@@ -55,9 +55,9 @@ namespace ClockInOutAPI.Services
 			return true;
 		}
 
-		public async Task<bool> DeletePosition(int id)
+		public async Task<bool> DeletePosition(int positionId)
 		{
-			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == id);
+			var position = await _context.Positions.FirstOrDefaultAsync(position => position.Id == positionId);
 			if (position == null) return false;
 
 			_context.Positions.Remove(position);

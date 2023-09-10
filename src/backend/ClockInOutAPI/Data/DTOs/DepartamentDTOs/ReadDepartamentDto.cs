@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using ClockInOutAPI.Data.DTOs.HRAdministratorDTOs;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.DepartamentDTOs
 {
 	public class ReadDepartamentDto
 	{
@@ -10,7 +11,7 @@ namespace ClockInOutAPI.Data.Dtos
 
         public string Name { get; set; }
 
-        public ReadHRAdministratorDto HRAdministrator { get; set; }
+        public int HRAdministratorId { get; set; }
     }
 }
 

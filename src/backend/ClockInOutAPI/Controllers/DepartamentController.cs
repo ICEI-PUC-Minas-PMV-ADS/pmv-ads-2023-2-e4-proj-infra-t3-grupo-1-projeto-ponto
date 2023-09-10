@@ -1,6 +1,6 @@
 ﻿using System;
 using ClockInOutAPI.Services;
-using ClockInOutAPI.Data.Dtos;
+using ClockInOutAPI.Data.DTOs.DepartamentDTOs;
 using Microsoft.AspNetCore.Mvc;
 using ClockInOutAPI.Models;
 
@@ -38,12 +38,12 @@ namespace ClockInOutAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDepartament([FromBody] CreateDepartamentDto departamentDto)
         {
-            Department department = await _departamentService.CreateDepartament(departamentDto);
-            return CreatedAtAction(nameof(GetDepartamentById), new { departamentId = department.Id }, departamentDto);
+            Departament departament = await _departamentService.CreateDepartament(departamentDto);
+            return CreatedAtAction(nameof(GetDepartamentById), new { departamentId = departament.Id }, departamentDto);
         }
 
         [HttpPut("{departamentId}")]
-        public async Task<IActionResult> UpdatePosition(int departamentId, [FromBody] UpdateDepartamentDto departamentDto)
+        public async Task<IActionResult> UpdateDepartament(int departamentId, [FromBody] UpdateDepartamentDto departamentDto)
         {
             bool isUpdateSuccessful = await _departamentService.UpdateDepartament(departamentId, departamentDto);
             if (isUpdateSuccessful)

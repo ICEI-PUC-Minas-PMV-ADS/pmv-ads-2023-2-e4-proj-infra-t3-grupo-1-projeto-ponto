@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClockInOutAPI.Migrations
 {
     [DbContext(typeof(ClockInOutContext))]
-    [Migration("20230830121138_initial")]
-    partial class initial
+    [Migration("20230906043357_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,17 +25,13 @@ namespace ClockInOutAPI.Migrations
                 .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("ClockInOutAPI.Models.Department", b =>
+            modelBuilder.Entity("ClockInOutAPI.Models.Departament", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("HRAdministratorId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("HRAdministratorId1")
+                    b.Property<int>("HRAdministratorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -44,9 +40,9 @@ namespace ClockInOutAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HRAdministratorId1");
+                    b.HasIndex("HRAdministratorId");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departaments");
                 });
 
             modelBuilder.Entity("ClockInOutAPI.Models.Employee", b =>
@@ -68,9 +64,6 @@ namespace ClockInOutAPI.Migrations
                     b.Property<int>("DepartamentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -79,15 +72,14 @@ namespace ClockInOutAPI.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("HRAdministratorId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("HRAdministratorId1")
+                    b.Property<int>("HRAdministratorId")
                         .HasColumnType("int");
 
                     b.Property<DateOnly>("HireDate")
                         .HasColumnType("date");
+
+                    b.Property<int?>("JustificationId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -98,9 +90,11 @@ namespace ClockInOutAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
+                    b.HasIndex("DepartamentId");
 
-                    b.HasIndex("HRAdministratorId1");
+                    b.HasIndex("HRAdministratorId");
+
+                    b.HasIndex("JustificationId");
 
                     b.HasIndex("PositionId");
 
@@ -134,17 +128,37 @@ namespace ClockInOutAPI.Migrations
                     b.ToTable("HRAdministrators");
                 });
 
+            modelBuilder.Entity("ClockInOutAPI.Models.Justification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("HRAdministratorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HRAdministratorId");
+
+                    b.ToTable("Justifications");
+                });
+
             modelBuilder.Entity("ClockInOutAPI.Models.Position", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("HRAdministratorId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("HRAdministratorId1")
+                    b.Property<int>("HRAdministratorId")
                         .HasColumnType("int");
 
                     b.Property<double>("HrValue")
@@ -156,16 +170,44 @@ namespace ClockInOutAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HRAdministratorId1");
+                    b.HasIndex("HRAdministratorId");
 
                     b.ToTable("Positions");
                 });
 
-            modelBuilder.Entity("ClockInOutAPI.Models.Department", b =>
+            modelBuilder.Entity("ClockInOutAPI.Models.TimeLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsEdited")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int?>("JustificationId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("JustificationId");
+
+                    b.ToTable("TimeLogs");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.Departament", b =>
                 {
                     b.HasOne("ClockInOutAPI.Models.HRAdministrator", "HRAdministrator")
-                        .WithMany("Departments")
-                        .HasForeignKey("HRAdministratorId1")
+                        .WithMany("Departaments")
+                        .HasForeignKey("HRAdministratorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -174,49 +216,107 @@ namespace ClockInOutAPI.Migrations
 
             modelBuilder.Entity("ClockInOutAPI.Models.Employee", b =>
                 {
-                    b.HasOne("ClockInOutAPI.Models.Department", "Department")
-                        .WithMany()
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("ClockInOutAPI.Models.Departament", "Departament")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartamentId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ClockInOutAPI.Models.HRAdministrator", "HRAdministrator")
                         .WithMany("Employees")
-                        .HasForeignKey("HRAdministratorId1")
+                        .HasForeignKey("HRAdministratorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ClockInOutAPI.Models.Justification", null)
+                        .WithMany("Employees")
+                        .HasForeignKey("JustificationId");
 
                     b.HasOne("ClockInOutAPI.Models.Position", "Position")
-                        .WithMany()
+                        .WithMany("Employees")
                         .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Department");
+                    b.Navigation("Departament");
 
                     b.Navigation("HRAdministrator");
 
                     b.Navigation("Position");
                 });
 
-            modelBuilder.Entity("ClockInOutAPI.Models.Position", b =>
+            modelBuilder.Entity("ClockInOutAPI.Models.Justification", b =>
                 {
                     b.HasOne("ClockInOutAPI.Models.HRAdministrator", "HRAdministrator")
-                        .WithMany("Positions")
-                        .HasForeignKey("HRAdministratorId1")
+                        .WithMany("Justifications")
+                        .HasForeignKey("HRAdministratorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("HRAdministrator");
                 });
 
+            modelBuilder.Entity("ClockInOutAPI.Models.Position", b =>
+                {
+                    b.HasOne("ClockInOutAPI.Models.HRAdministrator", "HRAdministrator")
+                        .WithMany("Positions")
+                        .HasForeignKey("HRAdministratorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HRAdministrator");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.TimeLog", b =>
+                {
+                    b.HasOne("ClockInOutAPI.Models.Employee", "Employee")
+                        .WithMany("TimeLog")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ClockInOutAPI.Models.Justification", "Justification")
+                        .WithMany("TimeLogs")
+                        .HasForeignKey("JustificationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Justification");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.Departament", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.Employee", b =>
+                {
+                    b.Navigation("TimeLog");
+                });
+
             modelBuilder.Entity("ClockInOutAPI.Models.HRAdministrator", b =>
                 {
-                    b.Navigation("Departments");
+                    b.Navigation("Departaments");
 
                     b.Navigation("Employees");
 
+                    b.Navigation("Justifications");
+
                     b.Navigation("Positions");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.Justification", b =>
+                {
+                    b.Navigation("Employees");
+
+                    b.Navigation("TimeLogs");
+                });
+
+            modelBuilder.Entity("ClockInOutAPI.Models.Position", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

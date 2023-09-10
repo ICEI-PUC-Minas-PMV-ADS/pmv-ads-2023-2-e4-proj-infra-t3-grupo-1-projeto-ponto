@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ClockInOutAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,23 +37,45 @@ namespace ClockInOutAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Departments",
+                name: "Departaments",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    HRAdministratorId = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HRAdministratorId1 = table.Column<int>(type: "int", nullable: false)
+                    HRAdministratorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Departments", x => x.Id);
+                    table.PrimaryKey("PK_Departaments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Departments_HRAdministrators_HRAdministratorId1",
-                        column: x => x.HRAdministratorId1,
+                        name: "FK_Departaments_HRAdministrators_HRAdministratorId",
+                        column: x => x.HRAdministratorId,
+                        principalTable: "HRAdministrators",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Justifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    HRAdministratorId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Justifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Justifications_HRAdministrators_HRAdministratorId",
+                        column: x => x.HRAdministratorId,
                         principalTable: "HRAdministrators",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -69,16 +91,14 @@ namespace ClockInOutAPI.Migrations
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     HrValue = table.Column<double>(type: "double", nullable: false),
-                    HRAdministratorId = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HRAdministratorId1 = table.Column<int>(type: "int", nullable: false)
+                    HRAdministratorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Positions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Positions_HRAdministrators_HRAdministratorId1",
-                        column: x => x.HRAdministratorId1,
+                        name: "FK_Positions_HRAdministrators_HRAdministratorId",
+                        column: x => x.HRAdministratorId,
                         principalTable: "HRAdministrators",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -96,12 +116,10 @@ namespace ClockInOutAPI.Migrations
                     CPF = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DailyWorkingHours = table.Column<int>(type: "int", nullable: false),
-                    HRAdministratorId = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HRAdministratorId1 = table.Column<int>(type: "int", nullable: false),
+                    HRAdministratorId = table.Column<int>(type: "int", nullable: false),
                     PositionId = table.Column<int>(type: "int", nullable: false),
                     DepartamentId = table.Column<int>(type: "int", nullable: false),
-                    DepartmentId = table.Column<int>(type: "int", nullable: false),
+                    JustificationId = table.Column<int>(type: "int", nullable: true),
                     FullName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: false)
@@ -113,40 +131,79 @@ namespace ClockInOutAPI.Migrations
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Employees_Departments_DepartmentId",
-                        column: x => x.DepartmentId,
-                        principalTable: "Departments",
+                        name: "FK_Employees_Departaments_DepartamentId",
+                        column: x => x.DepartamentId,
+                        principalTable: "Departaments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Employees_HRAdministrators_HRAdministratorId1",
-                        column: x => x.HRAdministratorId1,
+                        name: "FK_Employees_HRAdministrators_HRAdministratorId",
+                        column: x => x.HRAdministratorId,
                         principalTable: "HRAdministrators",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Employees_Justifications_JustificationId",
+                        column: x => x.JustificationId,
+                        principalTable: "Justifications",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Employees_Positions_PositionId",
                         column: x => x.PositionId,
                         principalTable: "Positions",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "TimeLogs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Timestamp = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IsEdited = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    JustificationId = table.Column<int>(type: "int", nullable: true),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TimeLogs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TimeLogs_Employees_EmployeeId",
+                        column: x => x.EmployeeId,
+                        principalTable: "Employees",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TimeLogs_Justifications_JustificationId",
+                        column: x => x.JustificationId,
+                        principalTable: "Justifications",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Departments_HRAdministratorId1",
-                table: "Departments",
-                column: "HRAdministratorId1");
+                name: "IX_Departaments_HRAdministratorId",
+                table: "Departaments",
+                column: "HRAdministratorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_DepartmentId",
+                name: "IX_Employees_DepartamentId",
                 table: "Employees",
-                column: "DepartmentId");
+                column: "DepartamentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_HRAdministratorId1",
+                name: "IX_Employees_HRAdministratorId",
                 table: "Employees",
-                column: "HRAdministratorId1");
+                column: "HRAdministratorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employees_JustificationId",
+                table: "Employees",
+                column: "JustificationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_PositionId",
@@ -154,19 +211,40 @@ namespace ClockInOutAPI.Migrations
                 column: "PositionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Positions_HRAdministratorId1",
+                name: "IX_Justifications_HRAdministratorId",
+                table: "Justifications",
+                column: "HRAdministratorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Positions_HRAdministratorId",
                 table: "Positions",
-                column: "HRAdministratorId1");
+                column: "HRAdministratorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TimeLogs_EmployeeId",
+                table: "TimeLogs",
+                column: "EmployeeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TimeLogs_JustificationId",
+                table: "TimeLogs",
+                column: "JustificationId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "TimeLogs");
+
+            migrationBuilder.DropTable(
                 name: "Employees");
 
             migrationBuilder.DropTable(
-                name: "Departments");
+                name: "Departaments");
+
+            migrationBuilder.DropTable(
+                name: "Justifications");
 
             migrationBuilder.DropTable(
                 name: "Positions");

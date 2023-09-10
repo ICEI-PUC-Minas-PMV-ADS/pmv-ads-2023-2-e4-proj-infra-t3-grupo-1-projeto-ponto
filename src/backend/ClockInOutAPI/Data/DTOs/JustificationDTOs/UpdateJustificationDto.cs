@@ -1,14 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClockInOutAPI.Data.Dtos
+namespace ClockInOutAPI.Data.DTOs.JustificationDTOs
 {
-	public class UpdateDepartamentDto
+	public class UpdateJustificationDto
 	{
         [Required]
         public string Name { get; set; }
         [Required]
-        public string HRAdministratorId { get; set; }
+        public string Description { get; set; }
     }
 }
 

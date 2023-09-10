@@ -13,8 +13,11 @@ namespace ClockInOutAPI.Models
         [Required]
         public double HrValue { get; set; }
         [Required]
-        public string HRAdministratorId { get; set; }
+        public int HRAdministratorId { get; set; }
         public virtual HRAdministrator HRAdministrator { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; }
+
 
     }
 }
