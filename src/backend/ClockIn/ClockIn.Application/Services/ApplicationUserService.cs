@@ -5,6 +5,7 @@ using ClockIn.Application.DTOs.LoginDTOs;
 using ClockIn.Application.Exceptions;
 using ClockIn.Application.Interfaces;
 using ClockIn.Domain.Entities;
+using ClockIn.Domain.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
 namespace ClockIn.Application.Services
@@ -13,13 +14,18 @@ namespace ClockIn.Application.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IHRAdministratorRepository _hRAdministratorRepository;
+
         private readonly ITokenService _tokenService;
 
-        public ApplicationUserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenService)
+        public ApplicationUserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenService, IEmployeeRepository employeeRepository, IHRAdministratorRepository hRAdministratorRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _employeeRepository = employeeRepository;
+            _hRAdministratorRepository = hRAdministratorRepository;
         }
 
         public async Task<LoginResultDto> Login(LoginRequestDto loginDto)
@@ -65,6 +71,15 @@ namespace ClockIn.Application.Services
             var existingUser = await _userManager.FindByEmailAsync(applicationUser.Email);
             if (existingUser != null)
             {
+                if (hRAdministrator != null)
+                {
+                    await _hRAdministratorRepository.DeleteHRAdministrator(hRAdministrator);
+                }
+                else
+                {
+                    await _employeeRepository.DeleteEmployee(employee);
+                }
+
                 throw new IdentityFailedException("Email já cadastrado na base de dados, entre em contato com o suporte para redefinir a senha");
             }
             var result = await _userManager.CreateAsync(applicationUser, password);
@@ -73,10 +88,12 @@ namespace ClockIn.Application.Services
             {
                 if (hRAdministrator != null)
                 {
+                    await _hRAdministratorRepository.DeleteHRAdministrator(hRAdministrator);
                     throw new IdentityFailedException("Erro ao criar administrador RH");
                 }
                 else
                 {
+                    await _employeeRepository.DeleteEmployee(employee);
                     throw new IdentityFailedException("Erro ao criar colaborador");
                 }
             }

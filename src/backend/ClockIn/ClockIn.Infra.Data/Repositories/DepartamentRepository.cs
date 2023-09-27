@@ -78,7 +78,6 @@ namespace ClockIn.Infra.Data.Repositories
         {
             try
             {
-                await GetDepartamentById(deletedDepartament.Id);
                 await _departamentsCollection.DeleteOneAsync(departament => departament.Id == deletedDepartament.Id);
                 var employees = await _employeeRepository.GetEmployeeByPositionId(deletedDepartament.Id);
                 foreach (var employee in employees)

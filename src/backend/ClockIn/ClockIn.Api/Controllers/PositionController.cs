@@ -56,7 +56,7 @@ namespace ClockIn.Api.Controllers
             try
             {
                 var position = await _positionService.CreatePosition(positionDto);
-                return CreatedAtAction(nameof(GetPositionById), new { paycheckId = position.Id }, position);
+                return CreatedAtAction(nameof(GetPositionById), new { positionId = position.Id }, position);
 
             }
             catch (DatabaseOperationException ex)

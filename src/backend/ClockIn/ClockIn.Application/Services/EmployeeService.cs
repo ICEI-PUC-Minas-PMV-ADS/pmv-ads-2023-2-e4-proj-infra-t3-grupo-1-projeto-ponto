@@ -35,8 +35,8 @@ namespace ClockIn.Application.Services
             await _positionRepository.GetPositionById(employeeDto.PositionId);
             await _departamentRepository.GetDepartamentById(employeeDto.DepartamentId);
 
-            await _applicationUserService.Register(null, employeeEntity, applicationUserEntity, employeeDto.Password, "employee");
             await _employeeRepository.CreateEmployee(employeeEntity);
+            await _applicationUserService.Register(null, employeeEntity, applicationUserEntity, employeeDto.Password, "employee");
         }
 
         public async Task<IEnumerable<ReadEmployeeDto>> GetEmployeesByHRAdministrator(string id)
