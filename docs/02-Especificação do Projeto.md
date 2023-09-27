@@ -175,7 +175,7 @@ O diagrama está representado na figura abaixo:
 ![Diagrama de caso de uso UML](img/casoDeUso.png)
 
 # Arquitetura Distribuída do projeto
-![Arquitetura Distribuida](img/arquitetura-distribuida.jpg)
+![Arquitetura Distribuida](img/arquitetura-distribuida.png)
 
 
 # Matriz de Rastreabilidade
