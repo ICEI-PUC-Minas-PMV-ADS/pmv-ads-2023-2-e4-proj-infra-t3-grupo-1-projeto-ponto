@@ -88,9 +88,6 @@ Segurança e Autenticação: É uma escolha segura para armazenar informações 
 
 Escalabilidade: O MySQL é escalável, permitindo o gerenciamento de grandes volumes de dados, caso o projeto cresça.
 
-Este documento oferece uma visão geral dos principais aspectos da implementação do banco de dados relacional MySQL no projeto. Certifique-se de incluir mais detalhes técnicos, como configurações de índices, esquema de tabelas completo e instruções específicas de configuração, conforme necessário, para uma documentação completa.
-
-
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.

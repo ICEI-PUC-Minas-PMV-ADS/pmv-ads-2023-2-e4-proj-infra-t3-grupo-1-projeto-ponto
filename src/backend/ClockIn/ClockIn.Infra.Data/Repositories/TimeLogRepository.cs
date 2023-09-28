@@ -26,7 +26,7 @@ namespace ClockIn.Infra.Data.Repositories
         public async Task<IEnumerable<TimeLog>> GetTimeLogsByEmplyeeId(string employeeId)
         {
             var timeLogs = await _timelogsCollection.Find(timeLog => timeLog.EmployeeId == employeeId).ToListAsync();
-            if (timeLogs != null)
+            if (timeLogs.Count != 0)
             {
                 return timeLogs;
             }
@@ -37,13 +37,20 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<TimeLog> GetTimeLogById(string id)
         {
-            TimeLog timeLog = await _timelogsCollection.Find(timeLog => timeLog.Id == id).FirstOrDefaultAsync();
-            //timeLog.Timestamp = TimeZoneInfo.ConvertTimeFromUtc(timeLog.Timestamp, TimeZoneInfo.Local);
-            if (timeLog != null)
+            try
             {
-                return timeLog;
+                TimeLog timeLog = await _timelogsCollection.Find(timeLog => timeLog.Id == id).FirstOrDefaultAsync();
+                //timeLog.Timestamp = TimeZoneInfo.ConvertTimeFromUtc(timeLog.Timestamp, TimeZoneInfo.Local);
+                if (timeLog != null)
+                {
+                    return timeLog;
+                }
+                throw new DataNotFoundException("Registro de ponto não encontrado");
             }
-            throw new DataNotFoundException("Registro de ponto não encontrado");
+            catch (Exception ex)
+            {
+                throw new FormatException("Id do Registro de ponto invalido", ex);
+            }
         }
 
         public async Task<TimeLog> CreateTimeLog(TimeLog newTimeLog, bool createdByHR)
@@ -127,7 +134,7 @@ namespace ClockIn.Infra.Data.Repositories
             //{
             //    timelog.Timestamp = TimeZoneInfo.ConvertTimeFromUtc(timelog.Timestamp, TimeZoneInfo.Local);
             //}
-            if (timeLogs != null)
+            if (timeLogs.Count != 0)
             {
                 return timeLogs;
             }
@@ -146,7 +153,7 @@ namespace ClockIn.Infra.Data.Repositories
             //{
             //    timelog.Timestamp = TimeZoneInfo.ConvertTimeFromUtc(timelog.Timestamp, TimeZoneInfo.Local);
             //}
-            if (nextDayLogs != null)
+            if (nextDayLogs.Count != 0)
             {
                 return nextDayLogs;
             }

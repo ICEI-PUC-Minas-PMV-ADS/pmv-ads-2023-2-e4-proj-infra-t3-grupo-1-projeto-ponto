@@ -35,12 +35,19 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<Paycheck> GetPaycheckById(string id)
         {
-            var paycheck = await _paychecksCollection.Find(paycheck => paycheck.Id == id).FirstOrDefaultAsync();
-            if (paycheck != null)
+            try
             {
-                return paycheck;
+                var paycheck = await _paychecksCollection.Find(paycheck => paycheck.Id == id).FirstOrDefaultAsync();
+                if (paycheck != null)
+                {
+                    return paycheck;
+                }
+                throw new DataNotFoundException("Contracheque não encontrado");
             }
-            throw new DataNotFoundException("Contracheque não encontrado");
+            catch (Exception ex)
+            {
+                throw new FormatException("Id do contracheque invalido", ex);
+            }
         }
 
         public async Task<Paycheck> CreatePaycheck(Employee employee, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes)

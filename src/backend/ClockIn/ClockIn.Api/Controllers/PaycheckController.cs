@@ -45,6 +45,10 @@ namespace ClockIn.Api.Controllers
             {
                 return NotFound(ex.Message);
             }
+            catch (FormatException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("{employeeId}")]

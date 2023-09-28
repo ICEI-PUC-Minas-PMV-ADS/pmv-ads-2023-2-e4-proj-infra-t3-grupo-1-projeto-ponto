@@ -68,7 +68,8 @@ namespace ClockIn.Application.Services
             }
             applicationUser.Employee = employee;
             applicationUser.HRAdministrator = hRAdministrator;
-            var existingUser = await _userManager.FindByEmailAsync(applicationUser.Email);
+            var existingUser = await VerifyUserExistence(applicationUser.Email);
+
             if (existingUser != null)
             {
                 if (hRAdministrator != null)
@@ -123,6 +124,12 @@ namespace ClockIn.Application.Services
             }
         }
 
+        public async Task<ApplicationUser> VerifyUserExistence(string email)
+        {
+           return await _userManager.FindByEmailAsync(email);
+        }
+
+
         public async Task<IdentityResult> UpdateUser(string email, string fullName, string userName, string id)
         {
             var applicationUser = _userManager.Users.FirstOrDefault(user => user.HRAdministratorId == id || user.EmployeeId == id)
@@ -131,6 +138,11 @@ namespace ClockIn.Application.Services
             applicationUser.NormalizedEmail = email.ToUpper();
             applicationUser.FullName = fullName;
             applicationUser.UserName = userName;
+            var existingUser = await VerifyUserExistence(email);
+            if(existingUser != null && existingUser.Id != applicationUser.Id)
+            {
+                throw new IdentityFailedException("Email ja cadastrado na base de dados");
+            }
 
             var updateResult = await _userManager.UpdateAsync(applicationUser);
             if (!updateResult.Succeeded)

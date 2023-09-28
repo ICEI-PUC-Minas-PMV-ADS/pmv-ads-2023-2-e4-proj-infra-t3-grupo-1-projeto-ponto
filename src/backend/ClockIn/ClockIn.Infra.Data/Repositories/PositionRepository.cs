@@ -38,13 +38,19 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<Position> GetPositionById(string id)
         {
-            var positions = await _positionsCollection.Find(position => position.Id == id).FirstOrDefaultAsync();
-            if (positions != null)
-            {
-                return positions;
+            try { 
+                var positions = await _positionsCollection.Find(position => position.Id == id).FirstOrDefaultAsync();
+                if (positions != null)
+                {
+                    return positions;
+                }
+                throw new DataNotFoundException("Cargo não encontrado");
             }
-            throw new DataNotFoundException("Cargo não encontrado");
-        }
+            catch (Exception ex)
+            {
+                throw new FormatException("Id cargo invalido", ex);
+            }
+}
 
         public async Task<Position> CreatePosition(Position newPosition)
         {

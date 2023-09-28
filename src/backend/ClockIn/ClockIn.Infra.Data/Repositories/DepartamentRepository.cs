@@ -39,13 +39,20 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<Departament> GetDepartamentById(string id)
         {
-            Departament departament = await _departamentsCollection.Find(departament => departament.Id == id).FirstOrDefaultAsync();
-            if (departament != null)
-            {
-                return departament;
+            try
+            { 
+                Departament departament = await _departamentsCollection.Find(departament => departament.Id == id).FirstOrDefaultAsync();
+                if (departament != null)
+                {
+                    return departament;
+                }
+                throw new DataNotFoundException("Departamento não encontrado");
             }
-            throw new DataNotFoundException("Departamento não encontrado");
-        }
+            catch (Exception ex)
+            {
+                throw new FormatException("Id do departamento invalido", ex);
+            }
+}
 
         public async Task<Departament> CreateDepartament(Departament newDepartament)
         {

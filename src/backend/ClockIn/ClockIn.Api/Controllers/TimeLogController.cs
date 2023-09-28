@@ -87,6 +87,10 @@ namespace ClockIn.Api.Controllers
             {
                 return NotFound(ex.Message);
             }
+            catch (FormatException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("HRAdministrator")]
@@ -103,10 +107,6 @@ namespace ClockIn.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch (DataNotFoundException ex)
-            {
-                return BadRequest(ex.Message);
-            }
         }
 
         [HttpPost("employee")]
@@ -120,6 +120,10 @@ namespace ClockIn.Api.Controllers
                 return Ok(timeLog);
             }
             catch (DatabaseOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (DataNotFoundException ex)
             {
                 return BadRequest(ex.Message);
             }

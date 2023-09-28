@@ -36,13 +36,19 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<Justification> GetJustificationById(string id)
         {
-            var justification = await _justificationsCollection.Find(justification => justification.Id == id).FirstOrDefaultAsync();
-            if (justification != null)
+            try
             {
-                return justification;
+                var justification = await _justificationsCollection.Find(justification => justification.Id == id).FirstOrDefaultAsync();
+                if (justification != null)
+                {
+                    return justification;
+                }
+                throw new DataNotFoundException("Justificativa não encontrada");
             }
-            throw new DataNotFoundException("Justificativa não encontrada");
-
+            catch (Exception ex)
+            {
+                throw new FormatException("Id da justificativa invalido", ex);
+            }
         }
 
         public async Task<Justification> CreateJustification(Justification newJustification)

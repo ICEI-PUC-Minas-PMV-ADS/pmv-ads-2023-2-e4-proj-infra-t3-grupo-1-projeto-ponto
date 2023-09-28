@@ -76,6 +76,10 @@ namespace ClockIn.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (FormatException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("login")]
@@ -132,7 +136,11 @@ namespace ClockIn.Api.Controllers
             catch (IdentityFailedException ex)
             {
                 return BadRequest(ex.Message);
-            }           
+            }
+            catch (FormatException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("{employeeId}")]

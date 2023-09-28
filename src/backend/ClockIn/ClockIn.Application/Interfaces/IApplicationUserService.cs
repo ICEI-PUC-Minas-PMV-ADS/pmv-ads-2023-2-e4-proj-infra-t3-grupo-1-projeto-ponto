@@ -14,6 +14,7 @@ namespace ClockIn.Application.Interfaces
         Task Logout();
         Task<IdentityResult> Update(UpdateHRAdministratorDto? hrAdmonistratorDto, UpdateEmployeeDto? employeeDto, string id);
         Task<IdentityResult> UpdateUser(string email, string fullName, string userName, string id);
+        Task<ApplicationUser> VerifyUserExistence(string email);
     }
 }
 
