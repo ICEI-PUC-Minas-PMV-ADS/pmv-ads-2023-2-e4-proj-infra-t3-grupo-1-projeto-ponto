@@ -118,11 +118,11 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Frontend web: Vercel
-Frontend mobile: Expo e sera disponibilizado um .apk
-Backend: AWS EC2 (Tentativa)
-Banco ORM: AWS RDS
-Banco NoSQL: AtlasDB
+- Frontend web: Vercel;
+- Frontend mobile: Expo e sera disponibilizado um .apk;
+- Backend: AWS EC2 (Tentativa);
+- Banco ORM: AWS RDS;
+- Banco NoSQL: AtlasDB
 
 ## Qualidade de Software
 
