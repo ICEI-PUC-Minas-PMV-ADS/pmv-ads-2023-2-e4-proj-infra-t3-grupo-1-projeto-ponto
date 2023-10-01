@@ -1,0 +1,38 @@
+﻿using System;
+using ClockIn.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver.Core.Configuration;
+
+namespace ClockIn.Infrastructure.Tests
+{
+    public class ClockInContextTests
+    {
+        protected ApplicationDbContext context;
+
+        [Fact]
+        public void TestDBConnection()
+        {
+            //Arrange
+            var connectionString = "server=localhost;database=ClockIn;user=root;password=Matheus#14";
+            var option = new DbContextOptionsBuilder<ApplicationDbContext>();
+            option.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            context = new ApplicationDbContext(option.Options);
+            bool connected;
+
+            //Act
+            try
+            {
+                connected = context.Database.CanConnect();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Não foi possivel conectar ao banco de dados");
+            }
+
+            //Asset
+            Assert.True(connected);
+        }
+    }
+}
+
+
