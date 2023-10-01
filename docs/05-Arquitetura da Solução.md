@@ -125,16 +125,39 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 - Banco NoSQL: AtlasDB
 
 ## Qualidade de Software
+### Funcionalidade:
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+- *Adequação:* Verificar se o sistema atende aos requisitos funcionais estabelecidos para o gerenciamento de ponto.
+  - Métrica: Percentagem de requisitos funcionais atendidos, incluindo o cadastro de empresas, empregados, registros de ponto e geração de contracheques.
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+### Confiabilidade:
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+- *Disponibilidade:* Medir o tempo em que o sistema de gerenciamento de ponto está disponível para uso.
+  - Métrica: Tempo médio entre falhas (MTBF) do sistema.
+- *Tolerância a falhas:* Avaliar como o sistema lida com erros e falhas nos registros de ponto.
+  - Métrica: Número de registros de ponto corrigidos em um determinado período.
 
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+### Usabilidade:
+
+- *Eficiência:* Avaliar o desempenho e a eficiência do sistema durante o registro de ponto pelos empregados.
+  - Métrica: Tempo médio para que um empregado registre sua entrada ou saída.
+- *Facilidade de Aprendizado:* Medir o tempo necessário para que um novo empregado aprenda a utilizar o sistema.
+  - Métrica: Tempo médio para treinamento de novos empregados.
+
+### Segurança:
+
+- *Confidencialidade:* Verificar a proteção dos dados de ponto contra acesso não autorizado.
+  - Métrica: Número de violações de segurança detectadas nos registros de ponto.
+- *Integridade:* Avaliar a proteção contra modificações não autorizadas nos registros de ponto.
+  - Métrica: Número de modificações não autorizadas detectadas nos registros de ponto.
+
+### Manutenibilidade:
+
+- *Modificabilidade:* Avaliar a facilidade de fazer atualizações e melhorias no sistema de gerenciamento de ponto.
+  - Métrica: Tempo médio para implementar uma alteração no sistema.
+- *Estabilidade:* Medir a capacidade do sistema de manter a integridade dos registros de ponto após modificações.
+  - Métrica: Número de erros introduzidos após atualizações no sistema.
+
+### Justificativas:
+
+Essas subcaracterísticas foram escolhidas porque são fundamentais para garantir que o sistema de gerenciamento de ponto atenda às necessidades das empresas, empregados e RH. As métricas correspondentes ajudarão a equipe a monitorar o desempenho do sistema e garantir sua qualidade ao longo do desenvolvimento.
