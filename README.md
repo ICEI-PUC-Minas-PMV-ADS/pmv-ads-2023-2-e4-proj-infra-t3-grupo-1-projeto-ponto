@@ -7,7 +7,7 @@
 `4º Semestre`
 
 ## Logo da Aplicação
-![Clock in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/9869c0ff-b701-41c5-b4be-f01e0b322c00)
+![Clock in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/8c5286d9-0a9f-4035-aee3-8b492f6af538)
 
 O projeto em desenvolvimento é um sistema de registro de entrada e saída de horário de trabalho, projetado para simplificar o controle de ponto dos funcionários de uma empresa. Este sistema permitirá que os funcionários realizem facilmente seus registros de entrada e saída, além de visualizarem um histórico completo de seus registros. Além disso, o sistema gerará contracheques para os funcionários, proporcionando uma visão clara e transparente de seus rendimentos e horas trabalhadas. 
 
