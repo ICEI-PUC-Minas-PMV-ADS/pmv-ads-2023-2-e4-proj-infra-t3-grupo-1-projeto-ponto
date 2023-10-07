@@ -112,9 +112,28 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 [Arquivo SQL](/src/bd/banco.sql)
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+## Tecnologias Utilizadas
+| Ferramenta          | Finalidade                                                                                   |
+|---------------------|----------------------------------------------------------------------------------------------|
+| Visual Studio Code e Visual Studio Community | Ambiente de desenvolvimento integrado (IDE) para desenvolver o projeto frontend e mobile   |
+| MySQL               | Banco de dados relacional utilizado para armazenar registros dos usuários                    |
+| MongoDB             | Banco de dados NoSQL utilizado para armazenar dados diversos como justificativas, departamentos, cargos, contracheques e registros de ponto  |
+| Swagger             | Ferramenta para documentação da API                                                             |
+| MySQL Workbench     | Ferramenta de gerenciamento de banco de dados para o MySQL                                     |
+| AtlasDB             | Serviço de hospedagem gerenciado para o banco de dados MongoDB                                  |
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+| Linguagem/Framework | Finalidade                                                                                   |
+|---------------------|----------------------------------------------------------------------------------------------|
+| JavaScript (JS)     | Linguagem de programação para desenvolvimento frontend e mobile com React e React Native (Expo)   |
+| React               | Biblioteca JavaScript para desenvolvimento da interface do usuário na web                      |
+| React Native (Expo) | Framework JavaScript para desenvolvimento de aplicativos móveis para iOS e Android              |
+| C#                  | Linguagem de programação para o desenvolvimento do backend da API ASP.NET 7                     |
+| ASP.NET 7           | Framework para desenvolvimento da API                                                         |
+| Entity Framework    | ORM (Object-Relational Mapping) para facilitar a interação com o banco de dados MySQL         |
+| xUnit               | Framework de testes utilizado para escrever e executar testes unitários                         |
+| JWT Bearer          | Protocolo de autenticação utilizado para gerar e validar tokens de autenticação                  |
+| Identity            | Framework de autenticação e autorização para gerenciar usuários e autenticação na API           |
+| AutoMapper          | Biblioteca para mapear objetos DTO (Data Transfer Objects)                                      |
 
 ## Hospedagem
 
