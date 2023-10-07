@@ -1,10 +1,13 @@
-# Ponto Digital
+##  ***Clock.in***
 
 `Análise e Desenvolvimento de Sistemas`
 
 `Projeto Eixo 4`
 
 `4º Semestre`
+
+## Logo da Aplicação
+![clock in](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/fa27bdd7-1987-43ad-a0fb-c581f4bcead2)
 
 O projeto em desenvolvimento é um sistema de registro de entrada e saída de horário de trabalho, projetado para simplificar o controle de ponto dos funcionários de uma empresa. Este sistema permitirá que os funcionários realizem facilmente seus registros de entrada e saída, além de visualizarem um histórico completo de seus registros. Além disso, o sistema gerará contracheques para os funcionários, proporcionando uma visão clara e transparente de seus rendimentos e horas trabalhadas. 
 
