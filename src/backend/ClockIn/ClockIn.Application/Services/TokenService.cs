@@ -17,15 +17,6 @@ namespace ClockIn.Application.Services
 
         public string GenerateToken(ApplicationUser applicationUser)
         {
-            string id = "null";
-            if (applicationUser.Role == "manager")
-            {
-                id = applicationUser.HRAdministratorId;
-            }
-            if (applicationUser.Role == "employee")
-            {
-                id = applicationUser.EmployeeId;
-            }
             var key = Encoding.ASCII.GetBytes("87ˆ#FASDF1$23Bjd3hfsjd%3fsdf!asdlkjhb%$kljhl");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -33,7 +24,7 @@ namespace ClockIn.Application.Services
                 {
                 new Claim(ClaimTypes.Name, applicationUser.UserName),
                 new Claim(ClaimTypes.Role, applicationUser.Role),
-                new Claim("id", id)
+                new Claim("id", applicationUser.Id)
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

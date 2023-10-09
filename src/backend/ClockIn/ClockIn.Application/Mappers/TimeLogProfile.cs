@@ -14,20 +14,14 @@ namespace ClockIn.Application.Mappers
                 .ConstructUsing((src, context) =>
                 {
                     var logTypeValue = src.LogTypeValue;
-                    ReadTimeLogDTO readTimeLog = new(logTypeValue)
+
+                    return new ReadTimeLogDTO(logTypeValue)
                     {
                         Id = src.Id,
                         Timestamp = src.Timestamp,
                         IsEdited = src.IsEdited,
                         EmployeeId = src.EmployeeId
                     };
-
-                    if (src.IsEdited) 
-                    {
-                        readTimeLog.Justification = src.JustificationId;
-                    }
-
-                    return readTimeLog;
                 });
 
             CreateMap<UpdateTimeLogDto, TimeLog>()

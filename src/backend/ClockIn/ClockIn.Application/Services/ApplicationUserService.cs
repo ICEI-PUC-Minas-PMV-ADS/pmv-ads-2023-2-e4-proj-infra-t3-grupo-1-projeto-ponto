@@ -34,11 +34,11 @@ namespace ClockIn.Application.Services
             if (res.Succeeded)
             {
                 var applicationUser = await _userManager.FindByEmailAsync(loginDto.Email);
-
                 string token = _tokenService.GenerateToken(applicationUser);
 
                 LoginResultDto loginResult = new()
                 {
+                    ApplicationUser = applicationUser,
                     Token = token
                 };
                 return loginResult;

@@ -42,30 +42,13 @@ namespace ClockIn.Application.Services
         public async Task<IEnumerable<ReadEmployeeDto>> GetEmployeesByHRAdministrator(string id)
         {
             var employeeEntity = await _employeeRepository.GetEmployeesByHRAdministrator(id);
-
-            var employessDto = _mapper.Map<IEnumerable<ReadEmployeeDto>>(employeeEntity);
-
-            foreach (var employee in employessDto)
-            {
-                var position = await _positionRepository.GetPositionById(employee.Position);
-                var departament = await _departamentRepository.GetDepartamentById(employee.Departament);
-                employee.Departament = departament.Name;
-                employee.Position = position.Name;
-            }
-
-            return employessDto;
+            return _mapper.Map<IEnumerable<ReadEmployeeDto>>(employeeEntity);
         }
 
         public async Task<ReadEmployeeDto> GetEmployeeById(string id)
         {
             var employeeEntity = await _employeeRepository.GetEmployeeById(id);
-            var employessDto = _mapper.Map<ReadEmployeeDto>(employeeEntity);
-            var position = await _positionRepository.GetPositionById(employessDto.Position);
-            var departament = await _departamentRepository.GetDepartamentById(employessDto.Departament);
-            employessDto.Departament = departament.Name;
-            employessDto.Position = position.Name;
-
-            return employessDto;
+            return _mapper.Map<ReadEmployeeDto>(employeeEntity);
         }
 
         public async Task UpdateEmployee(string id, UpdateEmployeeDto employeeDto)

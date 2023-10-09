@@ -141,7 +141,7 @@ namespace ClockIn.Infra.Data.Migrations
 
                     b.HasIndex("HRAdministratorId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("ClockIn.Domain.Entities.HRAdministrator", b =>
@@ -156,7 +156,7 @@ namespace ClockIn.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HRAdministrators");
+                    b.ToTable("HRAdministrators", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
