@@ -133,4 +133,26 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
+# dependencies
+/src/frontend/clockin/node_modules
+/src/frontend/clockin/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/src/frontend/clockinbuild
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
 _NCrunch*
