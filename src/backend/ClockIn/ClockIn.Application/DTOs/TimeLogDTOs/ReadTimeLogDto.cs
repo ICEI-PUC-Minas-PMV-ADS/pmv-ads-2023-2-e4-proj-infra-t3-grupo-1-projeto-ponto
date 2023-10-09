@@ -16,7 +16,7 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
 
         public string LogTyoeText { get; set; }
 
-        public string JustificationId { get; set; }
+        public string Justification { get; set; }
 
         public string EmployeeId { get; set; }
 

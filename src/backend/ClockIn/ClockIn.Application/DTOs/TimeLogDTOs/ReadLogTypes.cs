@@ -17,7 +17,7 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
             LogTypeEntry = LogType.Entry;
             LogTypeNameEntry = "Entrada";
             LogTypeExit = LogType.Exit;
-            LogTypeNameExit = "Sída";
+            LogTypeNameExit = "Saída";
         }
     }
 }

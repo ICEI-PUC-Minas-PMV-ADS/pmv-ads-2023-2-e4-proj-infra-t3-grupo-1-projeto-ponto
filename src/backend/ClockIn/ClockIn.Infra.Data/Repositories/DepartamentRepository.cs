@@ -28,7 +28,7 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<IEnumerable<Departament>> GetDepartamentsByHRAdministrator(string hRAdministratorId)
         {
-            List<Departament> departaments = await _departamentsCollection.Find(departament => departament.HRAdministratorId == hRAdministratorId).ToListAsync();
+            var departaments = await _departamentsCollection.Find(departament => departament.HRAdministratorId == hRAdministratorId).ToListAsync();
 
             if (departaments.Count != 0)
             {

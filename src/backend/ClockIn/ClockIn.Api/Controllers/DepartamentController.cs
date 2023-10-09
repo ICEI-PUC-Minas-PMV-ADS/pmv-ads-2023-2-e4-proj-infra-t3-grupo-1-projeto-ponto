@@ -29,7 +29,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -58,7 +58,7 @@ namespace ClockIn.Api.Controllers
         {
             try
             {
-                var departament = await _departamentService.CreateDepartament(departamentDto); //implementar retorno para o get
+                var departament = await _departamentService.CreateDepartament(departamentDto);
                 return CreatedAtAction(nameof(GetDepartamentById), new { departamentId = departament.Id }, departament);
             }
             catch (DatabaseOperationException ex)

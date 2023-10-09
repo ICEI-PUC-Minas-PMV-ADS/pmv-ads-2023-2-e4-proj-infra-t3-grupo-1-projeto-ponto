@@ -31,8 +31,8 @@ namespace ClockIn.Application.Services
 
         public async Task<IEnumerable<ReadJustificationDto>> GetJustificationsByHRAdministrator(string hRAdministratorId)
         {
-            var justificationEntity = await _justificationRepository.GetJustificationsByHRAdministrator(hRAdministratorId);
-            return _mapper.Map<IEnumerable<ReadJustificationDto>>(justificationEntity);
+            var justificationsEntity = await _justificationRepository.GetJustificationsByHRAdministrator(hRAdministratorId);
+            return _mapper.Map<IEnumerable<ReadJustificationDto>>(justificationsEntity);
         }
 
         public async Task<ReadJustificationDto> GetJustificationById(string id)

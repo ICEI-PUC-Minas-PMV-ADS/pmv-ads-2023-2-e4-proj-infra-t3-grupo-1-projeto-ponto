@@ -68,19 +68,10 @@ namespace ClockIn.Api.Controllers
             try
             {
                 LoginResultDto loginResult = await _applicationUserService.Login(loginDto);
-                ReadHRAdministratorDto readHRAdministratorDto = await _hRAdministratorService.GetHRAdministratorById(loginResult.ApplicationUser.HRAdministratorId);
-                HRAdministratorLoginResultDto hRAdministratorLoginResultDto = new()
-                {
-                    HRAdministratorDto = readHRAdministratorDto,
-                    Token = loginResult.Token
-                };
-                return Ok(hRAdministratorLoginResultDto);
+
+                return Ok(loginResult);
             }
             catch (LoginFailedException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (DataNotFoundException ex)
             {
                 return BadRequest(ex.Message);
             }
