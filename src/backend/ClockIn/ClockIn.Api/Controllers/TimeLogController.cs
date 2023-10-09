@@ -31,7 +31,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ClockIn.Api.Controllers
 
         [HttpGet("logTypes")]
         [Authorize(Roles = "manager, employee")]
-        public async Task<IActionResult> GetLogTypes()
+        public IActionResult GetLogTypes()
         {
             ReadLogTypes logTypes = new();
             return Ok(logTypes);
@@ -117,7 +117,7 @@ namespace ClockIn.Api.Controllers
             {
                 timeLogDto.CreatedByHR = false;
                 var timeLog = await _timeLogService.CreateTimeLog(timeLogDto);
-                return Ok(timeLog);
+                return CreatedAtAction(nameof(GetTimeLogById), new { timeLogId = timeLog.Id }, timeLog);
             }
             catch (DatabaseOperationException ex)
             {

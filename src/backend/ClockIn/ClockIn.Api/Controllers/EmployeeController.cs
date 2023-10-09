@@ -25,9 +25,9 @@ namespace ClockIn.Api.Controllers
             _applicationUserService = applicationUserService;
         }
 
-        [HttpGet()]
+        [HttpGet("hradministrator/{hRAdministratorId}")]
         [Authorize(Roles = "manager")]
-        public async Task<IActionResult> GetEmploGetEmployeesByHRAdministrator([FromQuery] string hradministratorId)
+        public async Task<IActionResult> GetEmploGetEmployeesByHRAdministrator(string hradministratorId)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -89,19 +89,10 @@ namespace ClockIn.Api.Controllers
             try
             {
                 LoginResultDto loginResult = await _applicationUserService.Login(loginDto);
-                ReadEmployeeDto readEmployeeDto = await _employeeService.GetEmployeeById(loginResult.ApplicationUser.EmployeeId);
-                EmployeeLoginResultDto employeeLoginResultDto = new()
-                {
-                    EmployeeDto = readEmployeeDto,
-                    Token = loginResult.Token
-                };
-                return Ok(employeeLoginResultDto);
+
+                return Ok(loginResult);
             }
             catch (LoginFailedException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (DataNotFoundException ex)
             {
                 return BadRequest(ex.Message);
             }
