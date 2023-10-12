@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 //Config run application in local network
-/*
+//Accept req from React
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", builder =>
@@ -23,9 +23,10 @@ builder.Services.AddCors(options =>
         builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
     });
 });
-*/
+
 
 //Database connections
+//Mysql
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>
     (opts =>
@@ -33,10 +34,11 @@ builder.Services.AddDbContext<ApplicationDbContext>
         opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     });
 
+//Mongo
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("ClockInDatabase"));
-//services
 
+//services
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
 {
     opts.User.RequireUniqueEmail = true;
