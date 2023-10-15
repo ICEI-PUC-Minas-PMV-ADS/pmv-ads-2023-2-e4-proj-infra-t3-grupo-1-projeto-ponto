@@ -47,8 +47,8 @@ namespace ClockIn.Application.Services
 
             foreach (var employee in employessDto)
             {
-                var position = await _positionRepository.GetPositionById(employee.Position);
-                var departament = await _departamentRepository.GetDepartamentById(employee.Departament);
+                var position = await _positionRepository.GetPositionById(employee.PositionId);
+                var departament = await _departamentRepository.GetDepartamentById(employee.DepartamentId);
                 employee.Departament = departament.Name;
                 employee.Position = position.Name;
             }
@@ -60,8 +60,8 @@ namespace ClockIn.Application.Services
         {
             var employeeEntity = await _employeeRepository.GetEmployeeById(id);
             var employessDto = _mapper.Map<ReadEmployeeDto>(employeeEntity);
-            var position = await _positionRepository.GetPositionById(employessDto.Position);
-            var departament = await _departamentRepository.GetDepartamentById(employessDto.Departament);
+            var position = await _positionRepository.GetPositionById(employessDto.PositionId);
+            var departament = await _departamentRepository.GetDepartamentById(employessDto.DepartamentId);
             employessDto.Departament = departament.Name;
             employessDto.Position = position.Name;
 

@@ -1,25 +1,37 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import { useParams } from "react-router-dom";
-import ButtonSubmitRegisterForm from "../../../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import InputForm from "../../../../components/InputForm";
 import { postJustification } from "../../../../services/JustificationsService";
 
-export default function JustificationForm({ setJustifications }) {
+export default function JustificationForm({
+  setJustifications,
+  justificationProp = null,
+  setViewEditForm = null,
+  viewEditForm = false,
+}) {
   const [justificationName, setJustificationName] = useState("");
   const [justificationdescription, setJustificationdescription] = useState("");
   const params = useParams();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const departament = {
-      name: justificationName,
-      description: justificationdescription,
-      hrAdministratorId: params.userId,
-    };
-    const response = await postJustification(departament);
-    setJustifications((prevJustifications) => [...prevJustifications, response.data]);
-    setJustificationName("");
-    setJustificationdescription("");
+    try {
+      const justification = {
+        name: justificationName,
+        description: justificationdescription,
+        hrAdministratorId: params.userId,
+      };
+      const response = await postJustification(justification);
+      setJustifications((prevJustifications) => [
+        ...prevJustifications,
+        response.data,
+      ]);
+      setJustificationName("");
+      setJustificationdescription("");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -40,7 +52,7 @@ export default function JustificationForm({ setJustifications }) {
         placeholder={"Digite aqui a descrição da justificativa"}
         label={"Descrição: "}
       />
-      <ButtonSubmitRegisterForm textButton={"Enviar"} />
+      <ButtonSubmitForm textButton={"Enviar"} />
     </form>
   );
 }

@@ -6,10 +6,10 @@ import {
   getDepartaments,
   deleteDepartament,
 } from "../../services/DepartamentService";
+import Departament from "./components/Departament";
 
 export default function Departaments() {
   const [departaments, setDepartaments] = useState([]);
-  const [error, setError] = useState(null);
   const params = useParams();
 
   const handleDeleteDepartament = async (id) => {
@@ -20,22 +20,23 @@ export default function Departaments() {
       );
       setDepartaments(newDepartaments);
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
     async function fetchData(id) {
       try {
         const response = await getDepartaments(id);
-        if(Array.isArray(response.data)){
+        if (Array.isArray(response.data)) {
           setDepartaments(response.data);
-          console.log(response)
-        }
-        else{
-          setError(response.data)
+          console.log(response);
+        } else {
+          console.error(response.data);
         }
       } catch (error) {
-        setError(error);
+        console.error(error);
       }
     }
     fetchData(params.userId);
@@ -45,15 +46,15 @@ export default function Departaments() {
     <div>
       <div>
         <h1>Departamentos: </h1>
-        {error && <div>{error}</div>}
         <div>
           {departaments.map((departament) => {
             return (
               <div key={departament.id}>
-                <h3>Nome: {departament.name}</h3>
-                <button onClick={() => handleDeleteDepartament(departament.id)}>
-                  Excluir
-                </button>
+                <Departament
+                  departament={departament}
+                  handleDeleteDepartament={handleDeleteDepartament}
+                  setDepartaments={setDepartaments}
+                />
               </div>
             );
           })}

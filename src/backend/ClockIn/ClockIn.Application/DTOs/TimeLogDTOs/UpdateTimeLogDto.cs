@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using ClockIn.Application.DTOs.Validations;
 using ClockIn.Domain.Enums;
-using ClockIn.Domain.Validation;
 
 namespace ClockIn.Application.DTOs.TimeLogDTOs
 {
@@ -15,7 +15,7 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
 
         [Required(ErrorMessage = "O campo 'LogType' é obrigatório.")]
         [LogTypeValidation]
-        public LogType LogType { get; set; }
+        public LogType LogTypeValue { get; set; }
     }
 }
 

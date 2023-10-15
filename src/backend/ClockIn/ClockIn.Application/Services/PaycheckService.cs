@@ -37,22 +37,22 @@ namespace ClockIn.Application.Services
             return _mapper.Map<ReadPaycheckDto>(paycheckEntity);
         }
 
-        public async Task<Paycheck> CreatePaycheck(string employeeId, DateOnly startDate, DateOnly endDate)
+        public async Task<Paycheck> CreatePaycheck(string employeeId, CreatePaycheckDto paycheckDto)
         {
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
-            WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, startDate.ToDateTime(TimeOnly.MinValue), endDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
+            WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, paycheckDto.StartDate.ToDateTime(TimeOnly.MinValue), paycheckDto.EndDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
             SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.TotalWorkHours, employeeId);
-            var createdPaycheck = await _paycheckRepository.CreatePaycheck(employee, startDate, endDate, workTimeTotal, employeeSalary);
+            var createdPaycheck = await _paycheckRepository.CreatePaycheck(employee, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
             return createdPaycheck;
         }
 
-        public async Task UpdatePaycheck(string paychekId, string employeeId, DateOnly startDate, DateOnly endDate)
+        public async Task UpdatePaycheck(string paychekId, string employeeId, UpdatePaycheckDto paycheckDto)
         {
             Paycheck payCheck = await _paycheckRepository.GetPaycheckById(paychekId);
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
-            WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, startDate.ToDateTime(TimeOnly.MinValue), endDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
+            WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, paycheckDto.StartDate.ToDateTime(TimeOnly.MinValue), paycheckDto.EndDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
             SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.OvertimeHours, employeeId);
-            await _paycheckRepository.UpdatePaycheck(employee, payCheck, startDate, endDate, workTimeTotal, employeeSalary);
+            await _paycheckRepository.UpdatePaycheck(employee, payCheck, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
 
         }
 

@@ -1,9 +1,14 @@
 import api from "../http/api";
 
-async function postPaycheck(employeeId, startDate, endDate) {
+async function postPaycheck(paycheck) {
+  const { employeeId, startDate, endDate } = paycheck;
   try {
     const response = await api.post(
-      `/paycheck/${employeeId}/startDate=${startDate}&&endDate=${endDate}`,
+      `/paycheck/${employeeId}`,
+      {
+        startDate,
+        endDate,
+      },
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token_ClockIn")}`,
@@ -49,10 +54,17 @@ async function getPaycheck(paycheckId) {
   }
 }
 
-async function putPaycheck(employeeId, paycheckId, startDate, endDate) {
+async function putPaycheck(paycheck) {
+  const { employeeId, paycheckId, startDate, endDate } = paycheck;
+  console.log(paycheck);
+
   try {
     const response = await api.put(
-      `/paycheck/${employeeId}/${paycheckId}?startDate=${startDate}&&endDate=${endDate}`,
+      `/paycheck/${employeeId}/${paycheckId}`,
+      {
+        startDate,
+        endDate,
+      },
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token_ClockIn")}`,

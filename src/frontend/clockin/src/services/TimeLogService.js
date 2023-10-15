@@ -88,15 +88,16 @@ async function getLogTypes() {
   }
 }
 
-async function putTimeLogs(departament, id) {
-  const { timestamp, justificationId, logType } = departament;
+async function putTimeLogs(timeLog) {
+  console.log(timeLog);
+  const { timestamp, justificationId, logTypeValue, id } = timeLog;
   try {
     const response = await api.put(
       `/timelog/${id}`,
       {
         timestamp,
         justificationId,
-        logType,
+        logTypeValue,
       },
       {
         headers: {

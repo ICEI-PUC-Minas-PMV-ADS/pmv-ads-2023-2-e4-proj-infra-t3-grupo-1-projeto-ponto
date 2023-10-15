@@ -59,8 +59,8 @@ async function getPosition(id) {
   }
 }
 
-async function putPosition(position, id) {
-  const { name, hrValue } = position;
+async function putPosition(position) {
+  const { name, hrValue, id } = position;
   try {
     const response = await api.put(
       `/position/${id}`,

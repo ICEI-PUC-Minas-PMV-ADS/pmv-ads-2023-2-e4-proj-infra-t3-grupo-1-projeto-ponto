@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ButtonSubmitRegisterForm from "../../../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import InputForm from "../../../../components/InputForm";
 import SelectForm from "../../../../components/SelectForm";
 import { getJustifications } from "../../../../services/JustificationsService";
@@ -51,50 +51,65 @@ export default function TimeLogForm({ setTimeLogs }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const timeLog = {
-      timestamp: `${timestamp}Z`,
-      employeeId: params.employeeId,
-      logTypeValue: logTypeValue,
-      justificationId: justification,
-    };
-    const response = await postTimeLog(timeLog);
-    console.log(response);
-    if (response && response.status === 201) {
-      const newTimeLogsList = await getTimeLogsByEmployeeId(params.employeeId);
-      setTimeLogs(newTimeLogsList.data);
-    }
+    try {
+      const timeLog = {
+        timestamp: `${timestamp}Z`,
+        employeeId: params.employeeId,
+        logTypeValue: logTypeValue,
+        justificationId: justification,
+      };
+      const response = await postTimeLog(timeLog);
+      console.log(response);
+      if (response && response.status === 201) {
+        const newTimeLogsList = await getTimeLogsByEmployeeId(
+          params.employeeId
+        );
+        setTimeLogs(newTimeLogsList.data);
+      }
 
-    setTimestamp("");
-    if (logTypes.length > 0 && justifications.length > 0) {
-      setLogTypeValue(logTypes[0].id);
-      setJustification(justifications[0].id);
+      setTimestamp("");
+      if (logTypes.length > 0 && justifications.length > 0) {
+        setLogTypeValue(logTypes[0].id);
+        setJustification(justifications[0].id);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        value={timestamp}
-        changeValue={(timestamp) => setTimestamp(timestamp)}
-        required={true}
-        type={"datetime-local"}
-        label={"Seleceione o dia e a hora do registro: "}
-      />
-      <SelectForm
-        options={justifications}
-        setSelectedOption={setJustification}
-        selectedOption={justification}
-        text={"Selecione a justificativa"}
-      />
-      <SelectForm
-        options={logTypes}
-        setSelectedOption={(selectedOptionOption) =>
-          setLogTypeValue(parseInt(selectedOptionOption))
-        }
-        selectedOption={logTypeValue}
-        text={"Selecione o tipo do registro"}
-      />
-      <ButtonSubmitRegisterForm textButton={"Enviar"} />
-    </form>
+    <div>
+      {justifications.length === 0 || !Array.isArray(justifications) ? (
+        <p>
+          É necessário cadastrar pelo menos uma justificativa para adicionar um
+          novo registro de ponto.
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <InputForm
+            value={timestamp}
+            changeValue={(timestamp) => setTimestamp(timestamp)}
+            required={true}
+            type={"datetime-local"}
+            label={"Selecione o dia e a hora do registro:"}
+          />
+          <SelectForm
+            options={logTypes}
+            setSelectedOption={(selectedOptionOption) =>
+              setLogTypeValue(parseInt(selectedOptionOption))
+            }
+            selectedOption={logTypeValue}
+            text={"Selecione o tipo do registro"}
+          />
+          <SelectForm
+            options={justifications}
+            setSelectedOption={setJustification}
+            selectedOption={justification}
+            text={"Selecione a justificativa"}
+          />
+          <ButtonSubmitForm textButton={"Enviar"} />
+        </form>
+      )}
+    </div>
   );
 }

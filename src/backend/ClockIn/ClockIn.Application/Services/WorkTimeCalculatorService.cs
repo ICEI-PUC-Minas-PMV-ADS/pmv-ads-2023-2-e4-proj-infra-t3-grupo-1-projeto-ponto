@@ -22,7 +22,6 @@ namespace ClockIn.Application.Services
         {
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
             List<TimeLog> sortedLogs = await _timeLogRepository.GetTimeLogsByEmployeeAndDateRange(employeeId, startDate, endDate);
-            ValidateLogs(sortedLogs);
             TimeSpan workHours = await CalculateWorkHours(sortedLogs, employeeId, endDate);
             int daysWorked = CalculateDaysWorked(sortedLogs);
             TimeSpan standardHours = CalculateStandardHours(employee, daysWorked, workHours);

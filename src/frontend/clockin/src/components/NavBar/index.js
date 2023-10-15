@@ -1,27 +1,26 @@
 import React from "react";
-import { useUser } from "../../context/User";
 import NavBaarLink from "./NavBaarLink";
-import { useNavigate } from "react-router-dom";
-import { logoutUser } from "../../services/UserService";
+import { BsFillBuildingsFill } from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function NavBar() {
-  const navigate = useNavigate();
-  const { userId, setUserId } = useUser();
-  const logout = async () => {
-    await logoutUser();
-    setUserId("");
-    navigate("/rh/login");
-  };
+  const { logout, authenticated, userId } = useAuthentication();
+
   return (
     <div>
-      <NavBaarLink to={"/"}>Home</NavBaarLink>
-      {userId && (
+      {authenticated && (
         <>
-          <NavBaarLink to={`/rh/${userId}`}>Minha empresa</NavBaarLink>
-          <button onClick={logout}>Logout</button>
+          <NavBaarLink to={`/rh/${userId}`}>
+            <BsFillBuildingsFill />
+            Minha empresa
+          </NavBaarLink>
+          <button onClick={logout}>
+            <FiLogOut /> Logout
+          </button>
         </>
       )}
-      {!userId && <NavBaarLink to={"/rh/login"}>Login</NavBaarLink>}
+      {!authenticated && <NavBaarLink to={"/rh/login"}>Login</NavBaarLink>}
     </div>
   );
 }

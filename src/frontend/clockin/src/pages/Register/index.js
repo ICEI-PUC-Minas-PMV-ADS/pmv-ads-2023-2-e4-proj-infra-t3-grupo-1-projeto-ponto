@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { registerUser } from "../../services/UserService";
-import ButtonSubmitRegisterForm from "../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../components/ButtonSubmitForm";
 import InputForm from "../../components/InputForm";
 
 function RegisterHRForm() {
@@ -12,20 +12,24 @@ function RegisterHRForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const hRAdministrator = {
-      fullName: fullName,
-      email: email,
-      password: password,
-      rePassword: rePassword,
-      cnpj: cnpj,
-    };
-    const response = await registerUser(hRAdministrator);
-    console.log(response);
-    setFullName("");
-    setCnpj("");
-    setEmail("");
-    setPassword("");
-    setRePassword("");
+    try {
+      const hRAdministrator = {
+        fullName: fullName,
+        email: email,
+        password: password,
+        rePassword: rePassword,
+        cnpj: cnpj,
+      };
+      const response = await registerUser(hRAdministrator);
+      console.log(response);
+      setFullName("");
+      setCnpj("");
+      setEmail("");
+      setPassword("");
+      setRePassword("");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -74,7 +78,7 @@ function RegisterHRForm() {
             label={"Confirme sua senha"}
           />
 
-          <ButtonSubmitRegisterForm textButton={"Enviar"} />
+          <ButtonSubmitForm textButton={"Enviar"} />
         </form>
       </div>
     </div>

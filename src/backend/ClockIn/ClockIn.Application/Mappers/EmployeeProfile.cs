@@ -14,9 +14,7 @@ namespace ClockIn.Application.Mappers
             CreateMap<UpdateEmployeeDto, Employee>();
             CreateMap<Employee, ReadEmployeeDto>()
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.ApplicationUser.FullName))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.ApplicationUser.Email))
-                .ForMember(dest => dest.Position, opt => opt.MapFrom(src => src.PositionId))
-                .ForMember(dest => dest.Departament, opt => opt.MapFrom(src => src.DepartamentId));
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.ApplicationUser.Email));
         }
     }
 }

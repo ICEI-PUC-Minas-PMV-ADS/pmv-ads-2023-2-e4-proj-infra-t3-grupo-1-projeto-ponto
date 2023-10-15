@@ -44,6 +44,10 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return justification;
                 }
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
                 throw new DataNotFoundException("Justificativa não encontrada");
             }
             catch (Exception ex)

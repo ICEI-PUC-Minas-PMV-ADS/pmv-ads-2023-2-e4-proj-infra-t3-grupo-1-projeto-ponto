@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import ButtonSubmitRegisterForm from "../../../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import InputForm from "../../../../components/InputForm";
 import { postPositions } from "../../../../services/PositionsService";
 
@@ -11,15 +11,19 @@ export default function PositionForm({ setPositions }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const departament = {
-      name: positionName,
-      hrValue: positioHrvalue,
-      hrAdministratorId: params.userId,
-    };
-    const response = await postPositions(departament);
-    setPositions((prevPositions) => [...prevPositions, response.data]);
-    setPositionName("");
-    setPositionHrValue(0);
+    try {
+      const position = {
+        name: positionName,
+        hrValue: positioHrvalue,
+        hrAdministratorId: params.userId,
+      };
+      const response = await postPositions(position);
+      setPositions((prevPositions) => [...prevPositions, response.data]);
+      setPositionName("");
+      setPositionHrValue(0);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ export default function PositionForm({ setPositions }) {
         }
         label={"valor da hora: "}
       />
-      <ButtonSubmitRegisterForm textButton={"Enviar"} />
+      <ButtonSubmitForm textButton={"Enviar"} />
     </form>
   );
 }

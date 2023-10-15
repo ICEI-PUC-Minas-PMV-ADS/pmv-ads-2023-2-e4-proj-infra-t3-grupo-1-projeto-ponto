@@ -1,28 +1,53 @@
-import React, { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Paycheck from "./Paycheck/index";
+import PaycheckForm from "./PaycheckForm";
+import { getPaychecks, deletePaycheck } from "../../services/PaycheckService";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function Paychecks() {
-  // const [paychecks, setPaychecks] = useState([])
+  const [paychecks, setPaychecks] = useState([]);
+  const { isTokenValid } = useAuthentication();
+  const params = useParams();
 
-  // useEffect(() => {
-  //   async function fetchData(id) {
-  //     try {
-  //       const response = await getPay(id);
-  //       const responseDepartaments = await getDepartaments(id);
-  //       const responsePositions = await getPositions(id);
+  const handleDeletePaycheck = async (id) => {
+    try {
+      const response = await deletePaycheck(id);
+      const newPaychecks = paychecks.filter((paycheck) => paycheck.id !== id);
+      setPaychecks(newPaychecks);
+      console.log(response);
+    } catch (error) {}
+  };
 
-  //       setDepartaments(responseDepartaments.data);
-  //       setPositions(responsePositions.data);
-  //       if (Array.isArray(response.data)) {
-  //         setEmployees(response.data);
-  //       } else {
-  //         setError(response.data);
-  //       }
-  //     } catch (error) {
-  //       setError(error);
-  //     }
-  //   }
-  //   fetchData(params.userId);
-  // }, [params.userId]);
+  useEffect(() => {
+    isTokenValid();
+    async function fetchData(id) {
+      try {
+        const response = await getPaychecks(id);
+        console.log(response);
+        if (Array.isArray(response.data)) {
+          setPaychecks(response.data);
+        } else {
+          console.error(response.data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData(params.employeeId);
+  }, [params.employeeId, isTokenValid]);
 
-  return <div>Paychecks</div>;
+  return (
+    <div>
+      {paychecks.map((paycheck) => (
+        <Paycheck
+          paycheck={paycheck}
+          handleDeletePaycheck={handleDeletePaycheck}
+          key={paycheck.id}
+        />
+      ))}
+      <h1>Criar um novo contracheque</h1>
+      <PaycheckForm setPaychecks={setPaychecks} />
+    </div>
+  );
 }

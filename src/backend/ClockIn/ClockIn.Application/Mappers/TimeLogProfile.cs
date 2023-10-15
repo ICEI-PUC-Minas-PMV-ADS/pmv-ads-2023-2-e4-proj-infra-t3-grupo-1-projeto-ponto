@@ -24,7 +24,7 @@ namespace ClockIn.Application.Mappers
 
                     if (src.IsEdited) 
                     {
-                        readTimeLog.Justification = src.JustificationId;
+                        readTimeLog.JustificationId = src.JustificationId;
                     }
 
                     return readTimeLog;

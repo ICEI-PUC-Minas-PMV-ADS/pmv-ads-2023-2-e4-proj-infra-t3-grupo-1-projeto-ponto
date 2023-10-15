@@ -6,10 +6,12 @@ import {
   deleteJustification,
   getJustifications,
 } from "../../services/JustificationsService";
+import Justification from "./components/Justification";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function Justifications() {
   const [justifications, setJustifications] = useState([]);
-  const [error, setError] = useState(null);
+  const { isTokenValid } = useAuthentication();
   const params = useParams();
 
   const handleDeleteJustification = async (id) => {
@@ -20,41 +22,41 @@ export default function Justifications() {
       );
       setJustifications(newJustifications);
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
+    isTokenValid();
     async function fetchData(id) {
       try {
         const response = await getJustifications(id);
         if (Array.isArray(response.data)) {
           setJustifications(response.data);
         } else {
-          setError(response.data);
+          console.error(response.data);
         }
       } catch (error) {
-        setError(error);
+        console.error(error);
       }
     }
     fetchData(params.userId);
-  }, [params.userId]);
+  }, [params.userId, isTokenValid]);
 
   return (
     <div>
       <div>
         <h1>Justificativas de ponto: </h1>
-        {error && <div>{error}</div>}
         <div>
           {justifications.map((justification) => {
             return (
               <div key={justification.id}>
-                <h3>Nome: {justification.name}</h3>
-                <h3>Descrição: {justification.description}</h3>
-                <button
-                  onClick={() => handleDeleteJustification(justification.id)}
-                >
-                  Excluir
-                </button>
+                <Justification
+                  justification={justification}
+                  handleDeleteJustification={handleDeleteJustification}
+                  setJustifications={setJustifications}
+                />
               </div>
             );
           })}

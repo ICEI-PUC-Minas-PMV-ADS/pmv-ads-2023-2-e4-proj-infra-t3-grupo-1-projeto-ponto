@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { loginUser } from "../../services/UserService";
-import ButtonSubmitRegisterForm from "../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../components/ButtonSubmitForm";
 import InputForm from "../../components/InputForm";
-import { Link, useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import { useUser } from "../../context/User";
+import { Link, } from "react-router-dom";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setUserId} = useUser()
-  const navigate = useNavigate();
+  const { login } = useAuthentication();
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,18 +16,9 @@ export default function Login() {
       email: email,
       password: password,
     };
-    try{
-      const response = await loginUser(userLogin);
-      const token = response.data.token
-      const decodedToken = jwt_decode(token)
+      login(userLogin);
       setEmail("");
       setPassword("");
-      setUserId(decodedToken.id)
-      navigate(`/rh/${decodedToken.id}`);
-    }catch(erros){
-      alert(erros)
-    }
-
   };
 
   return (
@@ -53,7 +42,7 @@ export default function Login() {
             placeholder={"Digite aqui sua senha de login"}
             label={"Senha"}
           />
-          <ButtonSubmitRegisterForm textButton={"Login"} />
+          <ButtonSubmitForm textButton={"Login"} />
         </form>
       </div>
       <Link to="/rh/registrar">Criar conta</Link>

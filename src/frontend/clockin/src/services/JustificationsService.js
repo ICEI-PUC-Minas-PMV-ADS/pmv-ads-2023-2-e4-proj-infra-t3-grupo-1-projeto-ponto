@@ -55,13 +55,14 @@ async function getJustification(id) {
   }
 }
 
-async function putJustification(justification, id) {
-  const { name } = justification;
+async function putJustification(justification) {
+  const { name, description, id } = justification;
   try {
     const response = await api.put(
       `/justification/${id}`,
       {
         name,
+        description,
       },
       {
         headers: {

@@ -3,52 +3,55 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import PositionForm from "./components/PositionForm";
 import { getPositions, deletePosition } from "../../services/PositionsService";
+import Position from "./components/Position";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function Positions() {
   const [positions, setPositions] = useState([]);
-  const [error, setError] = useState(null);
+  const { isTokenValid } = useAuthentication();
   const params = useParams();
 
-  const handleDeleteCargo = async (id) => {
+  const handleDeletePosition = async (id) => {
     try {
       const response = await deletePosition(id);
       const newPositions = positions.filter((position) => position.id !== id);
       setPositions(newPositions);
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
+    isTokenValid();
     async function fetchData(id) {
       try {
         const response = await getPositions(id);
-        if(Array.isArray(response.data)){
+        if (Array.isArray(response.data)) {
           setPositions(response.data);
-        }
-        else{
-          setError(response.data)
+        } else {
+          console.error(response.data);
         }
       } catch (error) {
-        setError(error);
+        console.error(error);
       }
     }
     fetchData(params.userId);
-  }, [params.userId]);
+  }, [params.userId, isTokenValid]);
 
   return (
     <div>
       <div>
         <h1>Cargos: </h1>
-        {error && <div>{error}</div>}
         <div>
           {positions.map((position) => {
             return (
               <div key={position.id}>
-                <h3>Nome: {position.name}</h3>
-                <h3>Valor da hora: {position.hrValue}</h3>
-                <button onClick={() => handleDeleteCargo(position.id)}>
-                  Excluir
-                </button>
+                <Position
+                  position={position}
+                  handleDeletePosition={handleDeletePosition}
+                  setPositions={setPositions}
+                />
               </div>
             );
           })}

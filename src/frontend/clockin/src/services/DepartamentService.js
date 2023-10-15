@@ -48,14 +48,13 @@ async function getDepartament(id) {
       },
     });
     return response;
-  }catch (error) {
+  } catch (error) {
     const errorMessage = error.response.data;
     throw errorMessage;
   }
 }
 
-async function putDepartament(departament, id) {
-  const { name } = departament;
+async function putDepartament(name, id) {
   try {
     const response = await api.put(
       `/departament/${id}`,

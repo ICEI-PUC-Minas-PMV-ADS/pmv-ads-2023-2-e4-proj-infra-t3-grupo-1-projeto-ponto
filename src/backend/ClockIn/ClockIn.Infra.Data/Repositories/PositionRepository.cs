@@ -29,7 +29,7 @@ namespace ClockIn.Infra.Data.Repositories
         public async Task<IEnumerable<Position>> GetPositionsByHRAdministrator(string hRAdministratorId)
         {
             var postition = await _positionsCollection.Find(postition => postition.HRAdministratorId == hRAdministratorId).ToListAsync();
-            if (postition != null)
+            if (postition.Count != 0)
             {
                 return postition;
             }
@@ -44,7 +44,11 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return positions;
                 }
-                throw new DataNotFoundException("Cargo não encontrado");
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
+                throw new DataNotFoundException("Cargo não encontrado", ex);
             }
             catch (Exception ex)
             {

@@ -10,12 +10,16 @@ export default function FilterTimeLogForm({ setTimeLogs }) {
 
   async function filterTimeLogs(event) {
     event.preventDefault();
-    const response = await getTimeLogsByEmployeeIdRange(
-      params.employeeId,
-      startDate,
-      endDate
-    );
-    setTimeLogs(response.data);
+    try{
+      const response = await getTimeLogsByEmployeeIdRange(
+        params.employeeId,
+        startDate,
+        endDate
+      );
+      setTimeLogs(response.data);
+    }catch(error){
+      console.error(error)
+    }
   }
 
   return (

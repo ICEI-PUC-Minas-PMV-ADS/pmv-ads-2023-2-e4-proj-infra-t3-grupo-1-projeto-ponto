@@ -73,7 +73,7 @@ namespace ClockIn.Api.Controllers
             }
         }
 
-        [HttpPut("{departamentId}")]
+        [HttpPut("{justificationId}")]
         [Authorize(Roles = "manager")]
         public async Task<IActionResult> UpdateJustification(string justificationId, [FromBody] UpdateJustificationDto justificarionDto)
         {

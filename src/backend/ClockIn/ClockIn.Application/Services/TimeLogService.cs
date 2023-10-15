@@ -30,10 +30,12 @@ namespace ClockIn.Application.Services
 
             foreach (var timeLog in timeLogsDto)
             {
-                var justification = await _justificationRepository.GetJustificationById(timeLog.Justification);
-                timeLog.Justification = justification.Name;
+                if (timeLog.IsEdited)
+                {
+                    var justification = await _justificationRepository.GetJustificationById(timeLog.JustificationId);
+                    timeLog.Justification = justification.Name;
+                }
             }
-
             return timeLogsDto;
         }
 
@@ -42,7 +44,7 @@ namespace ClockIn.Application.Services
             var timeLogEntity = await _timeLogRepository.GetTimeLogById(id);
             var timeLogDto = _mapper.Map<ReadTimeLogDTO>(timeLogEntity);
 
-            var justification = await _justificationRepository.GetJustificationById(timeLogDto.Justification);
+            var justification = await _justificationRepository.GetJustificationById(timeLogDto.JustificationId);
             timeLogDto.Justification = justification.Name;
 
 

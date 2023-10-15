@@ -10,9 +10,9 @@ namespace ClockIn.Application.Interfaces
 
         Task<ReadPaycheckDto> GetPaycheckById(string paycheckId);
 
-        Task<Paycheck> CreatePaycheck(string employeeId, DateOnly startDate, DateOnly endDate);
+        Task<Paycheck> CreatePaycheck(string employeeId, CreatePaycheckDto paycheckDto);
 
-        Task UpdatePaycheck(string paychekId, string employeeId, DateOnly startDate, DateOnly endDate);
+        Task UpdatePaycheck(string paychekId, string employeeId, UpdatePaycheckDto paycheckDto);
 
         Task DeletePaycheck(string id);
     }

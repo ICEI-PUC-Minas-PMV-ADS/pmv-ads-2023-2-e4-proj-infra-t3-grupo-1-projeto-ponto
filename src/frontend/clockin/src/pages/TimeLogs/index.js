@@ -2,32 +2,37 @@ import { React, useState, useEffect } from "react";
 import {
   deleteTimeLog,
   getTimeLogsByEmployeeId,
-  getTimeLogsByEmployeeIdRange,
 } from "../../services/TimeLogService";
 import { useParams } from "react-router-dom";
 import TimeLogForm from "./components/TimeLogForm";
 import FilterTimeLogForm from "./components/FilterTimeLogForm";
+import TimeLog from "./components/TimeLog";
+import useAuthentication from "../../hooks/useAuthentication";
 
 export default function TimeLogs() {
   const [timeLogs, setTimeLogs] = useState([]);
-  const [error, setError] = useState("");
+  const { isTokenValid } = useAuthentication();
   const params = useParams();
 
   useEffect(() => {
+    isTokenValid();
     async function fetchData(id) {
       try {
         const response = await getTimeLogsByEmployeeId(id);
+        if (response.status === 401) {
+          console.log("teste");
+        }
         if (Array.isArray(response.data)) {
           setTimeLogs(response.data);
         } else {
-          setError(response.data);
+          console.error(response.data);
         }
       } catch (error) {
-        setError(error);
+        console.error(error);
       }
     }
     fetchData(params.employeeId);
-  }, [params.employeeId]);
+  }, [params.employeeId, isTokenValid]);
 
   async function handleDeleteTimeLog(timeLogId) {
     try {
@@ -37,37 +42,26 @@ export default function TimeLogs() {
       );
       setTimeLogs(newTimeLogs);
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
     <div>
       <div>
         <h1>Registro de ponto: </h1>
-        {error && <div>{error}</div>}
         <div>
-        <h2>Filtrar registros</h2>
-        <FilterTimeLogForm setTimeLogs={setTimeLogs}/>
+          <h2>Filtrar registros</h2>
+          <FilterTimeLogForm setTimeLogs={setTimeLogs} />
           {timeLogs.map((timeLog) => {
-            var [date, hour] = timeLog.timestamp.split("T");
-            hour = hour.slice(0, -1);
-
             return (
               <div key={timeLog.id}>
-                <p>Dia: {date}</p>
-                <p>Hora: {hour}</p>
-                <p>Tipo: {timeLog.logTyoeText}</p>
-                {timeLog.isEdited ? (
-                  <div>
-                    <p>
-                      <strong>obs.:</strong> Editado ou criado pelo RH
-                    </p>
-                    <p>Justificativa: {timeLog.justification}</p>
-                  </div>
-                ) : null}
-                <button onClick={() => handleDeleteTimeLog(timeLog.id)}>
-                  Excluir
-                </button>
+                <TimeLog
+                  timeLog={timeLog}
+                  handleDeleteTimeLog={handleDeleteTimeLog}
+                  setTimeLogs={setTimeLogs}
+                />
               </div>
             );
           })}

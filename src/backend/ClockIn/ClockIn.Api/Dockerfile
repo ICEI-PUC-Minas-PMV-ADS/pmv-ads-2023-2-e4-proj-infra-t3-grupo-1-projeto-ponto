@@ -11,9 +11,9 @@ ENV ASPNETCORE_ENVIRONMENT=Development
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["ClockIn.Api/ClockIn.Api.csproj", "ClockIn.Api/"]
-COPY ["ClockIn.Infra.Data/ClockIn.Infra.Data.csproj", "ClockIn.Infra.Data/"]
-COPY ["ClockIn.Domain/ClockIn.Domain.csproj", "ClockIn.Domain/"]
 COPY ["ClockIn.Application/ClockIn.Application.csproj", "ClockIn.Application/"]
+COPY ["ClockIn.Domain/ClockIn.Domain.csproj", "ClockIn.Domain/"]
+COPY ["ClockIn.Infra.Data/ClockIn.Infra.Data.csproj", "ClockIn.Infra.Data/"]
 RUN dotnet restore "ClockIn.Api/ClockIn.Api.csproj"
 COPY . .
 WORKDIR "/src/ClockIn.Api"

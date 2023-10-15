@@ -5,7 +5,7 @@ import {
   registerEmployee,
 } from "../../../../services/EmployeeService";
 import InputForm from "../../../../components/InputForm";
-import ButtonSubmitRegisterForm from "../../../../components/ButtonSubmitRegisterForm";
+import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import SelectForm from "../../../../components/SelectForm";
 
 export default function EmployeeForm({
@@ -29,44 +29,52 @@ export default function EmployeeForm({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const employee = {
-      fullName: employeeName,
-      email: employeeEmail,
-      password: employeePassword,
-      rePassword: employeeRePassword,
-      birthDate: employeeBirthDate,
-      hireDate: employeeHireDate,
-      cpf: employeeCpf,
-      dailyWorkingHours: employeeDailyWorkingHours,
-      hrAdministratorId: params.userId,
-      positionId: employeePositionId,
-      departamentId: employeeDepartamentId,
-    };
-    const response = await registerEmployee(employee);
-    console.log(response);
-    if (response && response.status === 201) {
-      const newEmployeesList = await getEmployees(params.userId);
-      setEmployees(newEmployeesList.data);
+    try {
+      const employee = {
+        fullName: employeeName,
+        email: employeeEmail,
+        password: employeePassword,
+        rePassword: employeeRePassword,
+        birthDate: employeeBirthDate,
+        hireDate: employeeHireDate,
+        cpf: employeeCpf,
+        dailyWorkingHours: employeeDailyWorkingHours,
+        hrAdministratorId: params.userId,
+        positionId: employeePositionId,
+        departamentId: employeeDepartamentId,
+      };
+      const response = await registerEmployee(employee);
+      console.log(response);
+      if (response && response.status === 201) {
+        const newEmployeesList = await getEmployees(params.userId);
+        setEmployees(newEmployeesList.data);
+      }
+      setEmployeeName("");
+      setEmployeeEmail("");
+      setEmployeePassword("");
+      setEmployeeRePassword("");
+      setEmployeeBirthDate("");
+      setEmployeeHireDate("");
+      setEmployeeCpf("");
+      setEmployeeDailyWorkingHours("");
+      setEmployeePositionId(positions[0].id);
+      setEmployeeDepartamentId(departaments[0].id);
+    } catch (error) {
+      console.error(error);
     }
-    setEmployeeName("");
-    setEmployeeEmail("");
-    setEmployeePassword("");
-    setEmployeeRePassword("");
-    setEmployeeBirthDate("");
-    setEmployeeHireDate("");
-    setEmployeeCpf("");
-    setEmployeeDailyWorkingHours("");
-    setEmployeePositionId(positions[0].id);
-    setEmployeeDepartamentId(departaments[0].id);
   };
 
   useEffect(() => {
-    async function fetchData() {
+    function fetchData() {
       try {
-        setEmployeePositionId(positions[0].id);
-        setEmployeeDepartamentId(departaments[0].id);
+        if (positions.length > 0) {
+          setEmployeePositionId(positions[0].id);
+        }
+        if (departaments.length > 0) {
+          setEmployeeDepartamentId(departaments[0].id);
+        }
       } catch (error) {
-        //setError(error);
+        console.error(error);
       }
     }
     fetchData();
@@ -154,7 +162,7 @@ export default function EmployeeForm({
         setSelectedOption={setEmployeeDepartamentId}
         text={"Selecione um departamento"}
       />
-      <ButtonSubmitRegisterForm textButton={"Enviar"} />
+      <ButtonSubmitForm textButton={"Enviar"} />
     </form>
   );
 }

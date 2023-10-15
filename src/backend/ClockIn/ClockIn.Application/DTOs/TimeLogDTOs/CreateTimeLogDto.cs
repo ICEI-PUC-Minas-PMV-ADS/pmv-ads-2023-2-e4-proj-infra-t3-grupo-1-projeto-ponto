@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using ClockIn.Application.DTOs.Validations;
 using ClockIn.Domain.Enums;
-using ClockIn.Domain.Validation;
 
 namespace ClockIn.Application.DTOs.TimeLogDTOs
 {

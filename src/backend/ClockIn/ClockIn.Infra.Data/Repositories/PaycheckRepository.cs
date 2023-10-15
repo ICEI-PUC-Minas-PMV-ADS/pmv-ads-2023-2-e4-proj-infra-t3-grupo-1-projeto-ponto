@@ -26,7 +26,7 @@ namespace ClockIn.Infra.Data.Repositories
         public async Task<IEnumerable<Paycheck>> GetPaychecksByEmployeeId(string employeeId)
         {
             var paychecks = await _paychecksCollection.Find(paycheck => paycheck.EmployeeId == employeeId).ToListAsync();
-            if (paychecks != null)
+            if (paychecks.Count != 0)
             {
                 return paychecks;
             }
@@ -42,7 +42,11 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return paycheck;
                 }
-                throw new DataNotFoundException("Contracheque não encontrado");
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
+                throw new DataNotFoundException("Contracheque não encontrado", ex);
             }
             catch (Exception ex)
             {
