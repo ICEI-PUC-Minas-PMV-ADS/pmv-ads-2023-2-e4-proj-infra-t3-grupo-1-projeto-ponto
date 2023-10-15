@@ -13,7 +13,7 @@ namespace ClockIn.Infrastructure.Tests
         public void TestDBConnection()
         {
             //Arrange
-            var connectionString = "server=localhost;database=ClockIn;user=root;password=Matheus#14";
+            var connectionString = "server=clockin-db.cypx3jljksqs.sa-east-1.rds.amazonaws.com;database=clockin-db;user=admin;password=clockin123;port=3306";
             var option = new DbContextOptionsBuilder<ApplicationDbContext>();
             option.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             context = new ApplicationDbContext(option.Options);

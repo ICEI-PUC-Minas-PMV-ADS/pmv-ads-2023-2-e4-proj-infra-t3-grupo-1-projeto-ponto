@@ -4,6 +4,7 @@ using ClockIn.Infra.Data.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using ClockIn.Application.DTOs.PaycheckDTOs;
 
 namespace ClockIn.Api.Controllers
 {
@@ -28,7 +29,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -53,11 +54,11 @@ namespace ClockIn.Api.Controllers
 
         [HttpPost("{employeeId}")]
         [Authorize(Roles = "manager")]
-        public async Task<IActionResult> CreatePaycheck(string employeeId, [FromQuery] DateOnly startDate, [FromQuery] DateOnly endDate)
+        public async Task<IActionResult> CreatePaycheck(string employeeId, [FromBody] CreatePaycheckDto paycheckDto)
         {
             try
             {
-                var paycheck = await _paycheckService.CreatePaycheck(employeeId, startDate, endDate);
+                var paycheck = await _paycheckService.CreatePaycheck(employeeId, paycheckDto);
                 return CreatedAtAction(nameof(GetPaycheckById), new { paycheckId = paycheck.Id }, paycheck);
             }
             catch (DatabaseOperationException ex)
@@ -68,15 +69,19 @@ namespace ClockIn.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{employeeId}/{paycheckId}")]
         [Authorize(Roles = "manager")]
-        public async Task<IActionResult> UpdatePaycheck(string employeeId, string paycheckId, [FromQuery] DateOnly startDate, [FromQuery] DateOnly endDate)
+        public async Task<IActionResult> UpdatePaycheck(string employeeId, string paycheckId, [FromBody] UpdatePaycheckDto paycheckDto)
         {
             try
             {
-                await _paycheckService.UpdatePaycheck(paycheckId, employeeId, startDate, endDate);
+                await _paycheckService.UpdatePaycheck(paycheckId, employeeId, paycheckDto);
                 return NoContent();
             }
             catch (DataNotFoundException ex)
@@ -84,6 +89,10 @@ namespace ClockIn.Api.Controllers
                 return BadRequest(ex.Message);
             }
             catch (DatabaseOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidOperationException ex)
             {
                 return BadRequest(ex.Message);
             }

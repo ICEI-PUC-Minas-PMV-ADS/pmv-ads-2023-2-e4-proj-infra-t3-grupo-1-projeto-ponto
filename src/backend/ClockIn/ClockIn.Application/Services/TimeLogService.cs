@@ -11,26 +11,44 @@ namespace ClockIn.Application.Services
     {
         private readonly ITimeLogRepository _timeLogRepository;
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IJustificationRepository _justificationRepository;
 
         private readonly IMapper _mapper;
 
-        public TimeLogService(ITimeLogRepository timeLogRepository, IMapper mapper, IEmployeeRepository employeeRepository)
+        public TimeLogService(ITimeLogRepository timeLogRepository, IMapper mapper, IEmployeeRepository employeeRepository, IJustificationRepository justificationRepository)
         {
             _timeLogRepository = timeLogRepository;
             _mapper = mapper;
             _employeeRepository = employeeRepository;
+            _justificationRepository = justificationRepository;
         }
 
         public async Task<IEnumerable<ReadTimeLogDTO>> GetTimeLogsByEmplyeeId(string employeeId)
         {
             var timeLogEntity = await _timeLogRepository.GetTimeLogsByEmplyeeId(employeeId);
-            return _mapper.Map<IEnumerable<ReadTimeLogDTO>>(timeLogEntity);
+            var timeLogsDto = _mapper.Map<IEnumerable<ReadTimeLogDTO>>(timeLogEntity);
+
+            foreach (var timeLog in timeLogsDto)
+            {
+                if (timeLog.IsEdited)
+                {
+                    var justification = await _justificationRepository.GetJustificationById(timeLog.JustificationId);
+                    timeLog.Justification = justification.Name;
+                }
+            }
+            return timeLogsDto;
         }
 
         public async Task<ReadTimeLogDTO> GetTimeLogById(string id)
         {
             var timeLogEntity = await _timeLogRepository.GetTimeLogById(id);
-            return _mapper.Map<ReadTimeLogDTO>(timeLogEntity);
+            var timeLogDto = _mapper.Map<ReadTimeLogDTO>(timeLogEntity);
+
+            var justification = await _justificationRepository.GetJustificationById(timeLogDto.JustificationId);
+            timeLogDto.Justification = justification.Name;
+
+
+            return timeLogDto;
         }
 
         public async Task<IEnumerable<ReadTimeLogDTO>> GetTimeLogsByEmployeeAndDateRange(string employeeId, DateOnly startDate, DateOnly endDate)

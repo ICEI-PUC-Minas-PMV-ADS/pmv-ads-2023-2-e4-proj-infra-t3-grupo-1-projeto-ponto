@@ -27,10 +27,11 @@ namespace ClockIn.Infra.Data.Repositories
         public async Task<IEnumerable<Justification>> GetJustificationsByHRAdministrator(string hRAdministratorId)
         {
             var justification = await _justificationsCollection.Find(justification => justification.HRAdministratorId == hRAdministratorId).ToListAsync();
-            if (justification != null)
+            if (justification.Count != 0)
             {
                 return justification;
             }
+           
             throw new DataNotFoundException("Nenhuma justificativa criada por esse usuário foi encontrada");
         }
 
@@ -43,6 +44,10 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return justification;
                 }
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
                 throw new DataNotFoundException("Justificativa não encontrada");
             }
             catch (Exception ex)

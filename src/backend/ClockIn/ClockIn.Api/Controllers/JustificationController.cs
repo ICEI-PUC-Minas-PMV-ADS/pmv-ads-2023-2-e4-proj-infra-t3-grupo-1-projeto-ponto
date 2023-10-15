@@ -30,7 +30,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -73,7 +73,7 @@ namespace ClockIn.Api.Controllers
             }
         }
 
-        [HttpPut("{departamentId}")]
+        [HttpPut("{justificationId}")]
         [Authorize(Roles = "manager")]
         public async Task<IActionResult> UpdateJustification(string justificationId, [FromBody] UpdateJustificationDto justificarionDto)
         {

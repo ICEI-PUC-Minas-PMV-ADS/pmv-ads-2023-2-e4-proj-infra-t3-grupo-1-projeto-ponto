@@ -45,7 +45,11 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return timeLog;
                 }
-                throw new DataNotFoundException("Registro de ponto não encontrado");
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
+                throw new DataNotFoundException("Registro de ponto não encontrado", ex);
             }
             catch (Exception ex)
             {
@@ -145,7 +149,7 @@ namespace ClockIn.Infra.Data.Repositories
         {
             DateTime endDateUTC = TimeZoneInfo.ConvertTimeFromUtc(endDate, TimeZoneInfo.Local);
             var nextDayLogs = await _timelogsCollection
-                .Find(log => log.Timestamp > endDate && log.EmployeeId == employeeId)
+                .Find(log => log.Timestamp > endDateUTC && log.EmployeeId == employeeId)
                 .SortBy(log => log.Timestamp)
                 .ToListAsync();
 

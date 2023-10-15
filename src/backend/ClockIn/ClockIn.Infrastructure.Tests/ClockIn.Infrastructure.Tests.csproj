@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClockIn.Api\ClockIn.Api.csproj" />
     <ProjectReference Include="..\ClockIn.Application\ClockIn.Application.csproj" />
     <ProjectReference Include="..\ClockIn.Infra.Data\ClockIn.Infra.Data.csproj" />
     <ProjectReference Include="..\ClockIn.Domain\ClockIn.Domain.csproj" />

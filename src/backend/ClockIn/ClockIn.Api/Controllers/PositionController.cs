@@ -29,7 +29,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 

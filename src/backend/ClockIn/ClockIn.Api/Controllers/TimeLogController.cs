@@ -31,7 +31,7 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
@@ -41,18 +41,22 @@ namespace ClockIn.Api.Controllers
         {
             try
             {
+                if(endDate < startDate)
+                {
+                    return BadRequest("A data de final não pode ser menor que a data de inicio!");
+                }
                 var timeLogs = await _timeLogService.GetTimeLogsByEmployeeAndDateRange(employeeId, startDate, endDate);
                 return Ok(timeLogs);
             }
             catch (DataNotFoundException ex)
             {
-                return NotFound(ex.Message);
+                return Ok(ex.Message);
             }
         }
 
         [HttpGet("logTypes")]
         [Authorize(Roles = "manager, employee")]
-        public async Task<IActionResult> GetLogTypes()
+        public IActionResult GetLogTypes()
         {
             ReadLogTypes logTypes = new();
             return Ok(logTypes);
@@ -107,6 +111,10 @@ namespace ClockIn.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (DataNotFoundException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("employee")]
@@ -117,7 +125,7 @@ namespace ClockIn.Api.Controllers
             {
                 timeLogDto.CreatedByHR = false;
                 var timeLog = await _timeLogService.CreateTimeLog(timeLogDto);
-                return Ok(timeLog);
+                return CreatedAtAction(nameof(GetTimeLogById), new { timeLogId = timeLog.Id }, timeLog);
             }
             catch (DatabaseOperationException ex)
             {
@@ -140,6 +148,10 @@ namespace ClockIn.Api.Controllers
             }
             catch (DataNotFoundException ex)
             {
+                return BadRequest(ex.Message);
+            }
+            catch (FormatException ex) 
+            { 
                 return BadRequest(ex.Message);
             }
             catch (DatabaseOperationException ex)

@@ -28,7 +28,7 @@ namespace ClockIn.Infra.Data.Repositories
 
         public async Task<IEnumerable<Departament>> GetDepartamentsByHRAdministrator(string hRAdministratorId)
         {
-            List<Departament> departaments = await _departamentsCollection.Find(departament => departament.HRAdministratorId == hRAdministratorId).ToListAsync();
+            var departaments = await _departamentsCollection.Find(departament => departament.HRAdministratorId == hRAdministratorId).ToListAsync();
 
             if (departaments.Count != 0)
             {
@@ -46,13 +46,17 @@ namespace ClockIn.Infra.Data.Repositories
                 {
                     return departament;
                 }
-                throw new DataNotFoundException("Departamento não encontrado");
+                throw new DataNotFoundException();
+            }
+            catch (DataNotFoundException ex)
+            {
+                throw new DataNotFoundException("Departamento não encontrado", ex);
             }
             catch (Exception ex)
             {
                 throw new FormatException("Id do departamento invalido", ex);
             }
-}
+        }
 
         public async Task<Departament> CreateDepartament(Departament newDepartament)
         {

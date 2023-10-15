@@ -36,7 +36,7 @@ namespace ClockIn.Infra.Data.Repositories
         public async Task<IEnumerable<Employee>> GetEmployeesByHRAdministrator(string id)
         {
             var employees = await _context.Employees.Where(emplyee => emplyee.HRAdministratorId == id).ToListAsync();
-            if (employees != null)
+            if (employees.Count != 0)
             {
                 return employees;
             }

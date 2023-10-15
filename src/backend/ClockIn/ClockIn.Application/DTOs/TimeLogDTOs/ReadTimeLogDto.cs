@@ -18,9 +18,11 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
 
         public string JustificationId { get; set; }
 
+        public string Justification { get; set; }
+
         public string EmployeeId { get; set; }
 
-
+        public LogType LogTypeValue { get; set; }
 
         public ReadTimeLogDTO(LogType LogTypeValue)
         {

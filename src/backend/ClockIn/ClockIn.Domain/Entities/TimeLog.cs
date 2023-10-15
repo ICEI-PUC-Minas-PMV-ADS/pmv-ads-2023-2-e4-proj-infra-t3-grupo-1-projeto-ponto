@@ -1,6 +1,6 @@
 ﻿using System;
 using ClockIn.Domain.Enums;
-using ClockIn.Domain.Validation;
+
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -17,7 +17,6 @@ namespace ClockIn.Domain.Entities
 
         public bool IsEdited { get; set; }
 
-        [LogTypeValidation]
         [BsonRepresentation(BsonType.String)]
         public LogType LogTypeValue { get; set; }
 

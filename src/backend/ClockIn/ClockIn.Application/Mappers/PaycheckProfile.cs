@@ -10,6 +10,8 @@ namespace ClockIn.Application.Mappers
         public PaycheckProfile()
         {
             CreateMap<Paycheck, ReadPaycheckDto>().ReverseMap();
+            CreateMap<UpdatePaycheckDto, Paycheck>().ReverseMap();
+            CreateMap<CreatePaycheckDto, Paycheck>().ReverseMap();
         }
     }
 }
