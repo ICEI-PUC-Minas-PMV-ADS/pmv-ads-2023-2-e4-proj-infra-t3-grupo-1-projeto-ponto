@@ -1,11 +1,32 @@
 # Plano de Testes de Usabilidade
 
-O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. O Plano de Testes de Software é gerado a partir da especificação do sistema e consiste em casos de testes que deverão ser executados quando a implementação estiver parcial ou totalmente pronta.
-
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
-
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+|  **Caso de Teste**  |                                                                                  **CT-01 – Responsividade**                                                                                   |
+| :-----------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |                                                      RNF-006 A aplicação deve ser compatível com diferentes navegadores e dispositivos.                                                       |
+|  Objetivo do Teste  |                                                 Verificar se o aplicativo não apresenta problemas visuais em dispositivos móveis diferentes.                                                  |
+|       Passos        |                                   - Acessar a aplicação; <br> - Clicar em "Login"; <br> - Preencher os campos obrigatórios; <br> - Clicar em "Entrar"; <br>                                   |
+|  Critério de Êxito  |                                                                         Elementos visuais se adequam ao tipo de tela.                                                                         |
+|        :---:        |                                                                                             :---:                                                                                             |
+|  **Caso de Teste**  |                                                                       **CT-02 – Editar informações de um colaborador**                                                                        |
+| Requisito Associado |                                                          RF-012 O RH deve poder fazer um CRUD dos usuários (empregados) no sistema.                                                           |
+|  Objetivo do Teste  |                                                             Verificar se o usuário RH consegue editar informações do colaborador                                                              |
+|       Passos        | - Clicar em "meus colaboradores";<br> - Clicar no icone de usuario no colaborador escolhido; <br> - Clicar no icone de editar; <br> - Preencher campos obrigatorios <br> - Clicar em "Enviar" |
+|  Critério de Êxito  |                                                                      O sistema irá editar as informações do colaborador.                                                                      |
+|        :---:        |                                                                                             :---:                                                                                             |
+|  **Caso de Teste**  |                                                                              **CT-03 – Criar novo departamento**                                                                              |
+| Requisito Associado |                                                              RF-009 O RH deve poder fazer um CRUD dos departamentos no sistema.                                                               |
+|  Objetivo do Teste  |                                                              Verificar se o usuário RH foi capaz de criar um novo departamento.                                                               |
+|       Passos        |                                                - Clicar em "meus departamentos";<br> - Preencher campos obrigatorios <br> - Clicar em "Enviar"                                                |
+|  Critério de Êxito  |                                                                        O sistema inerir um novo departamento a lista.                                                                         |
+|        :---:        |                                                                                             :---:                                                                                             |
+|  **Caso de Teste**  |                                                                  **CT-04 – Visualizar registros de ponto de um colaborador**                                                                  |
+| Requisito Associado |                                                   RF-013 O RH deve ter acesso à visualização dos registros de pontos de todos os usuários.                                                    |
+|  Objetivo do Teste  |                                                                Listar todos os registros de ponto de um colaborador escolhido                                                                 |
+|       Passos        |                                - Clicar em "meus colaboradores";<br> - Clicar no icone de usuario no colaborador escolhido; <br> - Clicar "registros de ponto"                                |
+|  Critério de Êxito  |                                                         O sistema deve exibir uma lista com todos os registros do usuário esoclhido.                                                          |
+|        :---:        |                                                                                             :---:                                                                                             |
+|  **Caso de Teste**  |                                                                                 **CT-05 – Deletar um cargo**                                                                                  |
+| Requisito Associado |                                                                    RF-016 O RH poderá fazer um CRUD dos cargos da empresa.                                                                    |
+|  Objetivo do Teste  |               Colaborador devera conseguir excluir um departamento e consequentemente todos os colaboradores associados a ele, junto com os registros associados ao colaborador               |
+|       Passos        |                                                                 - Clicar em "meus cargos";<br> - Clicar no icone de exclusão;                                                                 |
+|  Critério de Êxito  |                      O usuário não podera mais visualizar o cargo excluido, assim como os colaboradores associados ao cargo e os registros associados aos colaboradores                       |
