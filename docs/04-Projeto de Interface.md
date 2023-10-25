@@ -13,15 +13,8 @@ O diagrama de fluxo apresenta os caminhos e ações que o usuário padrão e R.H
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+Os wireframes foram desenvolvidos na plataforma Figma estão disponíveis através do link
+https://www.figma.com/file/oK6O2XmrWlc7ouX2EgqBPM/Untitled?type=design&node-id=0%3A1&mode=design&t=cSMvUMzbmHM4Vkpk-1
+As telas estão dividas entre o sistema mobile do usuário padrão e o sistema web gerido pelo R.H.
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+
