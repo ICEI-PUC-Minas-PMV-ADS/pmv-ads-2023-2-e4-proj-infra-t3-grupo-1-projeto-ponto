@@ -22,3 +22,32 @@ As telas estão dividas entre o sistema mobile do usuário padrão e o sistema w
 
 ### Criar Conta - Sistema Web
 ![Criar conta](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/eee0d8bf-5e2c-483c-ba78-b96e6b6d2a5b)
+
+### Informações - Sistema Web
+![Informações](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/17fd8920-1dd5-4a7d-abfa-b4c5814d5fee)
+
+### Departamentos - Sistema Web
+![Departamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/dbb038eb-080b-4c36-82ed-e012b5206304)
+
+### Cargos - Sistema Web
+![Cargos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/cfd9994a-0c09-4b22-8189-78350fd31f55)
+
+### Colaboradores - Sistema Web
+![Colaboradores](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/69e3faa6-f8da-4532-ad42-f7d444af41f4)
+
+### Perfil Colaboradores - Sistema Web
+![Perfil Colaboradores](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/716dd109-b393-4993-9531-9f977b9955da)
+
+### Registros de Ponto - Sistema Web
+![Registros de Ponto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/b9c5a4ab-85ac-450a-8160-9448afb8334c)
+
+### Contracheques - Sistema Web
+![Contracheques](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/343f9b55-8747-4684-b650-66b6aa4d238c)
+
+### Visualizar Contracheque - Sistema Web
+![Visualizar Contracheque](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/5cb12cda-0bdc-48dd-ad5e-e733a2034c75)
+
+### Justificativas - Sistema Web
+![Justificativas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/00a450d7-a30c-4338-bd5a-d63c57d8dd91)
+
+
