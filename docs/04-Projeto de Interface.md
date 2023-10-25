@@ -14,7 +14,7 @@ O diagrama de fluxo apresenta os caminhos e ações que o usuário padrão e R.H
 ## Wireframes
 
 As telas estão dividas entre o sistema web gerido pelo R.H. e o sistema mobile do usuário padrão. 
-Os wireframes foram desenvolvidos na plataforma Figma estão disponíveis através do link: https://www.figma.com/file/oK6O2XmrWlc7ouX2EgqBPM/Untitled?type=design&node-id=0%3A1&mode=design&t=cSMvUMzbmHM4Vkpk-1
+Os wireframes foram desenvolvidos na plataforma Figma e estão disponíveis através do link: https://www.figma.com/file/oK6O2XmrWlc7ouX2EgqBPM/Untitled?type=design&node-id=0%3A1&mode=design&t=cSMvUMzbmHM4Vkpk-1
 
 
 ### Tela de Login - Sistema Web
