@@ -1,5 +1,5 @@
 
-## Projeto de Interface
+# Projeto de Interface
 
 As telas foram criadas com intuito de facilitar a navegação do usuário padrão e do R.H., tornando o caminho intuitivo de modo a contribuir para uma melhor experiência de ambos. Foram utilizados vieses cognitivos de design para melhorar a experiência do usuário enquanto interage com o sistema. Todos os requisitos foram utilizados e aplicados no projeto da interface a fim de desenvolvermos a melhor solução possível.
 
@@ -17,6 +17,8 @@ Os wireframes foram desenvolvidos na plataforma Figma estão disponíveis atrav�
 https://www.figma.com/file/oK6O2XmrWlc7ouX2EgqBPM/Untitled?type=design&node-id=0%3A1&mode=design&t=cSMvUMzbmHM4Vkpk-1
 As telas estão dividas entre o sistema mobile do usuário padrão e o sistema web gerido pelo R.H.
 
-# Tela de Login - Sistema Web
+### Tela de Login - Sistema Web
 ![Tela - Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/a29e77bf-42af-41d9-b642-2454405318a0)
 
+### Criar Conta - Sistema Web
+![Criar conta](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/eee0d8bf-5e2c-483c-ba78-b96e6b6d2a5b)
