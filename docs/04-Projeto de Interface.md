@@ -50,4 +50,17 @@ As telas estão dividas entre o sistema web gerido pelo R.H. e o sistema mobile 
 ### Justificativas - Sistema Web
 ![Justificativas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/00a450d7-a30c-4338-bd5a-d63c57d8dd91)
 
+### Tela de Login - Sistema Mobile
+![Tela Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/0a64e47b-a0d6-4703-8cc3-a2fb19337719)
 
+### Home Page - Sistema Mobile
+![Home Page](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/e7aa227e-30e5-4c51-ad0f-8b7fb6978c8c)
+
+### Tela do Perfil - Sistema Mobile
+![Tela Perfil](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/e6681a66-3cb9-43cd-8133-32ec4fa193fd)
+
+### Tela Meu Ponto - Sistema Mobile
+![meu ponto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/702bea28-b19e-4699-989d-d314c8d6f220)
+
+### Tela Contracheques - Sistema Mobile
+![contracheques](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/103212087/2482e448-baa2-4e81-a0a0-4e718a4e87f7)
