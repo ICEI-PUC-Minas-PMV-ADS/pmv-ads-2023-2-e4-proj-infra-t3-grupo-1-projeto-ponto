@@ -8,7 +8,6 @@ import {
 } from "../../services/justificationsService";
 import Justification from "./components/Justification";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function Justifications() {
@@ -54,7 +53,10 @@ export default function Justifications() {
           <div className={styles.justificationsGerador}>
             {justifications.map((justification) => {
               return (
-                <div className={styles.justificationsItens} key={justification.id}>
+                <div
+                  className={styles.justificationsItens}
+                  key={justification.id}
+                >
                   <Justification
                     justification={justification}
                     handleDeleteJustification={handleDeleteJustification}

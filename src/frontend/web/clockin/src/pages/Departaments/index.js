@@ -7,7 +7,6 @@ import {
   deleteDepartament,
 } from "../../services/departamentService";
 import Departament from "./components/Departament";
-
 import styles from "./index.module.css";
 
 export default function Departaments() {
@@ -48,21 +47,21 @@ export default function Departaments() {
     <div className={styles.containerDepartaments}>
       <div className={styles.departamentContent}>
         <h2 className={styles.itens}>Departamentos</h2>
-          <div className={styles.departamentScroll}>
-            <div className={styles.departamentGerador}>
-              {departaments.map((departament) => {
-                return (
-                  <div className={styles.departamentItens} key={departament.id}>
-                    <Departament
-                      departament={departament}
-                      handleDeleteDepartament={handleDeleteDepartament}
-                      setDepartaments={setDepartaments} 
-                    />
-                  </div>
-                );
-              })}
-            </div>
+        <div className={styles.departamentScroll}>
+          <div className={styles.departamentGerador}>
+            {departaments.map((departament) => {
+              return (
+                <div className={styles.departamentItens} key={departament.id}>
+                  <Departament
+                    departament={departament}
+                    handleDeleteDepartament={handleDeleteDepartament}
+                    setDepartaments={setDepartaments}
+                  />
+                </div>
+              );
+            })}
           </div>
+        </div>
       </div>
       <div className={styles.contentDepartaments}>
         <h2 className={styles.itens}>Adicionar Departamentos</h2>

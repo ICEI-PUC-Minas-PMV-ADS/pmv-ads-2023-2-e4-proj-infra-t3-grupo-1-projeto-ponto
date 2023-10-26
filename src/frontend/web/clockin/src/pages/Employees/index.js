@@ -6,7 +6,6 @@ import { getDepartaments } from "../../services/departamentService";
 import { getPositions } from "../../services/positionsService";
 import Employee from "./components/Employee";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function Employees() {

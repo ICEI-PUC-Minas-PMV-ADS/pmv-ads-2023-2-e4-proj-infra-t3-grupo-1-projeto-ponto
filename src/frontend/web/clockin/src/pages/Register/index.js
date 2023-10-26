@@ -2,7 +2,6 @@ import { useState } from "react";
 import { registerUser } from "../../services/userService";
 import ButtonSubmitForm from "../../components/ButtonSubmitForm";
 import InputForm from "../../components/InputForm";
-
 import styles from "./index.module.css";
 
 function RegisterHRForm() {

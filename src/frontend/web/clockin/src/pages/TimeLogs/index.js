@@ -8,7 +8,6 @@ import TimeLogForm from "./components/TimeLogForm";
 import FilterTimeLogForm from "./components/FilterTimeLogForm";
 import TimeLog from "./components/TimeLog";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function TimeLogs() {

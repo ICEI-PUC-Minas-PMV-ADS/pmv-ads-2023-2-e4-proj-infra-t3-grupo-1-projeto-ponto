@@ -17,11 +17,11 @@ const useAuthentication = () => {
       localStorage.removeItem("token_ClockIn");
       setUserId("");
       if (
-        location.pathname !== "/rh/login" &&
+        location.pathname !== "/" &&
         location.pathname !== "/rh/registrar"
       ) {
         console.log("sessão expirada!");
-        navigate("/rh/login");
+        navigate("/");
       }
       if (location.pathname !== "/rh/registrar") {
       }
@@ -68,7 +68,7 @@ const useAuthentication = () => {
     localStorage.removeItem("token_ClockIn");
     await logoutUser();
     setUserId("");
-    navigate("/rh/login");
+    navigate("/");
     setAuthenticated(false);
   };
   return { authenticated, userId, setUserId, login, logout, isTokenValid };

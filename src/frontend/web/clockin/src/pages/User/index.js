@@ -6,7 +6,6 @@ import { deleteUser } from "../../services/userService";
 import UserEditForm from "./components/UserEditForm";
 import ButtonDelete from "../../components/ButtonDelete";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function User() {
@@ -48,30 +47,51 @@ export default function User() {
       ) : (
         <div className={styles.containerUser}>
           <div className={styles.contentUser}>
-          <h1 className={styles.itens}>Bem-vindo(a)!</h1>
-          <h3 className={styles.itens}><strong>Informações</strong></h3>
+            <h1 className={styles.itens}>Bem-vindo(a)!</h1>
+            <h3 className={styles.itens}>
+              <strong>Informações</strong>
+            </h3>
             <div className={styles.infoUser}>
-              <p><strong>Nome completo:</strong> {user.fullName}</p>
-              <p><strong>Email:</strong> {user.email}</p>
-              <p><strong>CNPJ:</strong> {user.cnpj}</p>
+              <p>
+                <strong>Nome completo:</strong> {user.fullName}
+              </p>
+              <p>
+                <strong>Email:</strong> {user.email}
+              </p>
+              <p>
+                <strong>CNPJ:</strong> {user.cnpj}
+              </p>
               <div className={styles.buttonUser}>
-                <ButtonUpdate setViewEditForm={setViewEditForm}/> 
-                <ButtonDelete handleDelete={handleDeleteUser} id={user.id}/>
+                <ButtonUpdate setViewEditForm={setViewEditForm} />
+                <ButtonDelete handleDelete={handleDeleteUser} id={user.id} />
               </div>
               <div className={styles.opcaoesUser}>
-              <Link to={`/rh/${params.userId}/departamentos`}>
-                Departamentos
-              </Link>
-              <Link to={`/rh/${params.userId}/cargos`}>Cargos</Link>
-              <Link to={`/rh/${params.userId}/colaboradores`}>
-                Colaboradores
-              </Link>
-              <Link to={`/rh/${params.userId}/justificativas`}>
-                Justificativas
-              </Link>
+                <Link
+                  to={`/rh/${params.userId}/departamentos`}
+                  data-cy="departaments-link"
+                >
+                  Departamentos
+                </Link>
+                <Link
+                  to={`/rh/${params.userId}/cargos`}
+                  data-cy="positions-link"
+                >
+                  Cargos
+                </Link>
+                <Link
+                  to={`/rh/${params.userId}/colaboradores`}
+                  data-cy="employees-link"
+                >
+                  Colaboradores
+                </Link>
+                <Link
+                  to={`/rh/${params.userId}/justificativas`}
+                  data-cy="justifications-link"
+                >
+                  Justificativas
+                </Link>
+              </div>
             </div>
-            </div>
-            
           </div>
         </div>
       )}

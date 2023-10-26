@@ -5,7 +5,6 @@ import PositionForm from "./components/PositionForm";
 import { getPositions, deletePosition } from "../../services/positionsService";
 import Position from "./components/Position";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function Positions() {

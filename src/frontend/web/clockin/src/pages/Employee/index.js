@@ -6,7 +6,6 @@ import EmployeeEditForm from "./components/EmployeeEditForm";
 import { getDepartaments } from "../../services/departamentService";
 import { getPositions } from "../../services/positionsService";
 import useAuthentication from "../../hooks/useAuthentication";
-
 import styles from "./index.module.css";
 
 export default function Employee() {
@@ -70,24 +69,49 @@ export default function Employee() {
         <div className={styles.containerEdit}>
           <div className={styles.contentEdit}>
             <div className={styles.infoEdit}>
-              <p><span>Nome:</span> {employee.fullName}</p>
-              <p><span>Email:</span> {employee.email}</p>
-              <p><span>Data de nascimento:</span> {employee.birthDate}</p>
-              <p><span>Data de contratação:</span> {employee.hireDate}</p>
-              <p><span>CPF:</span> {employee.cpf}</p>
-              <p><span>
-                Quantidade de horas trabalhadas:</span> {employee.dailyWorkingHours}
+              <p>
+                <span>Nome:</span> {employee.fullName}
               </p>
-              <p><span>Departamento:</span> {employee.departament}</p>
-              <p><span>Cargo:</span> {employee.position}</p>
-            
-            <div className={styles.buttonEdit}>
-              <ButtonUpdate setViewEditForm={setViewEditForm} />
-            </div>
+              <p>
+                <span>Email:</span> {employee.email}
+              </p>
+              <p>
+                <span>Data de nascimento:</span> {employee.birthDate}
+              </p>
+              <p>
+                <span>Data de contratação:</span> {employee.hireDate}
+              </p>
+              <p>
+                <span>CPF:</span> {employee.cpf}
+              </p>
+              <p>
+                <span>Quantidade de horas trabalhadas:</span>{" "}
+                {employee.dailyWorkingHours}
+              </p>
+              <p>
+                <span>Departamento:</span> {employee.departament}
+              </p>
+              <p>
+                <span>Cargo:</span> {employee.position}
+              </p>
+
+              <div className={styles.buttonEdit}>
+                <ButtonUpdate setViewEditForm={setViewEditForm} />
+              </div>
             </div>
             <div className={styles.opcoesEdit}>
-              <button className={styles.buttonRedirecionar} onClick={handleTimeLogs}>Registros de ponto</button>
-              <button className={styles.buttonRedirecionar} onClick={handlePaychecks}>Contracheques</button>
+              <button
+                className={styles.buttonRedirecionar}
+                onClick={handleTimeLogs}
+              >
+                Registros de ponto
+              </button>
+              <button
+                className={styles.buttonRedirecionar}
+                onClick={handlePaychecks}
+              >
+                Contracheques
+              </button>
             </div>
           </div>
         </div>
