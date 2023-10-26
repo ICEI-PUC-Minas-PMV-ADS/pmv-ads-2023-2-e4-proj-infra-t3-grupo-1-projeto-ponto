@@ -6,6 +6,8 @@ import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import ButtonCancel from "../../../../components/ButtonCancel";
 import SelectForm from "../../../../components/SelectForm";
 
+import styles from "./index.module.css";
+
 export default function EmployeeEditForm({
   employeeProp,
   setViewEditForm,
@@ -59,73 +61,82 @@ export default function EmployeeEditForm({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        value={employeeName}
-        changeValue={(name) => setEmployeeName(name)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui o nome do colaborador"}
-        label={"Nome: "}
-      />
-      <InputForm
-        value={employeeEmail}
-        changeValue={(email) => setEmployeeEmail(email)}
-        required={true}
-        type={"email"}
-        placeholder={"Digite aqui o nome do departamento"}
-        label={"Email: "}
-      />
-      <InputForm
-        value={employeeBirthDate}
-        changeValue={(birthDate) => setEmployeeBirthDate(birthDate)}
-        required={true}
-        type={"date"}
-        placeholder={"Digite aqui o nome do departamento"}
-        label={"Data de nascimento: "}
-      />
-      <InputForm
-        value={employeeHireDate}
-        changeValue={(hireDate) => setEmployeeHireDate(hireDate)}
-        required={true}
-        type={"date"}
-        placeholder={"Digite aqui a data de contratação do colaborador"}
-        label={"Data de contratação: "}
-      />
-      <InputForm
-        value={employeeCpf}
-        changeValue={(cpf) => setEmployeeCpf(cpf)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui o CPF do colaborador"}
-        label={"CPF: "}
-      />
-      <InputForm
-        value={employeeDailyWorkingHours}
-        changeValue={(dailyWorkingHours) =>
-          setEmployeeDailyWorkingHours(dailyWorkingHours)
-        }
-        required={true}
-        type={"number"}
-        placeholder={
-          "Digite aqui a quandidade de horas que o colaborador ira trabalhar por dia"
-        }
-        label={"quantidades de horas trabalhadas por dia: "}
-      />
-      <SelectForm
-        options={positions}
-        selectedOption={employeePositionId}
-        setSelectedOption={setEmployeePositionId}
-        text={"Selecione um cargo"}
-      />
-      <SelectForm
-        options={departaments}
-        selectedOption={employeeDepartamentId}
-        setSelectedOption={setEmployeeDepartamentId}
-        text={"Selecione um departamento"}
-      />
-      <ButtonSubmitForm textButton={"Enviar"} />
-      <ButtonCancel setViewEditForm={setViewEditForm} />
-    </form>
+    <div className={styles.containerEditUser}>
+      <div className={styles.contentEditUser}>
+      <h2 className={styles.tituloEditUser}>Editar colaborador</h2>
+        <div className={styles.scrolleditUser}>
+          <div className={styles.formEditUser}>
+            <form onSubmit={handleSubmit}>
+              <InputForm
+                value={employeeName}
+                changeValue={(name) => setEmployeeName(name)}
+                required={true}
+                type={"text"}
+                placeholder={"Digite aqui o nome do colaborador"}
+                label={"Nome: "}
+              />
+              <InputForm
+                value={employeeEmail}
+                changeValue={(email) => setEmployeeEmail(email)}
+                required={true}
+                type={"email"}
+                placeholder={"Digite aqui o nome do departamento"}
+                label={"Email: "}
+              />
+              <InputForm
+                value={employeeBirthDate}
+                changeValue={(birthDate) => setEmployeeBirthDate(birthDate)}
+                required={true}
+                type={"date"}
+                placeholder={"Digite aqui o nome do departamento"}
+                label={"Data de nascimento: "}
+              />
+              <InputForm
+                value={employeeHireDate}
+                changeValue={(hireDate) => setEmployeeHireDate(hireDate)}
+                required={true}
+                type={"date"}
+                placeholder={"Digite aqui a data de contratação do colaborador"}
+                label={"Data de contratação: "}
+              />
+              <InputForm
+                value={employeeCpf}
+                changeValue={(cpf) => setEmployeeCpf(cpf)}
+                required={true}
+                type={"text"}
+                placeholder={"Digite aqui o CPF do colaborador"}
+                label={"CPF: "}
+              />
+              <InputForm
+                value={employeeDailyWorkingHours}
+                changeValue={(dailyWorkingHours) =>
+                  setEmployeeDailyWorkingHours(dailyWorkingHours)
+                }
+                required={true}
+                type={"number"}
+                placeholder={
+                  "Digite aqui a quandidade de horas que o colaborador ira trabalhar por dia"
+                }
+                label={"quantidades de horas trabalhadas por dia: "}
+              />
+              <SelectForm
+                options={positions}
+                selectedOption={employeePositionId}
+                setSelectedOption={setEmployeePositionId}
+                text={"Selecione um cargo"}
+              />
+              <SelectForm
+                options={departaments}
+                selectedOption={employeeDepartamentId}
+                setSelectedOption={setEmployeeDepartamentId}
+                text={"Selecione um departamento"}
+              />
+              <ButtonSubmitForm textButton={"Enviar"} />
+              <ButtonCancel setViewEditForm={setViewEditForm} />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

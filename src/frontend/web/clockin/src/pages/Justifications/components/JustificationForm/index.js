@@ -43,6 +43,7 @@ export default function JustificationForm({
         type={"text"}
         placeholder={"Digite aqui o nome da justificativa"}
         label={"Nome: "}
+        data_cy={"input-name"}
       />
       <InputForm
         value={justificationdescription}
@@ -51,6 +52,7 @@ export default function JustificationForm({
         type={"text"}
         placeholder={"Digite aqui a descrição da justificativa"}
         label={"Descrição: "}
+        data_cy={"input-description"}
       />
       <ButtonSubmitForm textButton={"Enviar"} />
     </form>

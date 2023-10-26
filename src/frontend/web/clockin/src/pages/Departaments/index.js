@@ -8,6 +8,8 @@ import {
 } from "../../services/departamentService";
 import Departament from "./components/Departament";
 
+import styles from "./index.module.css";
+
 export default function Departaments() {
   const [departaments, setDepartaments] = useState([]);
   const params = useParams();
@@ -43,25 +45,57 @@ export default function Departaments() {
   }, [params.userId]);
 
   return (
-    <div>
-      <div>
-        <h1>Departamentos: </h1>
-        <div>
-          {departaments.map((departament) => {
-            return (
-              <div key={departament.id}>
-                <Departament
-                  departament={departament}
-                  handleDeleteDepartament={handleDeleteDepartament}
-                  setDepartaments={setDepartaments}
-                />
-              </div>
-            );
-          })}
+    <div className={styles.containerDepartaments}>
+      <div className={styles.departamentContent}>
+        <h2 className={styles.itens}>Departamentos</h2>
+          <div className={styles.departamentScroll}>
+            <div className={styles.departamentGerador}>
+              {departaments.map((departament) => {
+                return (
+                  <div className={styles.departamentItens} key={departament.id}>
+                    <Departament
+                      departament={departament}
+                      handleDeleteDepartament={handleDeleteDepartament}
+                      setDepartaments={setDepartaments} 
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+      </div>
+      <div className={styles.contentDepartaments}>
+        <h2 className={styles.itens}>Adicionar Departamentos</h2>
+        <div className={styles.formDepartaments}>
+          <DepartamentForm setDepartaments={setDepartaments} />
         </div>
-        <h2>Criar um novo departamento</h2>
-        <DepartamentForm setDepartaments={setDepartaments} />
+        {/* <h2>Criar um novo departamento</h2> */}
+        {/* <DepartamentForm setDepartaments={setDepartaments} /> */}
       </div>
     </div>
   );
 }
+
+// return (
+//   <div className={styles.containerDepartaments}>
+//     <div className={styles.contentDepartaments}>
+//       <h2 className={styles.itens}>Adicionar Departamento</h2>
+//       <div className={styles.formDepartaments}>
+//         {departaments.map((departament) => {
+//           return (
+//             <div key={departament.id}>
+//               <Departament
+//                 departament={departament}
+//                 handleDeleteDepartament={handleDeleteDepartament}
+//                 setDepartaments={setDepartaments}
+//               />
+//             </div>
+//           );
+//         })}
+//         <DepartamentForm setDepartaments={setDepartaments} />
+//       </div>
+//       {/* <h2>Criar um novo departamento</h2> */}
+//       {/* <DepartamentForm setDepartaments={setDepartaments} /> */}
+//     </div>
+//   </div>
+// );

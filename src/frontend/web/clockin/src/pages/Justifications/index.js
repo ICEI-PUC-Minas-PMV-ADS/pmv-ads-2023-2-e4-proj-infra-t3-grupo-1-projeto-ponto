@@ -9,6 +9,8 @@ import {
 import Justification from "./components/Justification";
 import useAuthentication from "../../hooks/useAuthentication";
 
+import styles from "./index.module.css";
+
 export default function Justifications() {
   const [justifications, setJustifications] = useState([]);
   const { isTokenValid } = useAuthentication();
@@ -45,24 +47,30 @@ export default function Justifications() {
   }, [params.userId, isTokenValid]);
 
   return (
-    <div>
-      <div>
-        <h1>Justificativas de ponto: </h1>
-        <div>
-          {justifications.map((justification) => {
-            return (
-              <div key={justification.id}>
-                <Justification
-                  justification={justification}
-                  handleDeleteJustification={handleDeleteJustification}
-                  setJustifications={setJustifications}
-                />
-              </div>
-            );
-          })}
+    <div className={styles.containerJustifications}>
+      <div className={styles.contentJustifications}>
+        <h2 className={styles.titulo}>Justificativas de ponto</h2>
+        <div className={styles.justificationsScroll}>
+          <div className={styles.justificationsGerador}>
+            {justifications.map((justification) => {
+              return (
+                <div className={styles.justificationsItens} key={justification.id}>
+                  <Justification
+                    justification={justification}
+                    handleDeleteJustification={handleDeleteJustification}
+                    setJustifications={setJustifications}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <h2>Criar um nova justificativa</h2>
-        <JustificationForm setJustifications={setJustifications} />
+      </div>
+      <div className={styles.contentAddJustifications}>
+        <h2 className={styles.titulo}>Criar uma nova justificativa</h2>
+        <div className={styles.formAddJustifications}>
+          <JustificationForm setJustifications={setJustifications} />
+        </div>
       </div>
     </div>
   );

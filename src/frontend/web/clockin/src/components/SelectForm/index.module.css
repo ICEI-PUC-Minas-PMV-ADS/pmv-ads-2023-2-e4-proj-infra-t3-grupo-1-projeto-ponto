@@ -1,0 +1,17 @@
+.selectEdit {
+    margin: 0.5rem 0rem;
+}
+
+.selectEdit label {
+    color: #002538;
+}
+
+.selectEdit select {
+    border: 2px solid #002538;
+    border-radius: 0.3rem;
+    margin: 0rem 0.50rem;
+}
+
+.selectEdit option {
+    color: #002538;
+}

@@ -1,0 +1,63 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002538;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 0 1.2rem;
+    font-weight: bold;
+    color: #FE9528;
+}
+
+.navLinks {
+    display: flex;
+    color: white;
+}
+
+.navLinks a {
+    color: white;
+    padding: 0 1.6rem;
+}
+
+.navLinks a:hover {
+    color: #FE9528
+}
+
+.buttonNav {
+    background: #002538;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.buttonNav:hover {
+    color: #FE9528;
+}
+
+.mobileMenuIcon {
+    display: none;
+}
+
+
+/* Abaixo começa a responsividade da navbar*/
+
+@media (max-width: 450px) {
+    .logo {
+        display: none;
+    } 
+
+    .navbar {
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

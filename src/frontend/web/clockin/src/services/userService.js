@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import api from "../http/api";
 
 async function registerUser(user) {
   const { fullName, email, password, rePassword, cnpj } = user;

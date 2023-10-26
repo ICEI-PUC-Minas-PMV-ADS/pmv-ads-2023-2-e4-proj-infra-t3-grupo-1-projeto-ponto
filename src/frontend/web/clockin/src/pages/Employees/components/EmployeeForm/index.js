@@ -8,6 +8,8 @@ import InputForm from "../../../../components/InputForm";
 import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import SelectForm from "../../../../components/SelectForm";
 
+import styles from "./index.module.css";
+
 export default function EmployeeForm({
   departaments,
   positions,
@@ -81,7 +83,7 @@ export default function EmployeeForm({
   }, [departaments, positions]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.editEmployee} onSubmit={handleSubmit}>
       <InputForm
         value={employeeName}
         changeValue={(name) => setEmployeeName(name)}
@@ -148,7 +150,7 @@ export default function EmployeeForm({
         placeholder={
           "Digite aqui a quandidade de horas que o colaborador ira trabalhar por dia"
         }
-        label={"quantidades de horas trabalhadas por dia: "}
+        label={"Quantidades de horas trabalhadas por dia: "}
       />
       <SelectForm
         options={positions}
@@ -157,12 +159,15 @@ export default function EmployeeForm({
         text={"Selecione um cargo"}
       />
       <SelectForm
+        className={styles.editEmployee}
         options={departaments}
         selectedOption={employeeDepartamentId}
         setSelectedOption={setEmployeeDepartamentId}
         text={"Selecione um departamento"}
       />
-      <ButtonSubmitForm textButton={"Enviar"} />
+      <div className={styles.buttonEnviar}>
+        <ButtonSubmitForm textButton={"Enviar"} />
+      </div>
     </form>
   );
 }

@@ -4,18 +4,18 @@ namespace ClockIn.Application.DTOs.PaycheckDTOs
 
 {
     public class ReadPaycheckDto
-	{
+    {
         public string Id { get; set; }
 
         public DateOnly StartDate { get; set; }
 
         public DateOnly EndDate { get; set; }
 
-        public TimeOnly OvertimeHours { get; set; }
+        public string OvertimeHours { get; set; }
 
-        public TimeOnly StandardHours { get; set; }
+        public string StandardHours { get; set; }
 
-        public TimeOnly TotalHours { get; set; }
+        public string TotalHours { get; set; }
 
         public int DaysWorked { get; set; }
 

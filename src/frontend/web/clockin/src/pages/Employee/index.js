@@ -7,6 +7,8 @@ import { getDepartaments } from "../../services/departamentService";
 import { getPositions } from "../../services/positionsService";
 import useAuthentication from "../../hooks/useAuthentication";
 
+import styles from "./index.module.css";
+
 export default function Employee() {
   const [employee, setEmployee] = useState({});
   const [viewEditForm, setViewEditForm] = useState(false);
@@ -65,25 +67,30 @@ export default function Employee() {
           />
         )
       ) : (
-        <>
-          <div>
-            <h3>Nome: {employee.fullName}</h3>
-            <h3>Email: {employee.email}</h3>
-            <h3>Data de nascimento: {employee.birthDate}</h3>
-            <h3>Data de contratação: {employee.hireDate}</h3>
-            <h3>CPF: {employee.cpf}</h3>
-            <h3>
-              Quantidade de horas trabalhadas: {employee.dailyWorkingHours}
-            </h3>
-            <h3>Departamento: {employee.departament}</h3>
-            <h3>Cargo: {employee.position}</h3>
+        <div className={styles.containerEdit}>
+          <div className={styles.contentEdit}>
+            <div className={styles.infoEdit}>
+              <p><span>Nome:</span> {employee.fullName}</p>
+              <p><span>Email:</span> {employee.email}</p>
+              <p><span>Data de nascimento:</span> {employee.birthDate}</p>
+              <p><span>Data de contratação:</span> {employee.hireDate}</p>
+              <p><span>CPF:</span> {employee.cpf}</p>
+              <p><span>
+                Quantidade de horas trabalhadas:</span> {employee.dailyWorkingHours}
+              </p>
+              <p><span>Departamento:</span> {employee.departament}</p>
+              <p><span>Cargo:</span> {employee.position}</p>
+            
+            <div className={styles.buttonEdit}>
+              <ButtonUpdate setViewEditForm={setViewEditForm} />
+            </div>
+            </div>
+            <div className={styles.opcoesEdit}>
+              <button className={styles.buttonRedirecionar} onClick={handleTimeLogs}>Registros de ponto</button>
+              <button className={styles.buttonRedirecionar} onClick={handlePaychecks}>Contracheques</button>
+            </div>
           </div>
-          <div>
-            <button onClick={handleTimeLogs}>Registros de ponto</button>
-            <button onClick={handlePaychecks}>Contracheques</button>
-            <ButtonUpdate setViewEditForm={setViewEditForm} />
-          </div>
-        </>
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,161 @@
+.containerPositions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fe9528;
+  flex-direction: column;
+}
+
+/* Aqui começa a estilização da div "Cargos e valor da hora" */
+
+.contentPositions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  height: 38%;
+  background-color: white;
+  border-radius: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.containerPositions h2 {
+  text-align: center;
+  color: #002538;
+  padding: 0.8rem;
+}
+
+.positionsScroll {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.positionsScroll::-webkit-scrollbar {
+  width: 10px;
+  background-color: #c6c6c6;
+  border-radius: 10px;
+}
+
+.positionsScroll::-webkit-scrollbar-thumb {
+  background-color: #002538;
+  border-radius: 10px;
+}
+
+.positionsGerador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #002538;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.positionsItens:nth-child(odd) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  width: 100%;
+  border-bottom-left-radius: 0.1rem;
+}
+
+.positionsItens:nth-child(even) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  border-bottom-left-radius: 0.1rem;
+}
+
+/* Aqui começa a estilização da div "Adicionar Cargo" */
+
+.contentAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  height: 43%;
+  background-color: white;
+  border-radius: 0.7rem;
+}
+
+.contentAdd h2 {
+  text-align: center;
+  margin: 10px;
+  color: #002538;
+}
+
+.contentAdd .formAdd {
+  width: 40%;
+}
+
+.formAdd {
+  margin-top: 0.2rem;
+}
+
+.tituloAdd {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* Aqui começa a responsividade da página */
+
+@media (max-width: 900px) {
+  .contentPositions h2 {
+    font-size: 16px;
+  }
+
+  .contentAdd h2 {
+    font-size: 16px;
+  }
+
+  .contentAdd .formAdd {
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  .contentAdd {
+    background-color: transparent;
+  }
+
+  .contentPositions {
+    width: 55%;
+    height: 28%;
+  }
+
+  .contentAdd .formAdd {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+    .contentAdd {
+        background-color: transparent;
+    }
+
+    .contentPositions {
+        width: 75%;
+        height: 28%;
+      }
+}
+
+@media (max-width: 450px) {
+    .contentAdd {
+        background-color: transparent;
+    }
+
+    .contentPositions {
+        width: 75%;
+        height: 28%;
+      }
+}

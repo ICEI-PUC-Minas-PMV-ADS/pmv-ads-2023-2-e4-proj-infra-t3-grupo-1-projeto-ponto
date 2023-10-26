@@ -1,0 +1,11 @@
+.containerItens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0.30rem 0rem;
+}
+
+.buttonPosition {
+    display: flex;
+}

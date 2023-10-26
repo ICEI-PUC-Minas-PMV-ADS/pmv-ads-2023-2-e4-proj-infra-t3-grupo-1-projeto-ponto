@@ -3,6 +3,8 @@ import ButtonDelete from "../../../../components/ButtonDelete";
 import ButtonUpdate from "../../../../components/ButtonUpdate";
 import PositionEditForm from "../PositionEditForm";
 
+import styles from "./index.module.css";
+
 export default function Position({
   position,
   handleDeletePosition,
@@ -20,7 +22,7 @@ export default function Position({
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div>
+        <div className={styles.containerItens}>
           <p>{position.name}</p>
           <p>
             {position.hrValue.toLocaleString("pt-BR", {
@@ -29,8 +31,13 @@ export default function Position({
               minimumFractionDigits: 2,
             })}
           </p>
-          <ButtonUpdate setViewEditForm={setViewEditForm} />
-          <ButtonDelete handleDelete={handleDeletePosition} id={position.id} />
+          <div className={styles.buttonPosition}>
+            <ButtonUpdate setViewEditForm={setViewEditForm} />
+            <ButtonDelete
+              handleDelete={handleDeletePosition}
+              id={position.id}
+            />
+          </div>
         </div>
       )}
     </div>

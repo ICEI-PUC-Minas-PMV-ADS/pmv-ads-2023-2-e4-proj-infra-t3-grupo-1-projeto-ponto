@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import api from "../http/api";
 
 async function postPaycheck(paycheck) {
   const { employeeId, startDate, endDate } = paycheck;
@@ -15,6 +15,8 @@ async function postPaycheck(paycheck) {
         },
       }
     );
+console.log(response)
+
     return response;
   } catch (error) {
     const errorMessage = error.response.data;

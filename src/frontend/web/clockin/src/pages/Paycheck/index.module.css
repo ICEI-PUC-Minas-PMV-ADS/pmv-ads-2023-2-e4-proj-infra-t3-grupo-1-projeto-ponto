@@ -1,0 +1,39 @@
+.containerDemonstrativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #fe9528;
+    flex-direction: column;
+}
+
+.contentDemonstrativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    height: 83%;
+    background-color: white;
+    border-radius: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.buttonGerarPDF {
+    background: #002538;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.9rem;
+    border-radius: 0.3rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.buttonEditarInfos {
+    margin: 0.5rem 0;
+}
+
+.buttonGerarPDF:hover {
+    color: #fe9528;
+}

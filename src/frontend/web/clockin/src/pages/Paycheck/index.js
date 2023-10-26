@@ -7,6 +7,8 @@ import PaycheckEditForm from "./PaycheckEditForm";
 import useAuthentication from "../../hooks/useAuthentication";
 import { generatePdf } from "../../services/pdfService";
 
+import styles from "./index.module.css";
+
 export default function Paycheck() {
   const [paycheck, setPaycheck] = useState({
     baseSalary: 0,
@@ -58,7 +60,7 @@ export default function Paycheck() {
   }, [params.paycheckId, isTokenValid, setEmployee]);
 
   return (
-    <>
+    <div className={styles.containerDemonstrativo}>
       {viewEditForm ? (
         <div>
           <PaycheckEditForm
@@ -69,7 +71,7 @@ export default function Paycheck() {
           />
         </div>
       ) : (
-        <div>
+        <div className={styles.contentDemonstrativo}>
           <table
             border="1"
             style={{
@@ -89,7 +91,9 @@ export default function Paycheck() {
                 <th style={{ padding: "10px" }}>Departamento:</th>
                 <td style={{ padding: "10px" }}>{employee.departament}</td>
                 <th style={{ padding: "10px" }}>Data:</th>
-                <td style={{ padding: "10px" }}>2023-10-15 a 2023-10-16</td>
+                <td style={{ padding: "10px" }}>
+                  {paycheck.startDate} a {paycheck.endDate}
+                </td>
               </tr>
             </thead>
 
@@ -187,10 +191,14 @@ export default function Paycheck() {
               </tr>
             </tfoot>
           </table>
-          <ButtonUpdate setViewEditForm={setViewEditForm} />
-          <button onClick={generatePdfHandle}>Gerar PDF</button>
+          <div className={styles.buttonEditarInfos}>
+            <ButtonUpdate setViewEditForm={setViewEditForm} />
+          </div>
+          <button className={styles.buttonGerarPDF} onClick={generatePdfHandle}>
+            Gerar PDF
+          </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

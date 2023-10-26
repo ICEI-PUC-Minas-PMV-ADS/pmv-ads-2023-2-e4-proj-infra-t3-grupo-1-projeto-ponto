@@ -1,0 +1,142 @@
+.containerUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fe9528;
+  flex-direction: column;
+}
+
+.contentUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  height: 50%;
+  background-color: white;
+  border-radius: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.contentUser h1 {
+  text-align: center;
+  color: #002538;
+  padding: 0.8rem;
+}
+
+.contentUser h3 {
+  text-align: center;
+  color: #002538;
+}
+
+.itens {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.infoUser {
+  text-align: center;
+  color: #002538;
+  width: 90%;
+  margin-top: 0rem;
+}
+
+.infoUser p {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0.4rem;
+}
+
+.buttonUser {
+  border-bottom: 1px solid #E4E4E4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+
+}
+
+.opcaoesUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4rem;
+}
+
+.opcaoesUser a {
+  background: #002538;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.3rem;
+  margin: 0.3rem 0.2rem;
+}
+
+.opcaoesUser a:hover {
+  color: #fe9528;
+}
+
+/* Abaixo começa a responsividade da página de Boas Vindas*/
+
+@media (max-width:1300px) {
+  .opcaoesUser {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:1100px) {
+  .opcaoesUser {
+    flex-wrap: wrap;    
+  }
+
+  .opcaoesUser a {
+    font-size: 12px;    
+  }
+
+  .contentUser {
+    width: 40%;
+    height: 60%;
+  }
+}
+
+@media (max-width:910px) {
+  .opcaoesUser a {
+    background: none;
+    color: #002538;
+  }
+}
+
+@media (max-width:650px) {
+  .contentUser {
+    background-color: transparent;
+  }
+
+  .contentUser h1 {
+    font-size: 20px;
+  }
+
+  .contentUser h3 {
+    font-size: 20px;
+  }
+
+  .opcaoesUser{
+    flex-direction: column;
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width:650px) {
+  .contentUser h1 {
+    font-size: 16px;
+  }
+
+  .contentUser h3 {
+    font-size: 16px;
+  }
+
+  .infoUser p {
+    font-size: 14px;
+  }
+}

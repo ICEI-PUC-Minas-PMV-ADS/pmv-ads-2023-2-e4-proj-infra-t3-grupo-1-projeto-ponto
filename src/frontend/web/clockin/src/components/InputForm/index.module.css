@@ -1,0 +1,25 @@
+.inputBox { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+/* .inputBox label {        Estilização da label ocultada para seguir o design do Bruno (Anderson)
+    margin-bottom: 0.6em;
+    font-weight: bold;
+} */
+
+.inputBox label {
+    color: #002538;
+    font-size: 0.9rem;
+}
+
+.inputBox input {
+    padding: 0.7em;
+    border-radius: 0.25rem;
+    border: 2px solid #002538;
+}
+
+.inputBox input::placeholder {
+    color: #002538;
+}

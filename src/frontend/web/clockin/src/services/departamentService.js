@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import api from "../http/api";
 
 async function postDepartament(departament) {
   const { name, hrAdministratorId } = departament;

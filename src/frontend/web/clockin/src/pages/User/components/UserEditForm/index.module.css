@@ -1,0 +1,64 @@
+.containerNewUser {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fe9528;
+  flex-direction: column;
+}
+
+.contentNewUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
+    height: 65%;
+    background-color: white;
+    border-radius: 0.7rem;
+}
+
+.containerNewUser h2 {
+    text-align: center;
+  color: #002538;
+  padding: 0.5rem;
+}
+
+.titulo {
+    border-bottom: 1px solid #e4e4e4;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.formNewUser {
+    margin-top: 1rem;
+}
+
+.contentNewUser .formNewUser {
+    width: 65%;
+}
+
+/* Abaixo começa a responsividade da página de Registro*/
+
+@media (max-width:1000px) {
+    .containerNewUser h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:800px) {
+    .contentNewUser {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        background: #FE9528;
+    }
+
+    .titulo {
+        border-bottom: none;
+    }
+}

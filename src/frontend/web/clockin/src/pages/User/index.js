@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { getUser } from "../../services/userService";
 import ButtonUpdate from "../../components/ButtonUpdate";
-import { deleteUser, getUser } from "../../services/userService";
+import { deleteUser } from "../../services/userService";
 import UserEditForm from "./components/UserEditForm";
 import ButtonDelete from "../../components/ButtonDelete";
 import useAuthentication from "../../hooks/useAuthentication";
+
+import styles from "./index.module.css";
 
 export default function User() {
   const [user, setUser] = useState({});
@@ -43,26 +46,32 @@ export default function User() {
           setUser={setUser}
         />
       ) : (
-        <div>
-          <div>
-            <h1>Informações</h1>
-            <h3>Nome completo: {user.fullName}</h3>
-            <h3>Email: {user.email}</h3>
-            <h3>CNPJ: {user.cnpj}</h3>
-            <ButtonUpdate setViewEditForm={setViewEditForm} />
-            <ButtonDelete handleDelete={handleDeleteUser} id={user.id} />
-          </div>
-          <div>
-            <Link to={`/rh/${params.userId}/departamentos`}>
-              Meus departamentos
-            </Link>
-            <Link to={`/rh/${params.userId}/cargos`}>Meus cargos</Link>
-            <Link to={`/rh/${params.userId}/colaboradores`}>
-              Meus colaboradores
-            </Link>
-            <Link to={`/rh/${params.userId}/justificativas`}>
-              Minhas justificativas
-            </Link>
+        <div className={styles.containerUser}>
+          <div className={styles.contentUser}>
+          <h1 className={styles.itens}>Bem-vindo(a)!</h1>
+          <h3 className={styles.itens}><strong>Informações</strong></h3>
+            <div className={styles.infoUser}>
+              <p><strong>Nome completo:</strong> {user.fullName}</p>
+              <p><strong>Email:</strong> {user.email}</p>
+              <p><strong>CNPJ:</strong> {user.cnpj}</p>
+              <div className={styles.buttonUser}>
+                <ButtonUpdate setViewEditForm={setViewEditForm}/> 
+                <ButtonDelete handleDelete={handleDeleteUser} id={user.id}/>
+              </div>
+              <div className={styles.opcaoesUser}>
+              <Link to={`/rh/${params.userId}/departamentos`}>
+                Departamentos
+              </Link>
+              <Link to={`/rh/${params.userId}/cargos`}>Cargos</Link>
+              <Link to={`/rh/${params.userId}/colaboradores`}>
+                Colaboradores
+              </Link>
+              <Link to={`/rh/${params.userId}/justificativas`}>
+                Justificativas
+              </Link>
+            </div>
+            </div>
+            
           </div>
         </div>
       )}

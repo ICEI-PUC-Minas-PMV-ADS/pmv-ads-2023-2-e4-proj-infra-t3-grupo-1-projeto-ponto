@@ -9,6 +9,8 @@ import FilterTimeLogForm from "./components/FilterTimeLogForm";
 import TimeLog from "./components/TimeLog";
 import useAuthentication from "../../hooks/useAuthentication";
 
+import styles from "./index.module.css";
+
 export default function TimeLogs() {
   const [timeLogs, setTimeLogs] = useState([]);
   const { isTokenValid } = useAuthentication();
@@ -48,26 +50,34 @@ export default function TimeLogs() {
   }
 
   return (
-    <div>
-      <div>
-        <h1>Registro de ponto: </h1>
-        <div>
-          <h2>Filtrar registros</h2>
-          <FilterTimeLogForm setTimeLogs={setTimeLogs} />
-          {timeLogs.map((timeLog) => {
-            return (
-              <div key={timeLog.id}>
-                <TimeLog
-                  timeLog={timeLog}
-                  handleDeleteTimeLog={handleDeleteTimeLog}
-                  setTimeLogs={setTimeLogs}
-                />
-              </div>
-            );
-          })}
+    <div className={styles.containerTimeLogs}>
+      <div className={styles.contentTimeLogs}>
+        {/* <h1>Registro de ponto: </h1> */}
+        <h2 className={styles.tituloTimeLogs}>Filtrar registros</h2>
+        <div className={styles.scrollTimeLogs}>
+          <div className={styles.geradorTimeLogs}>
+            <div className={styles.formTimeLogs}>
+              <FilterTimeLogForm setTimeLogs={setTimeLogs} />
+            </div>
+            {timeLogs.map((timeLog) => {
+              return (
+                <div className={styles.itensTimeLogs} key={timeLog.id}>
+                  <TimeLog
+                    timeLog={timeLog}
+                    handleDeleteTimeLog={handleDeleteTimeLog}
+                    setTimeLogs={setTimeLogs}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <h2>Criar novo registro</h2>
-        <TimeLogForm setTimeLogs={setTimeLogs} />
+      </div>
+      <div className={styles.contentAddTimeLogs}>
+        <h2 className={styles.tituloTimeLogs}>Criar novo registro</h2>
+        <div className={styles.formAddTimeLogs}>
+          <TimeLogForm setTimeLogs={setTimeLogs} />
+        </div>
       </div>
     </div>
   );

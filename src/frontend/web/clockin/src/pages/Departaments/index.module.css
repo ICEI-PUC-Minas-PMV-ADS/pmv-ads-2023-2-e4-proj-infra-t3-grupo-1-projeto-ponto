@@ -1,0 +1,164 @@
+.containerDepartaments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fe9528;
+  flex-direction: column;
+}
+
+/* Aqui começa a estilização da div "Departamentos" */
+
+.departamentContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  height: 38%;
+  background-color: white;
+  border-radius: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.departamentContent h2 {
+  text-align: center;
+  color: #002538;
+  padding: 0.8rem;
+}
+
+.departamentScroll {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.departamentScroll::-webkit-scrollbar {
+  width: 10px;
+  background-color: #c6c6c6;
+  border-radius: 10px;
+}
+
+.departamentScroll::-webkit-scrollbar-thumb {
+  background-color: #002538;
+  border-radius: 10px;
+}
+
+.departamentGerador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #002538;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+
+
+.departamentItens:nth-child(odd) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  width: 100%;
+  border-bottom-left-radius: 0.1rem;
+}
+
+.departamentItens:nth-child(even) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  border-bottom-left-radius: 0.1rem;
+}
+
+/* Aqui começa a estilização da div "Adicionar Departamento" */
+
+.contentDepartaments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  height: 25%;
+  background-color: white;
+  border-radius: 0.7rem;
+}
+
+.contentDepartaments h2 {
+  text-align: center;
+  margin: 10px;
+  color: #002538;
+}
+
+.contentDepartaments .formDepartaments {
+  width: 40%;
+}
+
+.formDepartaments {
+  margin-top: 0.2rem;
+}
+
+.itens {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* Aqui começa a responsividade da página */
+
+@media (max-width: 900px) {
+  .departamentContent h2 {
+    font-size: 16px;
+  }
+
+  .contentDepartaments h2 {
+    font-size: 16px;
+  }
+
+  .contentDepartaments .formDepartaments {
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  .contentDepartaments {
+    background-color: transparent;
+  }
+
+  .departamentContent {
+    width: 55%;
+    height: 28%;
+}
+
+  .contentDepartaments .formDepartaments {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+    .contentDepartaments {
+        background-color: transparent;
+      }
+
+      .departamentContent {
+        width: 55%;
+        height: 28%;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .contentDepartaments {
+        background-color: transparent;
+      }
+
+      .departamentContent {
+        width: 75%;
+        height: 28%;
+    }
+}

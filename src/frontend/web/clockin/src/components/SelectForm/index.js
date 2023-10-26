@@ -1,5 +1,7 @@
 import { React } from "react";
 
+import styles from "./index.module.css";
+
 export default function SelectForm({
   options,
   setSelectedOption,
@@ -11,7 +13,7 @@ export default function SelectForm({
   };
 
   return (
-    <div>
+    <div className={styles.selectEdit}>
       <label>{text}</label>
       <select value={selectedOption} onChange={handleChange}>
         {options.map((option, index) => (

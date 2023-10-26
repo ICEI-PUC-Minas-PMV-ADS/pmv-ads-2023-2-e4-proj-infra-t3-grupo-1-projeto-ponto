@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import api from "../http/api";
 
 async function postTimeLog(departament) {
   const { timestamp, employeeId, logTypeValue, justificationId } = departament;

@@ -14,11 +14,11 @@ namespace ClockIn.Domain.Entities
 
         public DateOnly EndDate { get; set; }
 
-        public TimeOnly OvertimeHours { get; set; }
+        public string OvertimeHours { get; set; }
 
-        public TimeOnly StandardHours { get; set; }
+        public string StandardHours { get; set; }
 
-        public TimeOnly TotalHours { get; set; }
+        public string TotalHours { get; set; }
 
         public int DaysWorked { get; set; }
 

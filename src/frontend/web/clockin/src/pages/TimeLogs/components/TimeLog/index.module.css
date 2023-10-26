@@ -1,0 +1,22 @@
+/* .containerTimeLog {
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .justificativaTimeLog {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .containerTimeLog {
+    width: 100%;
+}
+
+.infoTimeLog {
+    display: flex;
+    flex-direction: row;
+} */
+
+.containerTimeLog {
+    margin: 0.40rem 0rem;
+}

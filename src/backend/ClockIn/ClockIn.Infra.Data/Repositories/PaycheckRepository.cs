@@ -8,7 +8,7 @@ using MongoDB.Driver;
 
 namespace ClockIn.Infra.Data.Repositories
 {
-	public class PaycheckRepository : IPaycheckRepository
+    public class PaycheckRepository : IPaycheckRepository
     {
         private readonly IMongoCollection<Paycheck> _paychecksCollection;
 
@@ -54,15 +54,23 @@ namespace ClockIn.Infra.Data.Repositories
             }
         }
 
+        private static string FormatTimeSpan(TimeSpan timeSpan)
+        {
+            string TotalHours = timeSpan.Days > 0 ? ((int)timeSpan.TotalHours).ToString() : timeSpan.Hours.ToString();
+            return $"{TotalHours:D2}:{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+        }
+
         public async Task<Paycheck> CreatePaycheck(Employee employee, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes)
         {
+
             try
             {
-                Paycheck payCheck = new()
+
+                Paycheck paycheck = new()
                 {
-                    StandardHours = TimeOnly.FromTimeSpan(workTimeTotal.StandardHours),
-                    TotalHours = TimeOnly.FromTimeSpan(workTimeTotal.TotalWorkHours),
-                    OvertimeHours = TimeOnly.FromTimeSpan(workTimeTotal.OvertimeHours),
+                    StandardHours = FormatTimeSpan(workTimeTotal.StandardHours),
+                    TotalHours = FormatTimeSpan(workTimeTotal.TotalWorkHours),
+                    OvertimeHours = FormatTimeSpan(workTimeTotal.OvertimeHours),
                     DaysWorked = workTimeTotal.DaysWorked,
                     StartDate = startDate,
                     EndDate = endDate,
@@ -74,6 +82,7 @@ namespace ClockIn.Infra.Data.Repositories
                     IRRFValue = salaryAndTaxes.IRRFValue,
                     FGTSValue = salaryAndTaxes.FGTSValue,
                 };
+                Paycheck payCheck = paycheck;
 
                 await _paychecksCollection.InsertOneAsync(payCheck);
                 return payCheck;
@@ -90,9 +99,9 @@ namespace ClockIn.Infra.Data.Repositories
             {
                 await GetPaycheckById(updatedPayCheck.Id);
 
-                updatedPayCheck.StandardHours = TimeOnly.FromTimeSpan(workTimeTotal.StandardHours);
-                updatedPayCheck.TotalHours = TimeOnly.FromTimeSpan(workTimeTotal.TotalWorkHours);
-                updatedPayCheck.OvertimeHours = TimeOnly.FromTimeSpan(workTimeTotal.OvertimeHours);
+                updatedPayCheck.StandardHours = FormatTimeSpan(workTimeTotal.StandardHours);
+                updatedPayCheck.TotalHours = FormatTimeSpan(workTimeTotal.TotalWorkHours);
+                updatedPayCheck.OvertimeHours = FormatTimeSpan(workTimeTotal.OvertimeHours);
                 updatedPayCheck.DaysWorked = workTimeTotal.DaysWorked;
                 updatedPayCheck.StartDate = startDate;
                 updatedPayCheck.EndDate = endDate;

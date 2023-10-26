@@ -3,6 +3,8 @@ import { FaUserLarge } from "react-icons/fa6";
 import ButtonDelete from "../../../../components/ButtonDelete";
 import { useNavigate } from "react-router-dom";
 
+import styles from "./index.module.css";
+
 export default function Employee({ employee, handleDeletehemployee }) {
   const navigate = useNavigate();
 
@@ -10,12 +12,14 @@ export default function Employee({ employee, handleDeletehemployee }) {
     navigate(`${id}`);
   };
   return (
-    <span>
+    <div className={styles.containerItens}>
       <p>{employee.fullName}</p>
-      <button onClick={() => handleMoreInfo(employee.id)}>
-        <FaUserLarge />
-      </button>
-      <ButtonDelete handleDelete={handleDeletehemployee} id={employee.id} />
-    </span>
+      <div className={styles.buttonEmployee}>
+        <button className={styles.buttonUser} onClick={() => handleMoreInfo(employee.id)}>
+          <FaUserLarge />
+        </button>
+        <ButtonDelete handleDelete={handleDeletehemployee} id={employee.id} />
+      </div>
+    </div>
   );
 }

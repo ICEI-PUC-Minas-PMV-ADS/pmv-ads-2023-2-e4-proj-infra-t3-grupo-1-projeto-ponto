@@ -7,7 +7,7 @@ using ClockIn.Domain.Interfaces;
 
 namespace ClockIn.Application.Services
 {
-	public class PaycheckService : IPaycheckService
+    public class PaycheckService : IPaycheckService
     {
         private readonly IPaycheckRepository _paycheckRepository;
         private readonly IWorkTimeCalculatorService _workTimeCalculatorService;
@@ -41,7 +41,7 @@ namespace ClockIn.Application.Services
         {
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
             WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, paycheckDto.StartDate.ToDateTime(TimeOnly.MinValue), paycheckDto.EndDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
-            SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.TotalWorkHours, employeeId);
+            SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.TotalWorkHours, workTimeTotal.OvertimeHours, employeeId);
             var createdPaycheck = await _paycheckRepository.CreatePaycheck(employee, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
             return createdPaycheck;
         }
@@ -51,7 +51,7 @@ namespace ClockIn.Application.Services
             Paycheck payCheck = await _paycheckRepository.GetPaycheckById(paychekId);
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
             WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, paycheckDto.StartDate.ToDateTime(TimeOnly.MinValue), paycheckDto.EndDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
-            SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.OvertimeHours, employeeId);
+            SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.TotalWorkHours, workTimeTotal.OvertimeHours, employeeId);
             await _paycheckRepository.UpdatePaycheck(employee, payCheck, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
 
         }

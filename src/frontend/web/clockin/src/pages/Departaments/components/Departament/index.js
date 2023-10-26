@@ -3,6 +3,7 @@ import ButtonDelete from "../../../../components/ButtonDelete";
 import ButtonUpdate from "../../../../components/ButtonUpdate";
 import DepartamentEditForm from "../DepartamentEditForm";
 
+import styles from "./index.module.css";
 
 export default function Departament({
   departament,
@@ -12,7 +13,7 @@ export default function Departament({
   const [viewEditForm, setViewEditForm] = useState(false);
 
   return (
-    <div>
+    <div className={styles.containerButtons}>
       {viewEditForm ? (
         <DepartamentEditForm
           setDepartaments={setDepartaments}
@@ -21,15 +22,41 @@ export default function Departament({
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div>
+        <div className={styles.contentButtons}>
           <p>{departament.name}</p>
-          <ButtonUpdate setViewEditForm={setViewEditForm} />
-          <ButtonDelete
-            handleDelete={handleDeleteDepartament}
-            id={departament.id}
-          />
+          <div className={styles.buttons}>
+            <ButtonUpdate setViewEditForm={setViewEditForm} />
+            <ButtonDelete
+              handleDelete={handleDeleteDepartament}
+              id={departament.id}
+            />
+          </div>
         </div>
       )}
     </div>
   );
 }
+
+// return (
+//   <div>
+//     {viewEditForm ? (
+//       <DepartamentEditForm
+//         setDepartaments={setDepartaments}
+//         departamentProp={departament}
+//         setViewEditForm={setViewEditForm}
+//         viewEditForm={viewEditForm}
+//       />
+//     ) : (
+//       <div className={styles.containerItens} >
+//         <p className={styles.addItens}>{departament.name}</p>
+//         <div className={styles.buttonDepartament}>
+//           <ButtonUpdate setViewEditForm={setViewEditForm} />
+//           <ButtonDelete
+//             handleDelete={handleDeleteDepartament}
+//             id={departament.id}
+//           />
+//         </div>
+//       </div>
+//     )}
+//   </div>
+// );

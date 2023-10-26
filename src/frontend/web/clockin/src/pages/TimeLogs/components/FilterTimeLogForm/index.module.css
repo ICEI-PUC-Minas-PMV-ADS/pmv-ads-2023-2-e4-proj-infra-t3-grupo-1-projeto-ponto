@@ -1,0 +1,14 @@
+.buttonFiltrar {
+    background: #002538;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.buttonFiltrar:hover {
+    color: #FE9528;
+}

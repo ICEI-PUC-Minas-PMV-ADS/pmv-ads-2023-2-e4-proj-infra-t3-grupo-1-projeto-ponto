@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import InputForm from "../../../../components/InputForm";
 import { getTimeLogsByEmployeeIdRange } from "../../../../services/timeLogService";
 
+import styles from "./index.module.css";
+
 export default function FilterTimeLogForm({ setTimeLogs }) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -23,7 +25,7 @@ export default function FilterTimeLogForm({ setTimeLogs }) {
   }
 
   return (
-    <form>
+    <form className={styles.containerFilter}>
       <InputForm
         value={startDate}
         changeValue={setStartDate}
@@ -40,7 +42,7 @@ export default function FilterTimeLogForm({ setTimeLogs }) {
         placeholder={""}
         label={"Selecione um dia final"}
       />
-      <button onClick={filterTimeLogs}>Filtrar</button>
+      <button className={styles.buttonFiltrar} onClick={filterTimeLogs}>Filtrar</button>
     </form>
   );
 }

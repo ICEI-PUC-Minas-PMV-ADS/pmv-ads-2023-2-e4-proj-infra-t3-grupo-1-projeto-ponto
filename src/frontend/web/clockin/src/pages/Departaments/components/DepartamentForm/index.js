@@ -35,7 +35,8 @@ export default function DepartamentForm({ setDepartaments }) {
         required={true}
         type={"text"}
         placeholder={"Digite aqui o nome do departamento"}
-        label={"Nome: "}
+        // label={"Nome: "}
+        data_cy={"input-name"}
       />
       <ButtonSubmitForm textButton={"Enviar"} />
     </form>

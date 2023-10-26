@@ -1,0 +1,60 @@
+.contentPaycheck h2 {
+    text-align: center;
+    padding: 0.8rem;
+    color: #002538;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.tituloPaycheck {
+    
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.infoPaycheck {
+    text-align: center;
+    color: #002538;
+    width: 100%;
+}
+
+.infoPaycheck p {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 0.4rem;
+}
+
+.buttonDelInfo {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 0.4rem;
+}
+
+.opcaoButton {
+    padding: 0.8rem;
+}
+
+.buttonRedirecionar {
+    background: #002538;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.9rem;
+    border-radius: 0.3rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.buttonRedirecionar:hover {
+    color: #fe9528;
+}
+
+/* Aqui começa a responsividade da página */
+
+@media (max-width:600px) {
+    .contentPaycheck h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:400px) {
+    .contentPaycheck h2 {
+        font-size: 15px;
+    }
+}

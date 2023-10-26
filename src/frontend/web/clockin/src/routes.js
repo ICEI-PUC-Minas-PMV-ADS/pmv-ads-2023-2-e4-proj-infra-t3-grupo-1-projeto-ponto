@@ -2,6 +2,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import User from "./pages/User";
 import Employees from "./pages/Employees";
 import Employee from "./pages/Employee";
@@ -17,6 +18,7 @@ export default function Router() {
     <BrowserRouter>
       <NavBar />
       <Routes>
+        <Route index element={<Home />} />
         <Route path="/rh/login" element={<Login />} />
         <Route path="/rh/registrar" element={<Register />} />
         <Route path="/rh/:userId/*" element={<User />} />

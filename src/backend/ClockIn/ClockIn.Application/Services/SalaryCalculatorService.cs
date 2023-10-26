@@ -5,7 +5,7 @@ using ClockIn.Domain.Interfaces;
 
 namespace ClockIn.Application.Services
 {
-	public class SalaryCalculatorService : ISalaryCalculatorService
+    public class SalaryCalculatorService : ISalaryCalculatorService
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IPositionRepository _positionRepository;
@@ -16,14 +16,14 @@ namespace ClockIn.Application.Services
             _positionRepository = positionRepository;
         }
 
-        public async Task<SalaryAndTaxes> CalculateSalaryAndTaxes(TimeSpan standardHours, TimeSpan totalWorkHours, string employeeId)
+        public async Task<SalaryAndTaxes> CalculateSalaryAndTaxes(TimeSpan standardHours, TimeSpan totalWorkHours, TimeSpan totalOvertimeHours, string employeeId)
         {
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
             Position position = await _positionRepository.GetPositionById(employee.PositionId);
 
             double _baseSalary = standardHours.TotalHours * position.HrValue;
             double _totalSalary = totalWorkHours.TotalHours * position.HrValue;
-            double _overtimeHourlyRate = _totalSalary - _baseSalary;
+            double _overtimeHourlyRate = totalOvertimeHours.TotalHours * position.HrValue;
 
             double _iNSSvalue = 0;
             if (_totalSalary <= 1320) { _iNSSvalue = _totalSalary * 0.075; }

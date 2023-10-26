@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import api from "../http/api";
 
 async function postPositions(position) {
   const { name, hrAdministratorId, hrValue } = position;

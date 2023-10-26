@@ -8,6 +8,8 @@ import {
   getDepartaments,
 } from "../../../../services/departamentService";
 
+import styles from "./index.module.css";
+
 export default function DepartamentEditForm({
   setDepartaments,
   departamentProp = null,
@@ -33,17 +35,20 @@ export default function DepartamentEditForm({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        value={departamentName}
-        changeValue={(name) => setDepartamentName(name)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui o nome do departamento"}
-        label={"Nome: "}
-      />
-      <ButtonSubmitForm textButton={"Enviar"} />
-      <ButtonCancel setViewEditForm={setViewEditForm} />
-    </form>
+    <div className={styles.containerEdit}>
+      <form onSubmit={handleSubmit}>
+        <InputForm
+          value={departamentName}
+          changeValue={(name) => setDepartamentName(name)}
+          required={true}
+          type={"text"}
+          placeholder={"Digite aqui o nome do departamento"}
+          label={"Nome: "}
+          data_cy={"input-name"}
+        />
+        <ButtonSubmitForm textButton={"Enviar"} />
+        <ButtonCancel setViewEditForm={setViewEditForm} />
+      </form>
+    </div>
   );
 }

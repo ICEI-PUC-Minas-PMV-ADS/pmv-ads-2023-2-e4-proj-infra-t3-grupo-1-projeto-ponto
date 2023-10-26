@@ -3,6 +3,8 @@ import ButtonDelete from "../../../../components/ButtonDelete";
 import ButtonUpdate from "../../../../components/ButtonUpdate";
 import JustificationEditForm from "../JustificationEditForm";
 
+import styles from "./index.module.css";
+
 export default function Justification({
   justification,
   handleDeleteJustification,
@@ -20,14 +22,16 @@ export default function Justification({
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div>
-          <p>Nome: {justification.name}</p>
-          <p>Descrição: {justification.description}</p>
-          <ButtonUpdate setViewEditForm={setViewEditForm} />
-          <ButtonDelete
-            handleDelete={handleDeleteJustification}
-            id={justification.id}
-          />
+        <div className={styles.containerItens}>
+          <p><span>Nome:</span> {justification.name}</p>
+          <p><span>Descrição:</span> {justification.description}</p>
+          <div className={styles.buttonJustification}>
+            <ButtonUpdate setViewEditForm={setViewEditForm} />
+            <ButtonDelete
+              handleDelete={handleDeleteJustification}
+              id={justification.id}
+            />
+          </div>
         </div>
       )}
     </>

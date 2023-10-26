@@ -1,0 +1,16 @@
+.containerItens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0.40rem 0rem;
+}
+
+.containerItens span {
+    font-weight: bold;
+}
+
+.buttonJustification {
+    display: flex;
+}

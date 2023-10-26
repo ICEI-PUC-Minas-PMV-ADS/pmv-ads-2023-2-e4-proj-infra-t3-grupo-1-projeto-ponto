@@ -5,7 +5,7 @@ namespace ClockIn.Application.Interfaces
 {
 	public interface ISalaryCalculatorService
 	{
-        Task<SalaryAndTaxes> CalculateSalaryAndTaxes(TimeSpan standardHours, TimeSpan totalWorkHours, string employeeId);
+        public Task<SalaryAndTaxes> CalculateSalaryAndTaxes(TimeSpan standardHours, TimeSpan totalWorkHours, TimeSpan totalOvertimeHours, string employeeId);
 
     }
 }

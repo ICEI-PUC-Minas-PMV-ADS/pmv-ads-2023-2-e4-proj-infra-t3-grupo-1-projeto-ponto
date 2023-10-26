@@ -1,8 +1,16 @@
-import React from 'react'
+import React from "react";
 
-export default function ButtonCancel({setViewEditForm}) {
+import styles from "./index.module.css";
+
+export default function ButtonCancel({ setViewEditForm }) {
   return (
-    <button type='button' onClick={() => setViewEditForm(false)}>
+    <button
+      className={styles.buttonCancel} 
+      data-cy="cancel"
+      type="button"
+      onClick={() => setViewEditForm(false)}
+    >
       Cancelar
-    </button>  ) 
+    </button>
+  );
 }

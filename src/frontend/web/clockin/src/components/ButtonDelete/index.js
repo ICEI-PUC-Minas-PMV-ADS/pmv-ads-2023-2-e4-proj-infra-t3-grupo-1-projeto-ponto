@@ -1,11 +1,11 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 
-export default function ButtonDelete({handleDelete, id}) {
-  
+import styles from './index.module.css'
 
+export default function ButtonDelete({handleDelete, id}) {  
   return (
-    <button onClick={() => handleDelete(id)}>
+    <button className={styles.buttonDelete} data-cy="delete" onClick={() => handleDelete(id)}>
       <FaTrash/>
     </button>
   );

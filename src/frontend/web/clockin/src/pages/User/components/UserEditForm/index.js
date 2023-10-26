@@ -4,6 +4,8 @@ import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import ButtonCancel from "../../../../components/ButtonCancel";
 import InputForm from "../../../../components/InputForm";
 
+import styles from "./index.module.css";
+
 function UserEditForm({ userProp, setViewEditForm, setUser }) {
   const [fullName, setFullName] = useState(userProp.fullName);
   const [cnpj, setCnpj] = useState(userProp.cnpj);
@@ -29,37 +31,39 @@ function UserEditForm({ userProp, setViewEditForm, setUser }) {
   };
 
   return (
-    <div>
-      <h2>Criar novo usuário</h2>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <InputForm
-            value={fullName}
-            changeValue={(name) => setFullName(name)}
-            required={false}
-            type={"text"}
-            placeholder={"Digite aqui o nome da sua empresa"}
-            label={"Nome"}
-          />
-          <InputForm
-            value={cnpj}
-            changeValue={(name) => setCnpj(name)}
-            required={false}
-            type={"text"}
-            placeholder={"Digite aqui o CNPJ da sua empresa"}
-            label={"CNPJ"}
-          />
-          <InputForm
-            value={email}
-            changeValue={(name) => setEmail(name)}
-            required={false}
-            type={"email"}
-            placeholder={"Digite aqui o email da sua empresa"}
-            label={"Email"}
-          />
-          <ButtonSubmitForm textButton={"Enviar"} />
-          <ButtonCancel setViewEditForm={setViewEditForm} />
-        </form>
+    <div className={styles.containerNewUser}>
+      <div className={styles.contentNewUser}>
+        <h2 className={styles.titulo}>Criar Novo Usuário</h2>
+        <div className={styles.formNewUser}>
+          <form onSubmit={handleSubmit}>
+            <InputForm
+              value={fullName}
+              changeValue={(name) => setFullName(name)}
+              required={false}
+              type={"text"}
+              placeholder={"Digite aqui o nome da sua empresa"}
+              label={"Nome"}
+            />
+            <InputForm
+              value={cnpj}
+              changeValue={(name) => setCnpj(name)}
+              required={false}
+              type={"text"}
+              placeholder={"Digite aqui o CNPJ da sua empresa"}
+              label={"CNPJ"}
+            />
+            <InputForm
+              value={email}
+              changeValue={(name) => setEmail(name)}
+              required={false}
+              type={"email"}
+              placeholder={"Digite aqui o email da sua empresa"}
+              label={"Email"}
+            />
+            <ButtonSubmitForm textButton={"Enviar"} />
+            <ButtonCancel setViewEditForm={setViewEditForm} />
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import PaycheckForm from "./PaycheckForm";
 import { getPaychecks, deletePaycheck } from "../../services/paycheckService";
 import useAuthentication from "../../hooks/useAuthentication";
 
+import styles from "./index.module.css";
+
 export default function Paychecks() {
   const [paychecks, setPaychecks] = useState([]);
   const { isTokenValid } = useAuthentication();
@@ -38,16 +40,24 @@ export default function Paychecks() {
   }, [params.employeeId, isTokenValid]);
 
   return (
-    <div>
-      {paychecks.map((paycheck) => (
-        <Paycheck
-          paycheck={paycheck}
-          handleDeletePaycheck={handleDeletePaycheck}
-          key={paycheck.id}
-        />
-      ))}
-      <h1>Criar um novo contracheque</h1>
-      <PaycheckForm setPaychecks={setPaychecks} />
+    <div className={styles.containerPaychecks}>
+      <div className={styles.contentPaychecks}>
+        <div className={styles.geradorPaycheks}>
+          {paychecks.map((paycheck) => (
+            <Paycheck
+              paycheck={paycheck}
+              handleDeletePaycheck={handleDeletePaycheck}
+              key={paycheck.id}
+            />
+          ))}
+        </div>
+      </div>
+      <div className={styles.contentAddPaychecks}>
+        <h2 className={styles.tituloAdd}>Criar um novo contracheque</h2>
+        <div className={styles.formAddPaychecks}>
+          <PaycheckForm setPaychecks={setPaychecks} />
+        </div>
+      </div>
     </div>
   );
 }

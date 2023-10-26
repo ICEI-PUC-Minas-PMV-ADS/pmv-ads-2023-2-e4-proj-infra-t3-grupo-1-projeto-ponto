@@ -7,6 +7,8 @@ import { getPositions } from "../../services/positionsService";
 import Employee from "./components/Employee";
 import useAuthentication from "../../hooks/useAuthentication";
 
+import styles from "./index.module.css";
+
 export default function Employees() {
   const [employees, setEmployees] = useState([]);
   const [positions, setPositions] = useState([]);
@@ -48,38 +50,82 @@ export default function Employees() {
   }, [params.userId, isTokenValid]);
 
   return (
-    <div>
-      <div>
-        <h1>Colaboradores: </h1>
-        <div>
-          {employees.map((employee) => {
-            return (
-              <div key={employee.id}>
-                <Employee
-                  employee={employee}
-                  handleDeletehemployee={handleDeletehemployee}
-                />
-              </div>
-            );
-          })}
+    <div className={styles.containerEmployees}>
+      <div className={styles.contentEmployees}>
+        <h2 className={styles.itens}>Colaboradores</h2>
+        <div className={styles.employeeScroll}>
+          <div className={styles.employeeGerador}>
+            {employees.map((employee) => {
+              return (
+                <div className={styles.employeeItens} key={employee.id}>
+                  <Employee
+                    employee={employee}
+                    handleDeletehemployee={handleDeletehemployee}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <h2>Inserir novo colaborador</h2>
-        {positions.length === 0 ||
-        departaments.length === 0 ||
-        !Array.isArray(departaments) ||
-        !Array.isArray(positions) ? (
-          <p>
-            Para cadastrar um novo colaborador é necessário cadastrar ao menos
-            um departamento e um cargo
-          </p>
-        ) : (
-          <EmployeeForm
-            setEmployees={setEmployees}
-            positions={positions}
-            departaments={departaments}
-          />
-        )}
+      </div>
+      <div className={styles.contentAddEmployees}>
+        <h2 className={styles.itens}>Adicionar colaborador</h2>
+        <div className={styles.addScroll}>
+          <div className={styles.formAddEmployees}>
+            {positions.length === 0 ||
+            departaments.length === 0 ||
+            !Array.isArray(departaments) ||
+            !Array.isArray(positions) ? (
+              <p>
+                Para cadastrar um novo colaborador é necessário cadastrar ao
+                menos um departamento e um cargo
+              </p>
+            ) : (
+              <EmployeeForm
+                setEmployees={setEmployees}
+                positions={positions}
+                departaments={departaments}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+// return (
+//   <div>
+//     <div>
+//       <h1>Colaboradores: </h1>
+//       <div>
+//         {employees.map((employee) => {
+//           return (
+//             <div key={employee.id}>
+//               <Employee
+//                 employee={employee}
+//                 handleDeletehemployee={handleDeletehemployee}
+//               />
+//             </div>
+//           );
+//         })}
+//       </div>
+//       <h2>Inserir novo colaborador</h2>
+//       {positions.length === 0 ||
+//       departaments.length === 0 ||
+//       !Array.isArray(departaments) ||
+//       !Array.isArray(positions) ? (
+//         <p>
+//           Para cadastrar um novo colaborador é necessário cadastrar ao menos
+//           um departamento e um cargo
+//         </p>
+//       ) : (
+//         <EmployeeForm
+//           setEmployees={setEmployees}
+//           positions={positions}
+//           departaments={departaments}
+//         />
+//       )}
+//     </div>
+//   </div>
+// );

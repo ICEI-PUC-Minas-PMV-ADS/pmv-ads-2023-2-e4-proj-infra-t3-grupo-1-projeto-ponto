@@ -1,4 +1,4 @@
-import { api } from "../http/api";
+import  api  from "../http/api";
 
 const generatePdf = async (pdfData) => {
   const { htmlContent, employeeId } = pdfData;

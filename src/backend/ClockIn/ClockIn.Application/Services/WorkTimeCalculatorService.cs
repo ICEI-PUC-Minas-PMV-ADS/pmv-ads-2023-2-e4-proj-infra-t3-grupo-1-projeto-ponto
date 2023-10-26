@@ -6,7 +6,7 @@ using ClockIn.Domain.Interfaces;
 
 namespace ClockIn.Application.Services
 {
-	public class WorkTimeCalculatorService : IWorkTimeCalculatorService
+    public class WorkTimeCalculatorService : IWorkTimeCalculatorService
     {
         private readonly ITimeLogRepository _timeLogRepository;
         private readonly IEmployeeRepository _employeeRepository;
@@ -25,7 +25,13 @@ namespace ClockIn.Application.Services
             TimeSpan workHours = await CalculateWorkHours(sortedLogs, employeeId, endDate);
             int daysWorked = CalculateDaysWorked(sortedLogs);
             TimeSpan standardHours = CalculateStandardHours(employee, daysWorked, workHours);
-            TimeSpan overtimeHours = CalculateOvertimeHours(workHours, standardHours);
+            TimeSpan overtimeHours = TimeSpan.Zero;
+
+            if (workHours > standardHours)
+            {
+                overtimeHours = CalculateOvertimeHours(workHours, standardHours);
+            }
+
             WorkTimeTotal result = new()
             {
                 TotalWorkHours = workHours,
@@ -111,7 +117,7 @@ namespace ClockIn.Application.Services
         private static int CalculateDaysWorked(List<TimeLog> sortedLogs)
         {
             int daysWorked = 1;
-            TimeLog previousLog = null;
+            TimeLog? previousLog = null;
 
             foreach (var log in sortedLogs)
             {
