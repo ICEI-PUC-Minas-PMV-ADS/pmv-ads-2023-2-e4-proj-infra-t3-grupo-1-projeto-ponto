@@ -42,10 +42,6 @@
     color: #FE9528;
 }
 
-.mobileMenuIcon {
-    display: none;
-}
-
 
 /* Abaixo começa a responsividade da navbar*/
 
@@ -60,4 +56,13 @@
         align-items: center;
         justify-content: center;
     }
+
+    .buttonNav  {
+        font-size: 14px;
+    }
+
+    .navLinks a {
+        font-size: 14px;
+    }
 }
+

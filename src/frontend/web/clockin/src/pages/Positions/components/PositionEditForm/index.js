@@ -8,6 +8,8 @@ import {
   putPosition,
 } from "../../../../services/positionsService";
 
+import styles from "./index.module.css";
+
 export default function PositionEditForm({
   setPositions,
   positionProp = null,
@@ -36,27 +38,29 @@ export default function PositionEditForm({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        value={positionName}
-        changeValue={(name) => setPositionName(name)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui o nome do cargo"}
-        label={"Nome: "}
-      />
-      <InputForm
-        value={positioHrvalue}
-        changeValue={(hrValue) => setPositionHrValue(hrValue)}
-        required={true}
-        type={"number"}
-        placeholder={
-          "Digite aqui o valor da hora que o colaborador irá receber"
-        }
-        label={"valor da hora: "}
-      />
-      <ButtonSubmitForm textButton={"Enviar"} />
-      <ButtonCancel setViewEditForm={setViewEditForm} />
-    </form>
+    <div className={styles.containerEdit}>
+      <form onSubmit={handleSubmit}>
+        <InputForm
+          value={positionName}
+          changeValue={(name) => setPositionName(name)}
+          required={true}
+          type={"text"}
+          placeholder={"Digite aqui o nome do cargo"}
+          label={"Nome: "}
+        />
+        <InputForm
+          value={positioHrvalue}
+          changeValue={(hrValue) => setPositionHrValue(hrValue)}
+          required={true}
+          type={"number"}
+          placeholder={
+            "Digite aqui o valor da hora que o colaborador irá receber"
+          }
+          label={"valor da hora: "}
+        />
+        <ButtonSubmitForm textButton={"Enviar"} />
+        <ButtonCancel setViewEditForm={setViewEditForm} />
+      </form>
+    </div>
   );
 }

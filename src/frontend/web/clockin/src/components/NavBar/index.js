@@ -6,30 +6,31 @@ import useAuthentication from "../../hooks/useAuthentication";
 import { Outlet } from "react-router-dom";
 import styles from "./index.module.css";
 
-export default function NavBar() {
-  const { logout, userId } = useAuthentication();
 
-  return (
-    <div className={styles.containerNavBar}>
-      <nav className={styles.navbar}>
-        <h3 className={styles.logo}>CLOCKIN</h3>
+export default function NavBar() {
+   const { logout, userId } = useAuthentication();
+
+   return (
+     <div className={styles.containerNavBar}>
+       <nav className={styles.navbar}>
+         <h3 className={styles.logo}>CLOCKIN</h3>
         <ul className={styles.navLinks}>
-          <li>
-            <NavBaarLink to={`/rh/${userId}`}>
-              <BsFillBuildingsFill />
-              Minha empresa
-            </NavBaarLink>
-          </li>
-          <li>
+           <li>
+             <NavBaarLink to={`/rh/${userId}`}>
+               <BsFillBuildingsFill />
+               Minha empresa
+             </NavBaarLink>
+           </li>
+           <li>
             <button className={styles.buttonNav} onClick={logout}>
               <FiLogOut /> Logout
             </button>
           </li>
-        </ul>
-      </nav>
-      <Outlet />
-    </div>
-  );
+         </ul>
+       </nav>
+       <Outlet />
+     </div>
+   );
 }
 
 // export default function NavBar() {

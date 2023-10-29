@@ -1,6 +1,11 @@
 .contentButtons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0.3rem 0rem;
+} 
+
+.contentButtons span {
+    margin-left: 3.5rem;
 }
+

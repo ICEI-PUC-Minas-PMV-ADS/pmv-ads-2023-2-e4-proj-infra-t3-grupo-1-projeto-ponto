@@ -12,8 +12,9 @@ export default function Employee({ employee, handleDeletehemployee }) {
     navigate(`${id}`);
   };
   return (
-    <div className={styles.containerItens}>
-      <p>{employee.fullName}</p>
+    <div className={styles.contentItens}>
+      <span></span>
+      <p><strong>{employee.fullName}</strong></p>
       <div className={styles.buttonEmployee}>
         <button className={styles.buttonUser} onClick={() => handleMoreInfo(employee.id)}>
           <FaUserLarge />

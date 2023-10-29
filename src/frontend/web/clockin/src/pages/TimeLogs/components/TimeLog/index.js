@@ -20,22 +20,24 @@ export default function TimeLog({ timeLog, handleDeleteTimeLog, setTimeLogs }) {
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div className={styles.containerTimeLog}>
-          <div className={styles.infoTimeLog}>
-            <p>Dia: {date} </p>
-            <p> Hora: {hour} </p>
-            <p>Tipo: {timeLog.logTyoeText}</p>
+        <div className={styles.contentTimeLog}>
+          <div>
+            <p><strong>Dia:</strong> {date} </p>
+            <p><strong>Hora:</strong> {hour} </p>
+            <p><strong>Tipo:</strong> {timeLog.logTyoeText}</p>
+            {timeLog.isEdited ? (
+              <>
+                <p><strong>Justificativa:</strong> {timeLog.justification}</p>
+                <p>
+                  <strong>obs.:</strong> Editado ou criado pelo RH
+                </p>
+              </>
+            ) : null}
           </div>
-          {timeLog.isEdited ? (
-            <div className={styles.justificativaTimeLog}>
-              <p>Justificativa: {timeLog.justification}</p>
-              <p>
-                <strong>obs.:</strong> Editado ou criado pelo RH
-              </p>
-            </div>
-          ) : null}
-          <ButtonUpdate setViewEditForm={setViewEditForm} />
-          <ButtonDelete handleDelete={handleDeleteTimeLog} id={timeLog.id} />
+          <div className={styles.buttonsTimeLog}>
+            <ButtonUpdate setViewEditForm={setViewEditForm} />
+            <ButtonDelete handleDelete={handleDeleteTimeLog} id={timeLog.id} />
+          </div>
         </div>
       )}
     </>

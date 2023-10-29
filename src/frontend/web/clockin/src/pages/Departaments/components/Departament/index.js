@@ -23,7 +23,8 @@ export default function Departament({
         />
       ) : (
         <div className={styles.contentButtons}>
-          <p>{departament.name}</p>
+          <span></span>
+          <p><strong>{departament.name}</strong></p>
           <div className={styles.buttons}>
             <ButtonUpdate setViewEditForm={setViewEditForm} />
             <ButtonDelete
@@ -36,27 +37,3 @@ export default function Departament({
     </div>
   );
 }
-
-// return (
-//   <div>
-//     {viewEditForm ? (
-//       <DepartamentEditForm
-//         setDepartaments={setDepartaments}
-//         departamentProp={departament}
-//         setViewEditForm={setViewEditForm}
-//         viewEditForm={viewEditForm}
-//       />
-//     ) : (
-//       <div className={styles.containerItens} >
-//         <p className={styles.addItens}>{departament.name}</p>
-//         <div className={styles.buttonDepartament}>
-//           <ButtonUpdate setViewEditForm={setViewEditForm} />
-//           <ButtonDelete
-//             handleDelete={handleDeleteDepartament}
-//             id={departament.id}
-//           />
-//         </div>
-//       </div>
-//     )}
-//   </div>
-// );

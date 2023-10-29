@@ -1,4 +1,4 @@
-.containerItens {
+/* .containerItens {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,4 +8,25 @@
 
 .buttonPosition {
     display: flex;
+} */
+
+.contentItens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0rem;
+}
+
+.infoItens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoItens p {
+    margin-left: 0.7rem;
+}
+
+.contentItens span {
+    margin-left: 3.5rem;
 }

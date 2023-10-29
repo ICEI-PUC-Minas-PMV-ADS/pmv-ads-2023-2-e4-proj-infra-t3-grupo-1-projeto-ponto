@@ -12,6 +12,8 @@ import {
   putTimeLogs,
 } from "../../../../services/timeLogService";
 
+import styles from "./index.module.css";
+
 export default function TimeLogEditForm({
   setTimeLogs,
   timeLogProp,
@@ -71,7 +73,7 @@ export default function TimeLogEditForm({
   };
 
   return (
-    <div>
+    <div className={styles.containerTimeLogEdit}>
       {justifications.length === 0 || !Array.isArray(justifications) ? (
         <p>
           É necessário cadastrar pelo menos uma justificativa para editar

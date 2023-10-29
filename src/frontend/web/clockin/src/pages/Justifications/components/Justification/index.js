@@ -22,9 +22,11 @@ export default function Justification({
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div className={styles.containerItens}>
-          <p><span>Nome:</span> {justification.name}</p>
-          <p><span>Descrição:</span> {justification.description}</p>
+        <div className={styles.contentItens}>
+          <div>
+          <p><strong>Nome:</strong> {justification.name}</p>
+          <p><strong>Descrição:</strong> {justification.description}</p>
+          </div>
           <div className={styles.buttonJustification}>
             <ButtonUpdate setViewEditForm={setViewEditForm} />
             <ButtonDelete

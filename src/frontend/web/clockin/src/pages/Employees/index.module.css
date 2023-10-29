@@ -57,18 +57,18 @@
 }
 
 .employeeItens:nth-child(odd) {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   background: #f1f1f1;
   width: 100%;
   border-bottom-left-radius: 0.1rem;
 }
 
 .employeeItens:nth-child(even) {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   background: white;
   width: 100%;
   border-bottom-left-radius: 0.1rem;

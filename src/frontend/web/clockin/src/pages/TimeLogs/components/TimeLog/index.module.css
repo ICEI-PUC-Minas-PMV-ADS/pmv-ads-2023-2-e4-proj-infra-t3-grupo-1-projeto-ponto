@@ -1,22 +1,14 @@
-/* .containerTimeLog {
+.contentTimeLog {
     display: flex;
-    flex-direction: row;
-} */
-
-/* .justificativaTimeLog {
-    display: flex;
-    flex-direction: column;
-} */
-
-/* .containerTimeLog {
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0rem 0.3rem 0.5rem;
 }
 
-.infoTimeLog {
-    display: flex;
-    flex-direction: row;
-} */
+.contentTimeLog p {
+    margin-top: 0.2rem;
+}
 
-.containerTimeLog {
-    margin: 0.40rem 0rem;
+.buttonsTimeLog {
+    display: flex;
 }

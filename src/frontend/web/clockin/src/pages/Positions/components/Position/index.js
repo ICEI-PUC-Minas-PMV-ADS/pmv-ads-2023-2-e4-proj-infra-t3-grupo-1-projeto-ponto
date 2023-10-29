@@ -22,15 +22,19 @@ export default function Position({
           viewEditForm={viewEditForm}
         />
       ) : (
-        <div className={styles.containerItens}>
-          <p>{position.name}</p>
-          <p>
-            {position.hrValue.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-              minimumFractionDigits: 2,
-            })}
-          </p>
+        <div className={styles.contentItens}>
+          <span></span>
+          <div className={styles.infoItens}>
+            <p><strong>{position.name}</strong></p>
+            <p>|</p>
+            <p>
+              {position.hrValue.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+                minimumFractionDigits: 2,
+              })}
+            </p>
+          </div>
           <div className={styles.buttonPosition}>
             <ButtonUpdate setViewEditForm={setViewEditForm} />
             <ButtonDelete

@@ -74,27 +74,3 @@ export default function Departaments() {
     </div>
   );
 }
-
-// return (
-//   <div className={styles.containerDepartaments}>
-//     <div className={styles.contentDepartaments}>
-//       <h2 className={styles.itens}>Adicionar Departamento</h2>
-//       <div className={styles.formDepartaments}>
-//         {departaments.map((departament) => {
-//           return (
-//             <div key={departament.id}>
-//               <Departament
-//                 departament={departament}
-//                 handleDeleteDepartament={handleDeleteDepartament}
-//                 setDepartaments={setDepartaments}
-//               />
-//             </div>
-//           );
-//         })}
-//         <DepartamentForm setDepartaments={setDepartaments} />
-//       </div>
-//       {/* <h2>Criar um novo departamento</h2> */}
-//       {/* <DepartamentForm setDepartaments={setDepartaments} /> */}
-//     </div>
-//   </div>
-// );

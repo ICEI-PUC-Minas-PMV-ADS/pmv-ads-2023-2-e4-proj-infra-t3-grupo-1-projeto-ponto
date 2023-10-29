@@ -8,6 +8,8 @@ import {
 } from "../../../../services/justificationsService";
 import ButtonCancel from "../../../../components/ButtonCancel";
 
+import styles from "./index.module.css";
+
 export default function JustificationEditForm({
   setJustifications,
   justificationProp = null,
@@ -42,25 +44,29 @@ export default function JustificationEditForm({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        value={justificationName}
-        changeValue={(name) => setJustificationName(name)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui o nome da justificativa"}
-        label={"Nome: "}
-      />
-      <InputForm
-        value={justificationdescription}
-        changeValue={(description) => setJustificationdescription(description)}
-        required={true}
-        type={"text"}
-        placeholder={"Digite aqui a descrição da justificativa"}
-        label={"Descrição: "}
-      />
-      <ButtonSubmitForm textButton={"Enviar"} />
-      <ButtonCancel setViewEditForm={setViewEditForm} />
-    </form>
+    <div className={styles.containerEdit}>
+      <form onSubmit={handleSubmit}>
+        <InputForm
+          value={justificationName}
+          changeValue={(name) => setJustificationName(name)}
+          required={true}
+          type={"text"}
+          placeholder={"Digite aqui o nome da justificativa"}
+          label={"Nome: "}
+        />
+        <InputForm
+          value={justificationdescription}
+          changeValue={(description) =>
+            setJustificationdescription(description)
+          }
+          required={true}
+          type={"text"}
+          placeholder={"Digite aqui a descrição da justificativa"}
+          label={"Descrição: "}
+        />
+        <ButtonSubmitForm textButton={"Enviar"} />
+        <ButtonCancel setViewEditForm={setViewEditForm} />
+      </form>
+    </div>
   );
 }
