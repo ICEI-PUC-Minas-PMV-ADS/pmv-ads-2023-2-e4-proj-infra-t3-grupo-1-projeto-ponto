@@ -28,8 +28,7 @@
 | Requisito Associado |                                                   RF-013 O RH deve ter acesso à visualização dos registros de pontos de todos os usuários.                                                    |
 |  Objetivo do Teste  |                                                                Listar todos os registros de ponto de um colaborador escolhido                                                                 |
 |       Passos        |                                - Clicar em "meus colaboradores";<br> - Clicar no icone de usuario no colaborador escolhido; <br> - Clicar "registros de ponto"                                |
-|  Critério de Êxito  | 
-                                                        O sistema deve exibir uma lista com todos os registros do usuário esoclhido.                                                          |
+|  Critério de Êxito  | O sistema deve exibir uma lista com todos os registros do usuário esoclhido.                                                          |
 |        Resultado        |                                                                                                       |
 |                                                                                                                                 |
 |  **Caso de Teste**  |                                                                                 **CT-05 – Deletar um cargo**                                                                                  |
