@@ -31,7 +31,7 @@
 |      |      |
 |  **Caso de Teste**  |                                                                                           **CT-05 – Listar registros de ponto em uma determinada data**                                                                                           |
 | Requisito Associado |                                                                             RF-011 O RH pode fazer filtros nos registros de ponto por um período de dias determinado.                                                                             |
-|  Objetivo do Teste  |                                                                                           Verificar se o usuário RH consegue fazer login na aplicação.                                                                                            |
+|  Objetivo do Teste  |                                                                                           Verificar se o usuário RH consegue visualizar registros de ponto.                                                                                        |
 |       Passos        |                 - Acessar a pagina "meus colaboradores"; <br> - Clicar no icone de usuario no colaborador escolhido; <br> - CLicar em "Registos de ponto"; <br> - Definir uma data para filtrar e clicar no botão "buscar"; <br>                  |
 |  Critério de Êxito  |                                                                                       Listagem dos registro de ponto que estão dentro do periodo escolhido.                                                                                       |
 |        Registro                                                                                                              |
