@@ -17,7 +17,7 @@
 | Requisito Associado |                                                              RF-009 O RH deve poder fazer um CRUD dos departamentos no sistema.                                                               |
 |  Objetivo do Teste  |                                                              Verificar se o usuário RH foi capaz de criar um novo departamento.                                                               |
 |       Passos        |                                                - Clicar em "meus departamentos";<br> - Preencher campos obrigatorios <br> - Clicar em "Enviar"                                                |
-|  Critério de Êxito  |                                                                        O sistema inerir um novo departamento a lista.                                                                         |
+|  Critério de Êxito  |                                                                        O sistema inserir um novo departamento a lista.                                                                         |
 |        :---:        |                                                                                             :---:                                                                                             |
 |  **Caso de Teste**  |                                                                  **CT-04 – Visualizar registros de ponto de um colaborador**                                                                  |
 | Requisito Associado |                                                   RF-013 O RH deve ter acesso à visualização dos registros de pontos de todos os usuários.                                                    |
@@ -27,6 +27,6 @@
 |        :---:        |                                                                                             :---:                                                                                             |
 |  **Caso de Teste**  |                                                                                 **CT-05 – Deletar um cargo**                                                                                  |
 | Requisito Associado |                                                                    RF-016 O RH poderá fazer um CRUD dos cargos da empresa.                                                                    |
-|  Objetivo do Teste  |               Colaborador devera conseguir excluir um departamento e consequentemente todos os colaboradores associados a ele, junto com os registros associados ao colaborador               |
+|  Objetivo do Teste  |               Colaborador deverá conseguir excluir um departamento e consequentemente todos os colaboradores associados a ele, junto com os registros associados ao colaborador               |
 |       Passos        |                                                                 - Clicar em "meus cargos";<br> - Clicar no icone de exclusão;                                                                 |
-|  Critério de Êxito  |                      O usuário não podera mais visualizar o cargo excluido, assim como os colaboradores associados ao cargo e os registros associados aos colaboradores                       |
+|  Critério de Êxito  |                      O usuário não poderá mais visualizar o cargo excluido, assim como os colaboradores associados ao cargo e os registros associados aos colaboradores                       |
