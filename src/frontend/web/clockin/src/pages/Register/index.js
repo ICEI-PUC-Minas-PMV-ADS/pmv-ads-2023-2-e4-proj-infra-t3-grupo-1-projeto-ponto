@@ -18,7 +18,7 @@ function RegisterHRForm() {
       if (!validate(cnpj)) {
         throw new Error("CNPJ invalido");
       }
-      const formatCnpj = formatCnpj(cnpj).replace(/[^\d]/g, "");
+      const formatCnpj = cnpj.replace(/[^\d]/g, "");
       const hRAdministrator = {
         fullName: fullName,
         email: email,
