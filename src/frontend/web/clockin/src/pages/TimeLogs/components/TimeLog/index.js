@@ -24,7 +24,7 @@ export default function TimeLog({ timeLog, handleDeleteTimeLog, setTimeLogs }) {
           <div>
             <p><strong>Dia:</strong> {date} </p>
             <p><strong>Hora:</strong> {hour} </p>
-            <p><strong>Tipo:</strong> {timeLog.logTyoeText}</p>
+            <p><strong>Tipo:</strong> {timeLog.logTypeText}</p>
             {timeLog.isEdited ? (
               <>
                 <p><strong>Justificativa:</strong> {timeLog.justification}</p>

@@ -1,59 +1,107 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { useParams } from "react-router-dom";
 import ButtonSubmitForm from "../../../components/ButtonSubmitForm";
 import ButtonCancel from "../../../components/ButtonCancel";
 import InputForm from "../../../components/InputForm";
-import { getEmployee, getEmployees } from "../../../services/employeeService";
 import { putPaycheck, getPaycheck } from "../../../services/paycheckService";
-import SelectForm from "../../../components/SelectForm";
+import styles from "./index.module.css";
+
+function formatTime(time) {
+  if (time === undefined) {
+    const [hours, minutes, seconds] = "00";
+    return { hours, minutes, seconds };
+  } else {
+    const [hours, minutes, seconds] = time.split(":");
+
+    return { hours, minutes, seconds };
+  }
+}
 
 export default function PaycheckEditForm({
   propsPaycheck,
   setPaycheck,
-  setEmployee,
   setViewEditForm,
 }) {
   const [startDate, setStartDate] = useState(propsPaycheck.startDate);
   const [endDate, setEndDate] = useState(propsPaycheck.endDate);
-  const [employeeId, setEmployeeId] = useState(propsPaycheck.employeeId);
-  const [employees, setEmployees] = useState([]);
+
+  const [standardHours, setStandardHours] = useState(
+    formatTime(propsPaycheck.standardHours).hours
+  );
+  const [standardMinutes, setStandardMinutes] = useState(
+    formatTime(propsPaycheck.standardHours).minutes
+  );
+  const [overtimeHours, setOvertimeHours] = useState(
+    formatTime(propsPaycheck.overtimeHours).hours
+  );
+  const [overtimeMinutes, setOvertimeMinutes] = useState(
+    formatTime(propsPaycheck.overtimeHours).minutes
+  );
+  const [daysWorked, setDaysWorked] = useState(propsPaycheck.daysWorked);
   const params = useParams();
 
-  useEffect(() => {
-    async function fetchData(userId) {
-      try {
-        const responseEmployees = await getEmployees(userId);
-        const employeesNameSeted = responseEmployees.data.map((employee) => ({
-          ...employee,
-          name: employee.fullName,
-        }));
-        setEmployees(employeesNameSeted);
-      } catch (error) {
-        console.error(error);
-      }
+  const setMinutes = (setValue, inputValue) => {
+    if (inputValue > 59) {
+      setValue(59);
     }
+    if (inputValue < 0) {
+      setValue(0);
+    } else {
+      setValue(inputValue);
+    }
+  };
 
-    fetchData(params.userId);
-  }, [params.userId]);
+  const validateTime = (
+    standardHours,
+    standardMinutes,
+    overtimeHours,
+    overtimeMinutes,
+    daysWorked
+  ) => {
+    if (
+      parseInt(standardHours) < 0 ||
+      parseInt(standardMinutes) < 0 ||
+      parseInt(overtimeHours) < 0 ||
+      parseInt(overtimeMinutes) < 0 ||
+      daysWorked < 0
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
+      if (
+        !validateTime(
+          standardHours,
+          standardMinutes,
+          overtimeHours,
+          overtimeMinutes,
+          daysWorked
+        )
+      ) {
+        throw new Error("Valor invalido nos campos");
+      }
       const paycheck = {
         startDate: startDate,
         endDate: endDate,
-        employeeId: employeeId,
         paycheckId: propsPaycheck.id,
+        standardHours: `${standardHours}:${standardMinutes}:00`,
+        overtimeHours: `${overtimeHours}:${overtimeMinutes}:00`,
+        daysWorked: daysWorked,
+        employeeId: params.employeeId,
       };
       const responseUpdate = await putPaycheck(paycheck);
       console.log(responseUpdate);
       const responsePaycheck = await getPaycheck(params.paycheckId);
       setPaycheck(responsePaycheck.data);
-      const responseEmployee = await getEmployee(employeeId);
-      setEmployee(responseEmployee.data);
       setViewEditForm(false);
     } catch (error) {
       console.error(error);
+      alert(error.message);
     }
   };
 
@@ -74,12 +122,58 @@ export default function PaycheckEditForm({
           type={"date"}
           label={"Data final"}
         />
-        <SelectForm
-          options={employees}
-          selectedOption={employeeId}
-          setSelectedOption={setEmployeeId}
-          text={"Selecione o colaborador"}
+
+        <p>Horas trabalhadas</p>
+        <div className={styles.time}>
+          <InputForm
+            value={standardHours}
+            changeValue={(standardHours) => setStandardHours(standardHours)}
+            required={true}
+            type={"number"}
+            label={""}
+          />
+          <h2>:</h2>
+          <InputForm
+            value={standardMinutes}
+            changeValue={(standardMinutes) =>
+              setMinutes(setStandardMinutes, standardMinutes)
+            }
+            required={true}
+            type={"number"}
+            label={""}
+            max={59}
+          />
+        </div>
+        <p>Quantidade de horas extras</p>
+        <div className={styles.time}>
+          <InputForm
+            value={overtimeHours}
+            changeValue={(overtimeHours) => setOvertimeHours(overtimeHours)}
+            required={true}
+            type={"number"}
+            label={""}
+          />
+          <h2>:</h2>
+          <InputForm
+            value={overtimeMinutes}
+            changeValue={(overtimeMinutes) =>
+              setMinutes(setOvertimeMinutes, overtimeMinutes)
+            }
+            required={true}
+            type={"number"}
+            label={""}
+            max={59}
+          />
+        </div>
+
+        <InputForm
+          value={daysWorked}
+          changeValue={(daysWorked) => setDaysWorked(daysWorked)}
+          required={true}
+          type={"number"}
+          label={"Quantidade de dias trabalhados"}
         />
+
         <ButtonCancel setViewEditForm={setViewEditForm} />
         <ButtonSubmitForm textButton={"Enviar"} />
       </form>

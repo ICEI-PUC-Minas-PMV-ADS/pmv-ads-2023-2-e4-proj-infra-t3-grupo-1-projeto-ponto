@@ -49,10 +49,16 @@ namespace ClockIn.Application.Services
         public async Task UpdatePaycheck(string paychekId, string employeeId, UpdatePaycheckDto paycheckDto)
         {
             Paycheck payCheck = await _paycheckRepository.GetPaycheckById(paychekId);
-            Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
-            WorkTimeTotal workTimeTotal = await _workTimeCalculatorService.CalculateWorkTotalTime(employeeId, paycheckDto.StartDate.ToDateTime(TimeOnly.MinValue), paycheckDto.EndDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
+            var totalWorkHours = TimeSpan.Parse(paycheckDto.StandardHours) + TimeSpan.Parse(paycheckDto.OvertimeHours);
+            WorkTimeTotal workTimeTotal = new ()
+            {
+                StandardHours = TimeSpan.Parse(paycheckDto.StandardHours),
+                OvertimeHours = TimeSpan.Parse(paycheckDto.OvertimeHours),
+                TotalWorkHours = totalWorkHours,
+                DaysWorked = paycheckDto.DaysWorked
+            };
             SalaryAndTaxes employeeSalary = await _salaryCalculatorService.CalculateSalaryAndTaxes(workTimeTotal.StandardHours, workTimeTotal.TotalWorkHours, workTimeTotal.OvertimeHours, employeeId);
-            await _paycheckRepository.UpdatePaycheck(employee, payCheck, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
+            await _paycheckRepository.UpdatePaycheck(payCheck, paycheckDto.StartDate, paycheckDto.EndDate, workTimeTotal, employeeSalary);
 
         }
 

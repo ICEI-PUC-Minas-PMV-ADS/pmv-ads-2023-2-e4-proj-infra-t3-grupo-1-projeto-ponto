@@ -93,7 +93,7 @@ namespace ClockIn.Infra.Data.Repositories
             }
         }
 
-        public async Task<Paycheck> UpdatePaycheck(Employee employee, Paycheck updatedPayCheck, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes)
+        public async Task<Paycheck> UpdatePaycheck(Paycheck updatedPayCheck, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace ClockIn.Infra.Data.Repositories
                 updatedPayCheck.DaysWorked = workTimeTotal.DaysWorked;
                 updatedPayCheck.StartDate = startDate;
                 updatedPayCheck.EndDate = endDate;
-                updatedPayCheck.EmployeeId = employee.Id;
+                updatedPayCheck.EmployeeId = updatedPayCheck.EmployeeId;
                 updatedPayCheck.BaseSalary = salaryAndTaxes.BaseSalary;
                 updatedPayCheck.TotalSalary = salaryAndTaxes.TotalSalary;
                 updatedPayCheck.OvertimeHourlyRate = salaryAndTaxes.OvertimeHourlyRate;

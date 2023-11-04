@@ -11,7 +11,7 @@ namespace ClockIn.Domain.Interfaces
 
         Task<Paycheck> CreatePaycheck(Employee employee, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes);
 
-        Task<Paycheck> UpdatePaycheck(Employee employee, Paycheck payCheck, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes);
+        Task<Paycheck> UpdatePaycheck(Paycheck payCheck, DateOnly startDate, DateOnly endDate, WorkTimeTotal workTimeTotal, SalaryAndTaxes salaryAndTaxes);
 
         Task<Paycheck> DeletePaycheck(Paycheck payCheck);
 

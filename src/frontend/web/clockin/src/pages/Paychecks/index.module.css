@@ -22,6 +22,12 @@
     margin-bottom: 1.5rem;
 }
 
+.geradorPaycheks{
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+
 /* Aqui começa a estilização da div "Criar um novo contracheque" */
 
 .contentAddPaychecks {

@@ -8,7 +8,7 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
     public class CreateTimeLogDto
 	{
         [Required(ErrorMessage = "O campo 'Timestamp' é obrigatório.")]
-        public DateTime Timestamp { get; set; }
+        public string Timestamp { get; set; }
 
         [Required(ErrorMessage = "O campo 'EmployeeId' é obrigatório.")]
         public string EmployeeId { get; set; }

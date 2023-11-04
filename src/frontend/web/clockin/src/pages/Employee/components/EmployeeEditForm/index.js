@@ -117,7 +117,7 @@ export default function EmployeeEditForm({
                 placeholder={
                   "Digite aqui a quandidade de horas que o colaborador ira trabalhar por dia"
                 }
-                label={"quantidades de horas trabalhadas por dia: "}
+                label={"Quantidades de horas que o colaborador irá trabalhar por dia: "}
               />
               <SelectForm
                 options={positions}

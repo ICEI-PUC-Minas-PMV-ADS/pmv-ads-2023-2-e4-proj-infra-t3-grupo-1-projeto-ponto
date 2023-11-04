@@ -31,6 +31,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Polybioz.HtmlRenderer.PdfSharp.Core" Version="1.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.13" />
   </ItemGroup>
 </Project>

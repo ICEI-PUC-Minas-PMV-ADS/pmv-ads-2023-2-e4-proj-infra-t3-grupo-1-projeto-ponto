@@ -1,0 +1,13 @@
+.time {
+    display: flex;
+    flex-direction: row;
+}
+
+p{
+    color: #002538;
+    font-size: 0.9rem;
+}
+
+.time input{
+    width: 60px;
+}

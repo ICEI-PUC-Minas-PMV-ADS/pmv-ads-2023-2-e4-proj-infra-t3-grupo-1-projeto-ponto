@@ -14,7 +14,7 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
 
         public bool IsEdited { get; set; }
 
-        public string LogTyoeText { get; set; }
+        public string LogTypeText { get; set; }
 
         public string JustificationId { get; set; }
 
@@ -28,11 +28,11 @@ namespace ClockIn.Application.DTOs.TimeLogDTOs
         {
             if (LogTypeValue == LogType.Entry)
             {
-                LogTyoeText = "Entrada";
+                LogTypeText = "Entrada";
             }
             else
             {
-                LogTyoeText = "Saida";
+                LogTypeText = "Saída";
             }
         }
     }

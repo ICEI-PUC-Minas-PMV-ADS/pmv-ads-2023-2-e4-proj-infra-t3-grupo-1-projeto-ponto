@@ -53,6 +53,13 @@ export default function TimeLogEditForm({
     fetchData(params.userId);
   }, [params.userId]);
 
+  useEffect(() => {
+    if (logTypes.length > 0 && justifications.length > 0) {
+      setLogTypeValue(logTypes[0].id);
+      setJustificationId(justifications[0].id);
+    }
+  }, [logTypes, justifications]);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -62,6 +69,7 @@ export default function TimeLogEditForm({
         justificationId: justificationId,
         id: timeLogProp.id,
       };
+      // console.log(editTimeLog.justificationId)
       const responseUpdate = await putTimeLogs(editTimeLog);
       const responseTimeLogs = await getTimeLogsByEmployeeId(params.employeeId);
       setTimeLogs(responseTimeLogs.data);

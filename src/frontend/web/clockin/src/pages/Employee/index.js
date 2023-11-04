@@ -85,8 +85,8 @@ export default function Employee() {
                 <span>CPF:</span> {employee.cpf}
               </p>
               <p>
-                <span>Quantidade de horas trabalhadas:</span>{" "}
-                {employee.dailyWorkingHours}
+                <span>Jornada de trabalho diária:</span>
+                {employee.dailyWorkingHours}Hrs
               </p>
               <p>
                 <span>Departamento:</span> {employee.departament}

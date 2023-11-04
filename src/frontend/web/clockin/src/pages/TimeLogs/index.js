@@ -20,9 +20,6 @@ export default function TimeLogs() {
     async function fetchData(id) {
       try {
         const response = await getTimeLogsByEmployeeId(id);
-        if (response.status === 401) {
-          console.log("teste");
-        }
         if (Array.isArray(response.data)) {
           setTimeLogs(response.data);
         } else {
@@ -58,8 +55,8 @@ export default function TimeLogs() {
             <div className={styles.formTimeLogs}>
               <FilterTimeLogForm setTimeLogs={setTimeLogs} />
             </div>
-            {timeLogs.map((timeLog) => {
-              return (
+            {Array.isArray(timeLogs) ? (
+              timeLogs.map((timeLog) => (
                 <div className={styles.itensTimeLogs} key={timeLog.id}>
                   <TimeLog
                     timeLog={timeLog}
@@ -67,8 +64,10 @@ export default function TimeLogs() {
                     setTimeLogs={setTimeLogs}
                   />
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <p>{timeLogs}</p>
+            )}
           </div>
         </div>
       </div>

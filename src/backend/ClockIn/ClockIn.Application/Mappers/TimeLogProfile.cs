@@ -9,7 +9,8 @@ namespace ClockIn.Application.Mappers
     {
         public TimeLogProfile()
         {
-            CreateMap<CreateTimeLogDto, TimeLog>();
+            CreateMap<CreateTimeLogDto, TimeLog>()
+                .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => DateTime.Parse(src.Timestamp)));
             CreateMap<TimeLog, ReadTimeLogDTO>()
                 .ConstructUsing((src, context) =>
                 {
@@ -31,7 +32,9 @@ namespace ClockIn.Application.Mappers
                 });
 
             CreateMap<UpdateTimeLogDto, TimeLog>()
-                .ForMember(dest => dest.JustificationId, opt => opt.MapFrom(src => src.JustificationId));
+                .ForMember(dest => dest.JustificationId, opt => opt.MapFrom(src => src.JustificationId))
+                .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => DateTime.Parse(src.Timestamp)));
+
         }
     }
 }

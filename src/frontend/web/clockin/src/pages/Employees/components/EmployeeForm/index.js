@@ -7,7 +7,7 @@ import {
 import InputForm from "../../../../components/InputForm";
 import ButtonSubmitForm from "../../../../components/ButtonSubmitForm";
 import SelectForm from "../../../../components/SelectForm";
-
+import { validate } from "gerador-validador-cpf";
 import styles from "./index.module.css";
 
 export default function EmployeeForm({
@@ -32,6 +32,10 @@ export default function EmployeeForm({
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      if (!validate(employeeCpf)) {
+        throw new Error("CPF invalido");
+      }
+      const formatCpf = employeeCpf.replace(/[^\d]/g, "");
       const employee = {
         fullName: employeeName,
         email: employeeEmail,
@@ -39,7 +43,7 @@ export default function EmployeeForm({
         rePassword: employeeRePassword,
         birthDate: employeeBirthDate,
         hireDate: employeeHireDate,
-        cpf: employeeCpf,
+        cpf: formatCpf,
         dailyWorkingHours: employeeDailyWorkingHours,
         hrAdministratorId: params.userId,
         positionId: employeePositionId,
@@ -97,7 +101,7 @@ export default function EmployeeForm({
         changeValue={(email) => setEmployeeEmail(email)}
         required={true}
         type={"email"}
-        placeholder={"Digite aqui o nome do departamento"}
+        placeholder={"Digite o nome email"}
         label={"Email: "}
       />
       <InputForm
@@ -105,7 +109,7 @@ export default function EmployeeForm({
         changeValue={(password) => setEmployeePassword(password)}
         required={true}
         type={"password"}
-        placeholder={"Digite aqui sua senha"}
+        placeholder={"Digite aqui a senha"}
         label={"Senha: "}
       />
       <InputForm
@@ -113,7 +117,7 @@ export default function EmployeeForm({
         changeValue={(repassword) => setEmployeeRePassword(repassword)}
         required={true}
         type={"password"}
-        placeholder={"Digite aqui novamente sua senha"}
+        placeholder={"Digite aqui novamente a senha"}
         label={"Confirme sua senha: "}
       />
       <InputForm
@@ -121,7 +125,7 @@ export default function EmployeeForm({
         changeValue={(birthDate) => setEmployeeBirthDate(birthDate)}
         required={true}
         type={"date"}
-        placeholder={"Digite aqui o nome do departamento"}
+        placeholder={"Digite aqui a data de nascimento"}
         label={"Data de nascimento: "}
       />
       <InputForm

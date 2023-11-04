@@ -11,7 +11,10 @@ namespace ClockIn.Application.DTOs.PaycheckDTOs
     public class UpdatePaycheckDto : IStartDateEndDateComparable
     {
         public DateOnly StartDate { get; set; }
-
         public DateOnly EndDate { get; set; }
+        public string StandardHours { get; set; }
+        public string OvertimeHours { get; set; }
+        public int DaysWorked { get; set; }
+
     }
 }

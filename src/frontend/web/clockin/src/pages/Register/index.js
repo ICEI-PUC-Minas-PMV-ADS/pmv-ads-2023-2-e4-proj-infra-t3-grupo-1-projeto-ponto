@@ -3,6 +3,7 @@ import { registerUser } from "../../services/userService";
 import ButtonSubmitForm from "../../components/ButtonSubmitForm";
 import InputForm from "../../components/InputForm";
 import styles from "./index.module.css";
+import { validate } from "cnpj";
 
 function RegisterHRForm() {
   const [fullName, setFullName] = useState("");
@@ -14,12 +15,16 @@ function RegisterHRForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      if (!validate(cnpj)) {
+        throw new Error("CNPJ invalido");
+      }
+      const formatCnpj = formatCnpj(cnpj).replace(/[^\d]/g, "");
       const hRAdministrator = {
         fullName: fullName,
         email: email,
         password: password,
         rePassword: rePassword,
-        cnpj: cnpj,
+        cnpj: formatCnpj,
       };
       const response = await registerUser(hRAdministrator);
       console.log(response);

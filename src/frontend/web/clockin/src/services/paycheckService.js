@@ -15,7 +15,7 @@ async function postPaycheck(paycheck) {
         },
       }
     );
-console.log(response)
+    console.log(response);
 
     return response;
   } catch (error) {
@@ -57,15 +57,25 @@ async function getPaycheck(paycheckId) {
 }
 
 async function putPaycheck(paycheck) {
-  const { employeeId, paycheckId, startDate, endDate } = paycheck;
-  console.log(paycheck);
-
+  const {
+    startDate,
+    endDate,
+    paycheckId,
+    standardHours,
+    overtimeHours,
+    daysWorked,
+    employeeId,
+  } = paycheck;
   try {
+    console.log(paycheck);
     const response = await api.put(
       `/paycheck/${employeeId}/${paycheckId}`,
       {
         startDate,
         endDate,
+        standardHours,
+        overtimeHours,
+        daysWorked,
       },
       {
         headers: {
