@@ -1,39 +1,85 @@
 .containerDemonstrativo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background: #fe9528;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fe9528;
+  flex-direction: column;
 }
 
 .contentDemonstrativo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 60%;
-    height: 83%;
-    background-color: white;
-    border-radius: 0.7rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 60%;
+  height: 85%; */
+  /* background-color: white; */
+  border-radius: 0.7rem;
+  margin-bottom: 1.5rem;
 }
 
 .buttonGerarPDF {
-    background: #002538;
-    border: none;
-    color: white;
-    padding: 0.3rem 0.9rem;
-    border-radius: 0.3rem;
-    margin: 0 0.2rem;
-    cursor: pointer;
+  background: #002538;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.3rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
 }
 
 .buttonEditarInfos {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .buttonGerarPDF:hover {
-    color: #fe9528;
+  color: #fe9528;
+}
+
+.tableEdit {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: white;
+}
+
+/* Aqui começa a responsividade da página */
+
+@media (max-width: 700px) {
+  .tableEdit {
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .tableEdit {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .tableEdit {
+      font-size: 9px;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .contentDemonstrativo {
+      width: 90%;
+      height: 50%;
+    }
+    .tableEdit {
+      font-size: 8px;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .contentDemonstrativo {
+      width: 90%;
+      height: 50%;
+    }
+  }
 }

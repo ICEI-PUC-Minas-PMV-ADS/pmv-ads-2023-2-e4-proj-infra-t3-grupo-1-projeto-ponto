@@ -6,6 +6,7 @@ import useAuthentication from "../../hooks/useAuthentication";
 
 import styles from "./index.module.css";
 import logoLogin from "../../img/ClockLogin.png"
+import logo from "../../img/logo.png"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ export default function Login() {
             <ButtonSubmitForm textButton={"Entrar"} />
             <div className={styles.inputBox}>
               <p>É novo por aqui? <Link to="/rh/registrar">Crie uma conta</Link></p>
+              <img src={logo} alt="Logo" title="ClockIn" />
             </div>
           </form>
         </div>

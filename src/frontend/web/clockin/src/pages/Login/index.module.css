@@ -53,6 +53,15 @@
     font-weight: 600;
 }
 
+.inputBox img {
+    height: 100px;
+    width: 100px;
+}
+
+.inputBox {
+    text-align: center;
+}
+
 /* Abaixo começa a responsividade da página de Login*/
 
 @media (max-width:1000px) {
