@@ -28,7 +28,7 @@ namespace ClockIn.Application.Services
         public async Task<IEnumerable<ReadPaycheckDto>> GetPaychecksByEmployeeId(string employeeId)
         {
             var paycheckEntity = await _paycheckRepository.GetPaychecksByEmployeeId(employeeId);
-            return _mapper.Map<IEnumerable<ReadPaycheckDto>>(paycheckEntity);
+            return _mapper.Map<IEnumerable<ReadPaycheckDto>>(paycheckEntity).Reverse();
         }
 
         public async Task<ReadPaycheckDto> GetPaycheckById(string paycheckId)

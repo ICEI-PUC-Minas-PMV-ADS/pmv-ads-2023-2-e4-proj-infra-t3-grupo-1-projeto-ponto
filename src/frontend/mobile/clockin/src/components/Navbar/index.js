@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Text,
   SafeAreaView,
@@ -18,11 +18,10 @@ export default function Navbar({
   home = false,
   navigateToPage = "",
   pageName = "",
+  toggleModal = null
 }) {
   const navigaion = useNavigation();
   const { logout } = useAuthentication();
-
-  
 
   return (
     <View>
@@ -42,7 +41,7 @@ export default function Navbar({
         </View>
         {filter && (
           <View>
-            <TouchableOpacity style={styles.headerIcons} onPress={() => {}}>
+            <TouchableOpacity style={styles.headerIcons} onPress={toggleModal}>
               <Ionicons name="md-filter-sharp" style={styles.icon} />
               <Text style={styles.textHeader}>Filtrar</Text>
             </TouchableOpacity>

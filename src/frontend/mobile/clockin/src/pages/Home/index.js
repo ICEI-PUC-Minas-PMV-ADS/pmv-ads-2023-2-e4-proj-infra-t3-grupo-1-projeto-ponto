@@ -22,7 +22,11 @@ export default function Home() {
         const responseUser = await getUser(userId);
         setUser(responseUser.data);
         const responseTimeLogs = await getTimeLogsByEmployeeId(userId);
-        setTimeLogs(responseTimeLogs.data);
+        if(Array.isArray(responseTimeLogs.data)){
+          setTimeLogs(responseTimeLogs.data);
+        }else{
+          throw Error(responseTimeLogs.data)
+        }
       } catch (error) {
         console.log(error);
       }
@@ -30,16 +34,8 @@ export default function Home() {
     fetchData(route.params.userId);
   }, [route.params.userId]);
 
-  const navigateToPageUserDetail = () => {
-    return navigaion.navigate("User", { user });
-  };
-
   const navigateToPage = (page) => {
-    if (page === "TimeLogs") {
-      return navigaion.navigate(page, { timeLogs });
-    } else {
       return navigaion.navigate(page, { user });
-    }
   };
 
   return (
@@ -53,9 +49,9 @@ export default function Home() {
       <View style={styles.container}>
         <View style={styles.lastTimeLogsContainer}>
           <Text style={styles.text}>Últimos registros:</Text>
-          {timeLogs.length > 0 && (
-            <LastTimeLogs timeLogs={timeLogs.slice(-3).reverse()} />
-          )}
+          {timeLogs.length > 0 ? (
+            <LastTimeLogs timeLogs={timeLogs.slice(0,3)} />
+          ) : <Text style={styles.text2}>Nenhum registor de ponto foi encontrado</Text>}
         </View>
         <FormTimelog
           timeLogs={timeLogs}
@@ -92,5 +88,9 @@ const styles = StyleSheet.create({
   lastTimeLogsContainer: {
     width: "90%",
     paddingTop: 20,
+  },
+  text2: {
+    color: "#002538",
+    textAlign: "center",
   },
 });

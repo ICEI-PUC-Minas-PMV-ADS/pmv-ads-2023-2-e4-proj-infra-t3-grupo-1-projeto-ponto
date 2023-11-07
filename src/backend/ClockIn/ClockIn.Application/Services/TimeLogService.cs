@@ -36,7 +36,7 @@ namespace ClockIn.Application.Services
                     timeLog.Justification = justification.Name;
                 }
             }
-            return timeLogsDto;
+            return timeLogsDto.Reverse();
         }
 
         public async Task<ReadTimeLogDTO> GetTimeLogById(string id)
@@ -54,7 +54,16 @@ namespace ClockIn.Application.Services
         public async Task<IEnumerable<ReadTimeLogDTO>> GetTimeLogsByEmployeeAndDateRange(string employeeId, DateOnly startDate, DateOnly endDate)
         {
             var timeLogEntity = await _timeLogRepository.GetTimeLogsByEmployeeAndDateRange(employeeId, startDate.ToDateTime(TimeOnly.MinValue), endDate.AddDays(1).ToDateTime(TimeOnly.MinValue));
-            return _mapper.Map<IEnumerable<ReadTimeLogDTO>>(timeLogEntity);
+            var timeLogsDto = _mapper.Map<IEnumerable<ReadTimeLogDTO>>(timeLogEntity);
+            foreach (var timeLog in timeLogsDto)
+            {
+                if (timeLog.IsEdited)
+                {
+                    var justification = await _justificationRepository.GetJustificationById(timeLog.JustificationId);
+                    timeLog.Justification = justification.Name;
+                }
+            }
+            return timeLogsDto.Reverse();
         }
 
         public async Task<TimeLog> CreateTimeLog(CreateTimeLogDto timeLogDto)

@@ -43,13 +43,13 @@ export default function Paychecks() {
     <div className={styles.containerPaychecks}>
       <div className={styles.contentPaychecks}>
         <div className={styles.geradorPaycheks}>
-          {paychecks.map((paycheck) => (
+          {paychecks.length > 0 ? paychecks.map((paycheck) => (
             <Paycheck
               paycheck={paycheck}
               handleDeletePaycheck={handleDeletePaycheck}
               key={paycheck.id}
             />
-          ))}
+          )) : <h3>Nenhum registro de ponto encontrado!</h3>}
         </div>
       </div>
       <div className={styles.contentAddPaychecks}>

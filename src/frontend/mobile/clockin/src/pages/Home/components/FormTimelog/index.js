@@ -1,6 +1,10 @@
 import { React, useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { getLogTypes, postTimeLog, getTimeLogsByEmployeeId } from "../../../../services/timelogService";
+import {
+  getLogTypes,
+  postTimeLog,
+  getTimeLogsByEmployeeId,
+} from "../../../../services/timelogService";
 import DateTimePicker from "@react-native-community/datetimepicker";
 // import RNPickerSelect from "react-native-picker-select";
 import SelectDropdown from "react-native-select-dropdown";
@@ -58,20 +62,17 @@ export default function FormTimelog({ employeeId, setTimeLogs, timeLogs }) {
   const registerTimeLog = async () => {
     try {
       if (logTypeValue != null) {
-        const editDate = date.toLocaleDateString('pt-BR').replace(/\//g, "-");
-        const editTime = date.toLocaleTimeString('pt-BR');
+        const editDate = date.toLocaleDateString("pt-BR").replace(/\//g, "-");
+        const editTime = date.toLocaleTimeString("pt-BR");
         const timeLog = {
-          timestamp: `${editDate.split("-")[2]}-${editDate.split("-")[1]}-${
-            editDate.split("-")[0]
-          }T${editTime}Z`,
+          timestamp: `${editDate.split("-").reverse().join("-")}T${editTime}Z`,
           employeeId,
           logTypeValue,
         };
-        // console.log(timeLog.timestamp)
         await postTimeLog(timeLog);
         setDate(new Date());
-        const response = await getTimeLogsByEmployeeId(employeeId)
-        setTimeLogs(response.data)
+        const response = await getTimeLogsByEmployeeId(employeeId);
+        setTimeLogs(response.data);
       } else {
         throw Error("Tipo de registro invalido");
       }
@@ -84,7 +85,7 @@ export default function FormTimelog({ employeeId, setTimeLogs, timeLogs }) {
     <View style={styles.form}>
       <View style={styles.dateAndTimeContainer}>
         <Text style={styles.dateAndTimeText}>
-          Data e hora do registro: {date.toLocaleString('pt-BR')}
+          Data e hora do registro: {date.toLocaleString("pt-BR")}
         </Text>
         <View style={styles.dateAndTimeButtons}>
           <TouchableOpacity
@@ -115,11 +116,13 @@ export default function FormTimelog({ employeeId, setTimeLogs, timeLogs }) {
           />
         )}
         <View style={styles.selectLogTypeContainer}>
-          <Text style={styles.textLabelLogType}>Selecione o tipo de registro:</Text>
+          <Text style={styles.textLabelLogType}>
+            Selecione o tipo de registro:
+          </Text>
           <View style={styles.dropdownsRow}>
             <SelectDropdown
               data={logTypes}
-              onSelect={(selectedItem, index) =>
+              onSelect={(selectedItem, index) =>                
                 setLogTypeValue(selectedItem.value)
               }
               buttonTextAfterSelection={(selectedItem, index) => {
@@ -186,7 +189,7 @@ const styles = StyleSheet.create({
   dateAndTimeButtons: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8
+    gap: 8,
   },
   dateAndTimeText: {
     color: "#002538",
@@ -199,20 +202,20 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 7,
     paddingHorizontal: 12,
-    width: "40%"
+    width: "40%",
   },
   selectDateAndTimeButtonText: {
     color: "#FA983B",
     fontWeight: "700",
     fontSize: 12,
-    textAlign: "center"
+    textAlign: "center",
   },
 
-  selectLogTypeContainer:{
+  selectLogTypeContainer: {
     alignItems: "center",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
-  textLabelLogType:{
+  textLabelLogType: {
     color: "#002538",
     fontWeight: "700",
     fontSize: 15,

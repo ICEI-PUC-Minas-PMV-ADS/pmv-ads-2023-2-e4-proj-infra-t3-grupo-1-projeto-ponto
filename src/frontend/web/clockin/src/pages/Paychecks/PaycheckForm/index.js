@@ -2,7 +2,11 @@ import { React, useState } from "react";
 import { useParams } from "react-router-dom";
 import ButtonSubmitForm from "../../../components/ButtonSubmitForm";
 import InputForm from "../../../components/InputForm";
-import { postPaycheck } from "../../../services/paycheckService";
+import {
+  getPaycheck,
+  getPaychecks,
+  postPaycheck,
+} from "../../../services/paycheckService";
 
 export default function PaycheckForm({ setPaychecks }) {
   const [startDate, setStartDate] = useState("");
@@ -18,9 +22,12 @@ export default function PaycheckForm({ setPaychecks }) {
         employeeId: params.employeeId,
       };
       const response = await postPaycheck(paycheck);
-      setPaychecks((prevPaychecks) => [...prevPaychecks, response.data]);
-      setStartDate("");
-      setEndDate("");
+      if (response && response.status === 201) {
+        const newListPaychecks = await getPaychecks(params.employeeId);
+        setPaychecks(newListPaychecks.data);
+        setStartDate("");
+        setEndDate("");
+      }
     } catch (error) {
       console.error(error);
     }

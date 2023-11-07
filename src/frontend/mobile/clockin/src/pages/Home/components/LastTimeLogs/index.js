@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Card from "./components/Card";
 
 export default function LastTimeLogs({ timeLogs }) {
+  console.log(timeLogs)
   return (
     <View style={styles.lastTimeLogsContainer}>
       {timeLogs.map((timeLog) => {
@@ -15,6 +16,6 @@ export default function LastTimeLogs({ timeLogs }) {
 const styles = StyleSheet.create({
   lastTimeLogsContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
 });

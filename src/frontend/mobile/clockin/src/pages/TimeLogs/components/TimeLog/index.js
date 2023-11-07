@@ -40,8 +40,6 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: 10,
     width: "90%",
-    borderTopWidth: 1,
-    borderTopColor: "#E4E4E4",
     marginHorizontal: 20,
     marginVertical: 10
   },

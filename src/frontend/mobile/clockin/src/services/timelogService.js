@@ -58,6 +58,7 @@ async function getTimeLogsByEmployeeId(employeeId) {
   }
 }
 async function getTimeLogsByEmployeeIdRange(employeeId, startDate, endDate) {
+  console.log(employeeId, startDate, endDate)
   try {
     const response = await api.get(
       `/timelog/employee/${employeeId}/range?startDate=${startDate}&&endDate=${endDate}`,

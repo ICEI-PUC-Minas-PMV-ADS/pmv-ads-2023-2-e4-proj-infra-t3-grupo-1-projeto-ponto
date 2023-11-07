@@ -23,13 +23,17 @@ namespace ClockIn.Application.Services
             Employee employee = await _employeeRepository.GetEmployeeById(employeeId);
             List<TimeLog> sortedLogs = await _timeLogRepository.GetTimeLogsByEmployeeAndDateRange(employeeId, startDate, endDate);
             TimeSpan workHours = await CalculateWorkHours(sortedLogs, employeeId, endDate);
-            int daysWorked = CalculateDaysWorked(sortedLogs);
+            int daysWorked = CalculateDaysWorked(sortedLogs, employee.DailyWorkingHours);
             TimeSpan standardHours = CalculateStandardHours(employee, daysWorked, workHours);
             TimeSpan overtimeHours = TimeSpan.Zero;
 
             if (workHours > standardHours)
             {
                 overtimeHours = CalculateOvertimeHours(workHours, standardHours);
+            }
+            if(workHours < standardHours)
+            {
+                standardHours = workHours;
             }
 
             WorkTimeTotal result = new()
@@ -114,25 +118,19 @@ namespace ClockIn.Application.Services
             return workHours;
         }
 
-        private static int CalculateDaysWorked(List<TimeLog> sortedLogs)
+        private static int CalculateDaysWorked(List<TimeLog> sortedLogs, int dailyWorkingHours)
         {
             int daysWorked = 1;
-            TimeLog? previousLog = null;
+            TimeLog? previousLog = sortedLogs[0];
 
             foreach (var log in sortedLogs)
             {
-                if (previousLog != null)
+                if (log.LogTypeValue == LogType.Entry && log.Timestamp.Date > previousLog.Timestamp.Date && (log.Timestamp - previousLog.Timestamp) > TimeSpan.FromHours(dailyWorkingHours))
                 {
-                    if (log.Timestamp.Date != previousLog.Timestamp.Date)
-                    {
-                        daysWorked++;
-                        if (previousLog.Timestamp.Date < log.Timestamp.Date && previousLog.LogTypeValue == LogType.Entry)
-                        {
-                            daysWorked--;
-                        }
-                    }
+                    daysWorked++;
+                    previousLog = log;
                 }
-                previousLog = log;
+
             }
 
             return daysWorked;

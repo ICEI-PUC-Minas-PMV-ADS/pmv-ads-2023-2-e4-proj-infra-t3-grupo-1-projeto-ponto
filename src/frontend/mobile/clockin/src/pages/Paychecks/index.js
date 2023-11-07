@@ -13,7 +13,11 @@ export default function Paychecks() {
     async function fetchData(userId) {
       try {
         const response = await getPaychecks(userId);
-        setPaychecks(response.data);
+        if (Array.isArray(response.data)) {
+          setPaychecks(response.data);
+        } else {
+          throw Error(response.data);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -33,7 +37,10 @@ export default function Paychecks() {
           ListHeaderComponent={() => <Navbar title={"Contracheques"} />}
         />
       ) : (
-        <Text style={styles.text}>Nenhum contracheque encontrado</Text>
+        <View>
+          <Navbar title={"Contracheques"} />
+          <Text style={styles.text}>Nenhum contracheque encontrado</Text>
+        </View>
       )}
     </>
   );

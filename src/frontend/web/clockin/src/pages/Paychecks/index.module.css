@@ -28,6 +28,10 @@
     width: 100%;
 }
 
+.geradorPaycheks h3{
+    text-align: center;
+}
+
 /* Aqui começa a estilização da div "Criar um novo contracheque" */
 
 .contentAddPaychecks {
