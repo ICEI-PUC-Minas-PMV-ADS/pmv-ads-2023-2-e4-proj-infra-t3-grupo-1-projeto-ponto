@@ -103,7 +103,7 @@ export default function Paycheck() {
 
 const styles = StyleSheet.create({
   containers: {    
-    width: "700",
+    width: "auto",
     alignItems: "center"
   },
 });

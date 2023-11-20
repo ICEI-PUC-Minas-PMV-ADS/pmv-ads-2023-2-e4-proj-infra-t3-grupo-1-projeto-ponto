@@ -2,29 +2,28 @@ import { React, useState } from "react";
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import InputForm from "../InputForm";
-import {loginUser} from "../../../../services/userService.js"
+import { loginUser } from "../../../../services/userService.js";
 import { useAuthentication } from "../../../../hooks/useAuthentication";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {login} = useAuthentication();
+  const { login } = useAuthentication();
 
   const handleSubmitForm = () => {
     const dataIsValid = validateForm(email, password);
     if (!dataIsValid) {
       alert("Email ou senha invalidos!");
-    } else{
+    } else {
       const userLogin = {
         email: email,
-        password: password
+        password: password,
       };
-      login(userLogin)
-      setEmail("")
-      setPassword("")
+        login(userLogin);
+        setEmail("");
+        setPassword("");
     }
-
-  }
+  };
 
   function validateForm(email, password) {
     const validateEmptyInput =

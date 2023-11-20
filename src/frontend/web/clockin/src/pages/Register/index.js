@@ -4,6 +4,7 @@ import ButtonSubmitForm from "../../components/ButtonSubmitForm";
 import InputForm from "../../components/InputForm";
 import styles from "./index.module.css";
 import { validate } from "cnpj";
+import { useNavigate } from "react-router-dom";
 
 function RegisterHRForm() {
   const [fullName, setFullName] = useState("");
@@ -11,11 +12,13 @@ function RegisterHRForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       if (!validate(cnpj)) {
+        alert("CNPJ invalido");
         throw new Error("CNPJ invalido");
       }
       const formatCnpj = cnpj.replace(/[^\d]/g, "");
@@ -33,6 +36,7 @@ function RegisterHRForm() {
       setEmail("");
       setPassword("");
       setRePassword("");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

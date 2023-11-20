@@ -88,18 +88,19 @@ const useAuthentication = () => {
     try {
       const response = await loginUser(userLogin);
       const token = response.data.token;
+      console.log(token);
       const decodedToken = jwtDecode(token);
       await AsyncStorage.setItem("token_ClockIn", token);
       setUserId(decodedToken.id);
       setAuthenticated(true);
       navigation.navigate("Home", { userId: decodedToken.id });
     } catch (erros) {
-      console.log(erros);
+      alert("Usuario ou senha invalidos");
+      console.error(erros);
     }
   };
 
   const logout = async () => {
-    console.log("Logout");
     await AsyncStorage.removeItem("token_ClockIn");
     await logoutUser();
     setUserId("");

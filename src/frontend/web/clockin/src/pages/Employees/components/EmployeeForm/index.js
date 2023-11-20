@@ -33,6 +33,7 @@ export default function EmployeeForm({
     event.preventDefault();
     try {
       if (!validate(employeeCpf)) {
+        alert("CPF invalido");
         throw new Error("CPF invalido");
       }
       const formatCpf = employeeCpf.replace(/[^\d]/g, "");
