@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://clockin.bmddhadwg0esdeeb.brazilsouth.azurecontainer.io:80",
+  baseURL: "http://20.226.234.84:80",
 });
 
 export default api;
