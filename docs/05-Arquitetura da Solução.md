@@ -138,7 +138,7 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 ## Hospedagem
 
 - Frontend web: Vercel;
-- Frontend mobile: Expo e sera disponibilizado um .apk;
+- Frontend mobile: Sera disponibilizado um .apk;
 - Backend: AWS EC2 (Tentativa);
 - Banco ORM: AWS RDS;
 - Banco NoSQL: AtlasDB
