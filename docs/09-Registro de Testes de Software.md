@@ -71,8 +71,25 @@
 |       Passos        |                                - Abrir o app ClockIn; <br> -Preencher campos (email e senha); <br> - Clicar em login; <br>                                  |
 |  Critério de Êxito  |                                                                                                Redirecionamento para a pagina principal.                                                                                                  |
 |             Registro        |      https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/f2d79aa1-a5e8-4c63-941b-ba744dc0c422     |
-
-
-
-
+|          |          |
+|  **Caso de Teste**  |                 **CT-11 – Registrar ponto**                                                                                                              |
+| Requisito Associado |                                         RF-002 O funcionário poder registrar sua entrada e saída no trabalho.                                                                                             |
+|  Objetivo do Teste  |                           Verificar se o usuário colaborador consegue registar o ponto na data, hora e tipo escolhido.                                                                                           |
+|       Passos        |                                - Acessar a pagina inicial; <br> - Preencher campos (dia, hora e tipo); <br> - Clicar em registrar ponto; <br>                                   |
+|  Critério de Êxito  |                                                                                              O registro recém craido deverá aparecer na seção de últimos registros e na página do espelho ponto.                                                                                                |
+|             Registro        |     https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/60cd45e3-32f6-430b-83de-4f8a06b91120  |
+|   |    |
+|  **Caso de Teste**  |                 **CT-12 – Visualizar Espelho ponto**                                                                                                              |
+| Requisito Associado |                                         RF-003 O funcionário deve ser capaz de visualizar todos os registros de pontos anteriores.                                                                                             |
+|  Objetivo do Teste  |                         Verificar se o usuário colaborador consegue visualizar seus registros de ponto.                                                                                         |
+|       Passos        |                                - Acessar a pagina inicial; <br> - Clicar em "Visualizar meus registros de ponto"; <br>                                    |
+|  Critério de Êxito  |                                                                                             Redirecionamento para a página espelho ponto com a listagem de todos os registros.                                                                                                |
+|             Registro        |     https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/d4b09588-d28b-4679-8b2e-250e8bb9c12a  |
+|      |      |
+|  **Caso de Teste**  |                 **CT-13 – Visualização do contacheque**                                                                                                              |
+| Requisito Associado |                                       RF-004 O sistema deve calcular e exibir o total de horas trabalhadas pelo funcionário em um determinado mês. <br> RF-005 O funcionário pode visualizar seu contracheque.                                                                                                   |
+|  Objetivo do Teste  |                         Verificar se o usuário colaborador consegue visualizar seus recibos de contracheque.                                                                                         |
+|       Passos        |                                - Acessar a pagina inicial; <br> - Clicar em "Visualizar meus contracheques"; <br> - Escolher um contracheque e clicar em "Visualizar"; <br>                              |
+|  Critério de Êxito  |                                                                                             Redirecinamento para a pagina com todos os contacheques pondendo escolher um para visualizar mais detalhes.                                                                                    |
+|             Registro        |   https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/77e06ab4-b508-496f-bced-57df89f46c80    |
 
