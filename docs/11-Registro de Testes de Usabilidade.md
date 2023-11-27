@@ -33,3 +33,23 @@ Execução de tarefas feitas pelo usuário _MasterRH_ dentro da aplicação - Us
 | **CT 03 - Criar novo departamento** | Separar todos os departamentos.  | Procurar os nomes de departamentos criados. | Tarefa realizada com sucesso. | :) |       
 | **CT 04 - Visualizar registros de ponto de um colaborador**    | Acusar todos os horários.| Informações acumuladas uma ao lado da outra. | Tarefa realizada com sucesso. |  :) |
 | **CT 05 - Deletar um cargo**    | Botão fácil de encontrar.| Incapaz de trazer um ponto negativo. | Tarefa realizada com sucesso. |  :D |
+
+
+<br />
+<br />
+
+Execução de tarefas feitas pelo usuário _Colaborador_ dentro da aplicação - Usuário: Gabriel Velasquez
+| **ETAPAS ESPERADAS** | **Pontos Positivos** | **Pontos Negativos** | **Resultado do Teste** | **SENTIMENTO** |
+|        ---      	 |         ---    	|       -----     	|        ----       |    -----     |    
+| **CT 06 - Registrar ponto**  | Fácil de encontrar a funcionalidade.  | Muitas etapas para registrar. |   Tarefa realizada com sucesso. |    :)|  
+| **CT 07 - Visualizar Espelho ponto** | Todos os registros em ordem cronológica.  | Incapaz de trazer um ponto negativo. | Tarefa realizada com sucesso. | :D |       
+| **CT 08 - Visualização do contracheque**    | Descrição detalhada dos proventos e descontos.| Incapaz de trzaer um ponto negativo. | Tarefa realizada com sucesso. |  :D |
+<br />
+<br />
+
+Execução de tarefas feitas pelo usuário _Colaborador_ dentro da aplicação - Usuário: Rafael Lange
+| **ETAPAS ESPERADAS** | **Pontos Positivos** | **Pontos Negativos** | **Resultado do Teste** | **SENTIMENTO** |
+|        ---      	 |         ---    	|       -----     	|        ----       |    -----     |    
+| **CT 06 - Registrar ponto**  | Ambiente intuitivo.  | Demora para registrar todas as informações pode levar. |   Tarefa realizada com sucesso. |    :)|  
+| **CT 07 - Visualizar Espelho ponto** | Registros separados por entrada e saída.  | Incapaz de trazer um ponto negativo. | Tarefa realizada com sucesso. | :D |       
+| **CT 08 - Visualização do contracheque**    | Resumo separado por cores.| Não ter o valor da hora extra especificado, como 'adicional noturno'. | Tarefa realizada com sucesso. |  :D |
