@@ -64,3 +64,16 @@
 |       Passos        |                                  - Acessar a pagina "minha empresa"; <br> - Clicar em "Meus cargos"; <br> - Apenas visualizar ou preencher campos obrigatorios para criar ou editar ou clicar em excluir ; <br>                                   |
 |  Critério de Êxito  |                                                                                                Visualizar ou criar ou editar ou excluir um cargo.                                                                                                 |
 |             Registro        |            https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/81a788f8-7aa2-4b7a-af89-e11f1b8cef25                                                                                                                                     |
+|          |          |
+|  **Caso de Teste**  |                                                                                                              **CT-10 – Login do usuário Colaborador**                                                                                                              |
+| Requisito Associado |                                                                                             RF-1 O funcionário pode fazer login no sistema.                                                                                              |
+|  Objetivo do Teste  |                                                                                          Verificar se o usuário colaborador consegue fazer login no sistema.                                                                                           |
+|       Passos        |                                - Abrir o app ClockIn; <br> -Preencher campos (email e senha); <br> - Clicar em login; <br>                                  |
+|  Critério de Êxito  |                                                                                                Redirecionamento para a pagina principal.                                                                                                  |
+|             Registro        |                          
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/f2d79aa1-a5e8-4c63-941b-ba744dc0c422                                                                             |
+
+
+
+
+
