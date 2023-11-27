@@ -70,8 +70,7 @@
 |  Objetivo do Teste  |                                                                                          Verificar se o usuário colaborador consegue fazer login no sistema.                                                                                           |
 |       Passos        |                                - Abrir o app ClockIn; <br> -Preencher campos (email e senha); <br> - Clicar em login; <br>                                  |
 |  Critério de Êxito  |                                                                                                Redirecionamento para a pagina principal.                                                                                                  |
-|             Registro        |                          
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/f2d79aa1-a5e8-4c63-941b-ba744dc0c422                                                                             |
+|             Registro        |      https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/f2d79aa1-a5e8-4c63-941b-ba744dc0c422     |
 
 
 
