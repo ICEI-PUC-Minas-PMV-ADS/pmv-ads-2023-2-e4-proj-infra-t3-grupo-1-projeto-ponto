@@ -147,9 +147,9 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 ## Hospedagem
 
-- Frontend web: Vercel ![Link para acesso](https://pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto.vercel.app/);
-- Frontend mobile: Sera disponibilizado um .apk ![Link para download](https://expo.dev/artifacts/eas/jE8UGUWp86kZPp4r9F7Xuf.apk) ou ![Link para download](arquivos/clockin.apk);
-- Backend: Azure - ![Link para acesso](https://clockin.azurewebsites.net/swagger/index.html)
+- Frontend web: Vercel [Link para acesso](https://pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto.vercel.app/);
+- Frontend mobile: Sera disponibilizado um .apk [Link para download](https://expo.dev/artifacts/eas/jE8UGUWp86kZPp4r9F7Xuf.apk) ou [Link para download](arquivos/clockin.apk);
+- Backend: Azure - [Link para acesso](https://clockin.azurewebsites.net/swagger/index.html)
 - Banco ORM: AWS RDS;
 - Banco NoSQL: AtlasDB
 
