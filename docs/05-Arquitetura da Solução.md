@@ -5,7 +5,9 @@ A seguir, apresentamos um diagrama de alto nível que ilustra a estrutura da sol
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
 
 ![Arquitetura Distribuida](img/arquitetura-distribuida.png)
+
 ## Arquitetura Backend
+
 No caso do nosso projeto, optamos por uma abordagem baseada em serviços com uma estrutura de código que segue os princípios do Domain-Driven Design (DDD) e está dividida em camadas bem definidas.
 Benefícios:
 Separação de Responsabilidades: A divisão do projeto em camadas distintas, como Domain, Infrastructure, Application e Presentation, permite uma clara separação de responsabilidades. Isso torna o código mais organizado e facilita a manutenção e escalabilidade.
@@ -29,12 +31,15 @@ ASP.NET 7: Escolhemos o ASP.NET 7 como framework para a API devido à sua robust
 MySQL e MongoDB: Optamos por usar o MySQL como banco de dados relacional para armazenar os registros de usuários devido à sua estrutura tabular adequada para esse tipo de dados. Utilizamos o MongoDB como banco NoSQL para armazenar dados diversos, como justificativas, departamentos, cargos, contracheques e registros de ponto, devido à sua flexibilidade de esquema e capacidade de armazenar dados semi-estruturados.
 
 ## Documentação da Implementação da Web API REST
+
 ### Para configurar o ambiente de desenvolvimento, siga as etapas abaixo:
+
 Instale o Visual Studio Code, ASP.NET 7 e todas as dependências necessárias no seu sistema operacional.
 Clone o repositório do projeto do GitHub para o seu ambiente local.
 Configure as variáveis de ambiente necessárias, como strings de conexão para os bancos de dados MySQL e MongoDB, bem como as chaves de autenticação JWT.
 
 ### Recursos e Rotas
+
 ![Documentacacao](img/swagger-api-1.png)
 ![Documentacacao](img/swagger-api-2.png)
 ![Documentacacao](img/swagger-api-3.png)
@@ -44,7 +49,9 @@ Configure as variáveis de ambiente necessárias, como strings de conexão para 
 ![Documentacacao](img/swagger-api-7.png)
 
 ### Documentação da Implementação do Banco de Dados NoSQL
+
 #### Uso do MongoDB:
+
 O MongoDB é utilizado para armazenar dados diversos que não se encaixam bem em uma estrutura de banco de dados relacional. As coleções do MongoDB incluem:
 justifications: Armazena informações sobre as justificativas fornecidas pelos usuários para edições manuais nos registros de ponto.
 departaments e positions: Armazenam informações sobre os departamentos e cargos dos empregados.
@@ -54,7 +61,9 @@ Justificativas das Escolhas
 Optamos por usar o MongoDB para armazenar esses dados devido à flexibilidade do esquema, que permite adicionar campos conforme necessário sem interromper as operações existentes. Além disso, o MongoDB é escalável e adequado para o armazenamento de grandes volumes de dados semi-estruturados.
 
 ### Documentação da Implementação do Banco de Dados Relacional (MySQL)
+
 #### Uso do MySQL
+
 O MySQL é utilizado como banco de dados relacional para armazenar informações cruciais no projeto, incluindo os registros dos usuários, bem como para manter a estrutura de autenticação e autorização da aplicação. As tabelas do MySQL incluem:
 
 AspNetRoles: Responsável por armazenar os papéis (ou funções) disponíveis na aplicação, o que é essencial para o gerenciamento de permissões.
@@ -75,7 +84,6 @@ AspNetUserRoles: Mantém o relacionamento entre os usuários e os papéis que de
 
 AspNetUserTokens: Armazena os tokens de autenticação associados a cada usuário, usados para autenticação e recuperação de senhas.
 
-
 Justificativas das Escolhas
 
 A escolha do MySQL como banco de dados relacional baseia-se em sua estrutura tabular sólida, ideal para armazenar informações altamente estruturadas, como detalhes de usuário e funções. A utilização do MySQL oferece os seguintes benefícios:
@@ -94,7 +102,6 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 ![DiagramaDeClasses](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/blob/main/docs/img/Diagrama%20de%20Classes.jpeg)
 
-
 ## Modelo ER
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
@@ -104,77 +111,81 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 ## Esquema Relacional
 
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
+
 ![EsquemaRelacional](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/blob/main/docs/img/Esquema%20Relacional.jpeg)
+
 ## Modelo Físico
 
 Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
 [Arquivo SQL](/src/bd/banco.sql)
+
 ## Tecnologias Utilizadas
 
 ## Tecnologias Utilizadas
-| Ferramenta          | Finalidade                                                                                   |
-|---------------------|----------------------------------------------------------------------------------------------|
-| Visual Studio Code e Visual Studio Community | Ambiente de desenvolvimento integrado (IDE) para desenvolver o projeto frontend e mobile   |
-| MySQL               | Banco de dados relacional utilizado para armazenar registros dos usuários                    |
-| MongoDB             | Banco de dados NoSQL utilizado para armazenar dados diversos como justificativas, departamentos, cargos, contracheques e registros de ponto  |
-| Swagger             | Ferramenta para documentação da API                                                             |
-| MySQL Workbench     | Ferramenta de gerenciamento de banco de dados para o MySQL                                     |
-| AtlasDB             | Serviço de hospedagem gerenciado para o banco de dados MongoDB                                  |
 
-| Linguagem/Framework | Finalidade                                                                                   |
-|---------------------|----------------------------------------------------------------------------------------------|
-| JavaScript (JS)     | Linguagem de programação para desenvolvimento frontend e mobile com React e React Native (Expo)   |
-| React               | Biblioteca JavaScript para desenvolvimento da interface do usuário na web                      |
+| Ferramenta                                   | Finalidade                                                                                                                                  |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visual Studio Code e Visual Studio Community | Ambiente de desenvolvimento integrado (IDE) para desenvolver o projeto frontend e mobile                                                    |
+| MySQL                                        | Banco de dados relacional utilizado para armazenar registros dos usuários                                                                   |
+| MongoDB                                      | Banco de dados NoSQL utilizado para armazenar dados diversos como justificativas, departamentos, cargos, contracheques e registros de ponto |
+| Swagger                                      | Ferramenta para documentação da API                                                                                                         |
+| MySQL Workbench                              | Ferramenta de gerenciamento de banco de dados para o MySQL                                                                                  |
+| AtlasDB                                      | Serviço de hospedagem gerenciado para o banco de dados MongoDB                                                                              |
+
+| Linguagem/Framework | Finalidade                                                                                      |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| JavaScript (JS)     | Linguagem de programação para desenvolvimento frontend e mobile com React e React Native (Expo) |
+| React               | Biblioteca JavaScript para desenvolvimento da interface do usuário na web                       |
 | React Native (Expo) | Framework JavaScript para desenvolvimento de aplicativos móveis para iOS e Android              |
 | C#                  | Linguagem de programação para o desenvolvimento do backend da API ASP.NET 7                     |
-| ASP.NET 7           | Framework para desenvolvimento da API                                                         |
-| Entity Framework    | ORM (Object-Relational Mapping) para facilitar a interação com o banco de dados MySQL         |
+| ASP.NET 7           | Framework para desenvolvimento da API                                                           |
+| Entity Framework    | ORM (Object-Relational Mapping) para facilitar a interação com o banco de dados MySQL           |
 | xUnit               | Framework de testes utilizado para escrever e executar testes unitários                         |
-| JWT Bearer          | Protocolo de autenticação utilizado para gerar e validar tokens de autenticação                  |
+| JWT Bearer          | Protocolo de autenticação utilizado para gerar e validar tokens de autenticação                 |
 | Identity            | Framework de autenticação e autorização para gerenciar usuários e autenticação na API           |
 | AutoMapper          | Biblioteca para mapear objetos DTO (Data Transfer Objects)                                      |
 
 ## Hospedagem
 
-- Frontend web: Vercel;
-- Frontend mobile: Sera disponibilizado um .apk;
-- Backend: AWS EC2 (Tentativa);
+- Frontend web: Vercel ![Link para acesso](https://pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto.vercel.app/);
+- Frontend mobile: Sera disponibilizado um .apk ![Link para download](https://expo.dev/artifacts/eas/jE8UGUWp86kZPp4r9F7Xuf.apk) ou ![Link para download](arquivos/clockin.apk);
+- Backend: Azure - ![Link para acesso](https://clockin.azurewebsites.net/swagger/index.html)
 - Banco ORM: AWS RDS;
 - Banco NoSQL: AtlasDB
 
 ## Qualidade de Software
+
 ### Funcionalidade:
 
-- *Adequação:* Verificar se o sistema atende aos requisitos funcionais estabelecidos para o gerenciamento de ponto.
+- _Adequação:_ Verificar se o sistema atende aos requisitos funcionais estabelecidos para o gerenciamento de ponto.
   - Métrica: Percentagem de requisitos funcionais atendidos, incluindo o cadastro de empresas, empregados, registros de ponto e geração de contracheques.
 
 ### Confiabilidade:
 
-- *Disponibilidade:* Medir o tempo em que o sistema de gerenciamento de ponto está disponível para uso.
+- _Disponibilidade:_ Medir o tempo em que o sistema de gerenciamento de ponto está disponível para uso.
   - Métrica: Tempo médio entre falhas (MTBF) do sistema.
-- *Tolerância a falhas:* Avaliar como o sistema lida com erros e falhas nos registros de ponto.
+- _Tolerância a falhas:_ Avaliar como o sistema lida com erros e falhas nos registros de ponto.
   - Métrica: Número de registros de ponto corrigidos em um determinado período.
 
 ### Usabilidade:
 
-- *Eficiência:* Avaliar o desempenho e a eficiência do sistema durante o registro de ponto pelos empregados.
+- _Eficiência:_ Avaliar o desempenho e a eficiência do sistema durante o registro de ponto pelos empregados.
   - Métrica: Tempo médio para que um empregado registre sua entrada ou saída.
-- *Facilidade de Aprendizado:* Medir o tempo necessário para que um novo empregado aprenda a utilizar o sistema.
+- _Facilidade de Aprendizado:_ Medir o tempo necessário para que um novo empregado aprenda a utilizar o sistema.
   - Métrica: Tempo médio para treinamento de novos empregados.
 
 ### Segurança:
 
-- *Confidencialidade:* Verificar a proteção dos dados de ponto contra acesso não autorizado.
+- _Confidencialidade:_ Verificar a proteção dos dados de ponto contra acesso não autorizado.
   - Métrica: Número de violações de segurança detectadas nos registros de ponto.
-- *Integridade:* Avaliar a proteção contra modificações não autorizadas nos registros de ponto.
+- _Integridade:_ Avaliar a proteção contra modificações não autorizadas nos registros de ponto.
   - Métrica: Número de modificações não autorizadas detectadas nos registros de ponto.
 
 ### Manutenibilidade:
 
-- *Modificabilidade:* Avaliar a facilidade de fazer atualizações e melhorias no sistema de gerenciamento de ponto.
+- _Modificabilidade:_ Avaliar a facilidade de fazer atualizações e melhorias no sistema de gerenciamento de ponto.
   - Métrica: Tempo médio para implementar uma alteração no sistema.
-- *Estabilidade:* Medir a capacidade do sistema de manter a integridade dos registros de ponto após modificações.
+- _Estabilidade:_ Medir a capacidade do sistema de manter a integridade dos registros de ponto após modificações.
   - Métrica: Número de erros introduzidos após atualizações no sistema.
 
 ### Justificativas:

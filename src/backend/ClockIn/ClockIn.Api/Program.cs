@@ -45,7 +45,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
     opts.User.AllowedUserNameCharacters = null;
 }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddRoles<IdentityRole>();
 
-var key = Encoding.ASCII.GetBytes("87ˆ#FASDF1$23Bjd3hfsjd%3fsdf!asdlkjhb%$kljhl");
+var key = Encoding.ASCII.GetBytes("87ï¿½#FASDF1$23Bjd3hfsjd%3fsdf!asdlkjhb%$kljhl");
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -108,6 +108,8 @@ app.UseCors("AllowSpecificOrigin");
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseHttpsRedirection();
 
 app.MapControllers();
 

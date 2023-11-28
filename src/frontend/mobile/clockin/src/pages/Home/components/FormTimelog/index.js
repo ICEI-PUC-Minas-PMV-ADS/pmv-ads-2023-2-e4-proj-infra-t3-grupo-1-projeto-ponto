@@ -6,7 +6,6 @@ import {
   getTimeLogsByEmployeeId,
 } from "../../../../services/timelogService";
 import DateTimePicker from "@react-native-community/datetimepicker";
-// import RNPickerSelect from "react-native-picker-select";
 import SelectDropdown from "react-native-select-dropdown";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
