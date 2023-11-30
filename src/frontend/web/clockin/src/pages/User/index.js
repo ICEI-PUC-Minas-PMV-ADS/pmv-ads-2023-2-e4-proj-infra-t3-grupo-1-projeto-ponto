@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getUser } from "../../services/userService";
+import { getUser, logoutUser } from "../../services/userService";
 import ButtonUpdate from "../../components/ButtonUpdate";
 import { deleteUser } from "../../services/userService";
 import UserEditForm from "./components/UserEditForm";
@@ -11,7 +11,7 @@ import styles from "./index.module.css";
 export default function User() {
   const [user, setUser] = useState({});
   const [viewEditForm, setViewEditForm] = useState(false);
-  const { isTokenValid } = useAuthentication();
+  const { isTokenValid, logout } = useAuthentication();
   const params = useParams();
 
   useEffect(() => {
@@ -29,8 +29,8 @@ export default function User() {
 
   const handleDeleteUser = async (id) => {
     try {
-      const response = await deleteUser(id);
-      console.log(response);
+      await deleteUser(id);
+      logout();
     } catch (error) {
       console.error(error);
     }
