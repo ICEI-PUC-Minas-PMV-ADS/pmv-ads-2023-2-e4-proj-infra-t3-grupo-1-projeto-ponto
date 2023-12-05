@@ -59,7 +59,6 @@ export default function TimeLogForm({ setTimeLogs }) {
         justificationId: justification,
       };
       const response = await postTimeLog(timeLog);
-      console.log(response);
       if (response && response.status === 201) {
         const newTimeLogsList = await getTimeLogsByEmployeeId(
           params.employeeId

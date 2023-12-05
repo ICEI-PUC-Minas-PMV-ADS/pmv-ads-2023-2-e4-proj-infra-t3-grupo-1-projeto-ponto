@@ -39,7 +39,6 @@ export default function TimeLogs() {
         (timeLog) => timeLog.id !== timeLogId
       );
       setTimeLogs(newTimeLogs);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

@@ -21,7 +21,6 @@ function UserEditForm({ userProp, setViewEditForm, setUser }) {
         id: userProp.id,
       };
       const responseUpdate = await putUser(hRAdministrator);
-      console.log(responseUpdate);
       const responseUser = await getUser(userProp.id);
       setUser(responseUser.data);
       setViewEditForm(false);

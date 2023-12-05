@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using AutoMapper;
 using ClockIn.Application.DTOs.PaycheckDTOs;
 using ClockIn.Application.Interfaces;
@@ -49,11 +50,17 @@ namespace ClockIn.Application.Services
         public async Task UpdatePaycheck(string paychekId, string employeeId, UpdatePaycheckDto paycheckDto)
         {
             Paycheck payCheck = await _paycheckRepository.GetPaycheckById(paychekId);
-            var totalWorkHours = TimeSpan.Parse(paycheckDto.StandardHours) + TimeSpan.Parse(paycheckDto.OvertimeHours);
+            string[] standardHoursSplit = paycheckDto.StandardHours.Split(":");
+            string[] overtimeHourSplit = paycheckDto.OvertimeHours.Split(":");
+
+            TimeSpan standardHours = new(int.Parse(standardHoursSplit[0]), int.Parse(standardHoursSplit[1]), int.Parse(standardHoursSplit[2]));
+            TimeSpan overtimeHours = new(int.Parse(overtimeHourSplit[0]), int.Parse(overtimeHourSplit[1]), int.Parse(overtimeHourSplit[2]));
+
+            var totalWorkHours = standardHours + overtimeHours;
             WorkTimeTotal workTimeTotal = new ()
             {
-                StandardHours = TimeSpan.Parse(paycheckDto.StandardHours),
-                OvertimeHours = TimeSpan.Parse(paycheckDto.OvertimeHours),
+                StandardHours = standardHours,
+                OvertimeHours = overtimeHours,
                 TotalWorkHours = totalWorkHours,
                 DaysWorked = paycheckDto.DaysWorked
             };

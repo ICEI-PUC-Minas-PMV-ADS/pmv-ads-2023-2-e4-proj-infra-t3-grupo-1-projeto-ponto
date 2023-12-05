@@ -26,7 +26,6 @@ export default function DepartamentEditForm({
         departamentProp.id
       );
       const responseDepartaments = await getDepartaments(params.userId);
-      console.log(responseUpdate);
       setDepartaments(responseDepartaments.data);
       setViewEditForm(false);
     } catch (error) {

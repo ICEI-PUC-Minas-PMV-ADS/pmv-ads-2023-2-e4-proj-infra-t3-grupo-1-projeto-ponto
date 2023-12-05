@@ -23,7 +23,6 @@ export default function Employee() {
     async function fetchData(id) {
       try {
         const response = await getEmployee(id);
-        console.log(response.data);
         setEmployee(response.data);
         const responseDepartaments = await getDepartaments(params.userId);
         const responsePositions = await getPositions(params.userId);

@@ -17,7 +17,6 @@ export default function Paychecks() {
       const response = await deletePaycheck(id);
       const newPaychecks = paychecks.filter((paycheck) => paycheck.id !== id);
       setPaychecks(newPaychecks);
-      console.log(response);
     } catch (error) {}
   };
 
@@ -26,7 +25,6 @@ export default function Paychecks() {
     async function fetchData(id) {
       try {
         const response = await getPaychecks(id);
-        console.log(response);
         if (Array.isArray(response.data)) {
           setPaychecks(response.data);
         } else {

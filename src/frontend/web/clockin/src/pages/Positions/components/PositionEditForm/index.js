@@ -30,7 +30,6 @@ export default function PositionEditForm({
       const responseUpdate = await putPosition(newPosition);
       const responsePositions = await getPositions(params.userId);
       setPositions(responsePositions.data);
-      console.log(responseUpdate);
       setViewEditForm(false);
     } catch (error) {
       console.error(error);

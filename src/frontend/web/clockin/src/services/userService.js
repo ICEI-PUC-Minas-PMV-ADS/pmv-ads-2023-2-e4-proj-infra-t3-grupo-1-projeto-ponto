@@ -10,7 +10,6 @@ async function registerUser(user) {
       rePassword,
       cnpj,
     });
-    console.log(response);
   } catch (error) {
     const errorMessage = error.response.data;
     if (errorMessage.errors) {

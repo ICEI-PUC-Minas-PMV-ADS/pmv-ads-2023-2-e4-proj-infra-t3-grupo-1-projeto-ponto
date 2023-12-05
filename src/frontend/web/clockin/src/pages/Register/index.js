@@ -30,7 +30,6 @@ function RegisterHRForm() {
         cnpj: formatCnpj,
       };
       const response = await registerUser(hRAdministrator);
-      console.log(response);
       setFullName("");
       setCnpj("");
       setEmail("");

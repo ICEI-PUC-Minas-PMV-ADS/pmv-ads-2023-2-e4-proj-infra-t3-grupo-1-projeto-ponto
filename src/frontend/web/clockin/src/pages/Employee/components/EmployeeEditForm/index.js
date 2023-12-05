@@ -51,7 +51,6 @@ export default function EmployeeEditForm({
         id: params.employeeId,
       };
       const response = await putEmployee(employee);
-      console.log(response);
       const responseEmployees = await getEmployee(employee.id);
       setEmployee(responseEmployees.data);
       setViewEditForm(false);

@@ -21,7 +21,6 @@ export default function Employees() {
       const response = await deleteEmployee(id);
       const newEmployees = employees.filter((employee) => employee.id !== id);
       setEmployees(newEmployees);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

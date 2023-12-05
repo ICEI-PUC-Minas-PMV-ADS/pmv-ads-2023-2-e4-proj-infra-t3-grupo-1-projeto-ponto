@@ -34,7 +34,6 @@ export default function JustificationEditForm({
         };
         const responseUpdate = await putJustification(justification);
         const responseJustifications = await getJustifications(params.userId);
-        console.log(responseUpdate);
         setJustifications(responseJustifications.data);
         setViewEditForm(false);
       }

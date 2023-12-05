@@ -89,7 +89,6 @@ async function getLogTypes() {
 }
 
 async function putTimeLogs(timeLog) {
-  console.log(timeLog);
   const { timestamp, justificationId, logTypeValue, id } = timeLog;
   try {
     const response = await api.put(

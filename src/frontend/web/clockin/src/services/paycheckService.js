@@ -15,7 +15,6 @@ async function postPaycheck(paycheck) {
         },
       }
     );
-    console.log(response);
 
     return response;
   } catch (error) {
@@ -67,7 +66,6 @@ async function putPaycheck(paycheck) {
     employeeId,
   } = paycheck;
   try {
-    console.log(paycheck);
     const response = await api.put(
       `/paycheck/${employeeId}/${paycheckId}`,
       {

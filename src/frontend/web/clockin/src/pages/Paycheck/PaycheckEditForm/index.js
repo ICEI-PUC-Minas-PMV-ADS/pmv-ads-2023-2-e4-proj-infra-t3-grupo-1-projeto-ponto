@@ -95,7 +95,6 @@ export default function PaycheckEditForm({
         employeeId: params.employeeId,
       };
       const responseUpdate = await putPaycheck(paycheck);
-      console.log(responseUpdate);
       const responsePaycheck = await getPaycheck(params.paycheckId);
       setPaycheck(responsePaycheck.data);
       setViewEditForm(false);

@@ -20,7 +20,6 @@ export default function Departaments() {
         (departaments) => departaments.id !== id
       );
       setDepartaments(newDepartaments);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -32,7 +31,6 @@ export default function Departaments() {
         const response = await getDepartaments(id);
         if (Array.isArray(response.data)) {
           setDepartaments(response.data);
-          console.log(response);
         } else {
           console.error(response.data);
         }

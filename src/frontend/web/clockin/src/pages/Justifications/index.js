@@ -22,7 +22,6 @@ export default function Justifications() {
         (justification) => justification.id !== id
       );
       setJustifications(newJustifications);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

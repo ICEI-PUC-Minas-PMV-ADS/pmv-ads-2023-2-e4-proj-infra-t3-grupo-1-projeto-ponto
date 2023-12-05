@@ -51,7 +51,6 @@ export default function EmployeeForm({
         departamentId: employeeDepartamentId,
       };
       const response = await registerEmployee(employee);
-      console.log(response);
       if (response && response.status === 201) {
         const newEmployeesList = await getEmployees(params.userId);
         setEmployees(newEmployeesList.data);

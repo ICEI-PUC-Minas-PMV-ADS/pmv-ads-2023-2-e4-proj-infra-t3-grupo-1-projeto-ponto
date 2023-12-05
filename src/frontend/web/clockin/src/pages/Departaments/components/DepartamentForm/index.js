@@ -16,7 +16,6 @@ export default function DepartamentForm({ setDepartaments }) {
         hrAdministratorId: params.userId,
       };
       const response = await postDepartament(departament);
-      console.log(response);
       setDepartaments((prevDepartaments) => [
         ...prevDepartaments,
         response.data,

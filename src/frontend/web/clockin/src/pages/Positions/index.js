@@ -17,7 +17,6 @@ export default function Positions() {
       const response = await deletePosition(id);
       const newPositions = positions.filter((position) => position.id !== id);
       setPositions(newPositions);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

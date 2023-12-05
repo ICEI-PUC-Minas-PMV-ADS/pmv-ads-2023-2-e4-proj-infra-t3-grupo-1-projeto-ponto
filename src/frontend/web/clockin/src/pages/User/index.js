@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getUser, logoutUser } from "../../services/userService";
+import { getUser } from "../../services/userService";
 import ButtonUpdate from "../../components/ButtonUpdate";
 import { deleteUser } from "../../services/userService";
 import UserEditForm from "./components/UserEditForm";

@@ -69,11 +69,9 @@ export default function TimeLogEditForm({
         justificationId: justificationId,
         id: timeLogProp.id,
       };
-      // console.log(editTimeLog.justificationId)
       const responseUpdate = await putTimeLogs(editTimeLog);
       const responseTimeLogs = await getTimeLogsByEmployeeId(params.employeeId);
       setTimeLogs(responseTimeLogs.data);
-      console.log(responseUpdate);
       setViewEditForm(false);
     } catch (error) {
       console.error(error);
