@@ -9,7 +9,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-ENV ASPNETCORE_URLS=http://+8000;
+ENV ASPNETCORE_URLS=http://+;
 ENV ASPNETCORE_ENVIRONMENT=Development
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
