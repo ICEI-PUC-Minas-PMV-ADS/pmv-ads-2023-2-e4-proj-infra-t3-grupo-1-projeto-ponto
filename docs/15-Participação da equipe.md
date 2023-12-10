@@ -1,3 +1,32 @@
+# Etapa 5
+
+## Contribuições
+
+### Matheus:
+
+Codigo: Deploy.
+Documentação: Apresentação do projeto.
+
+### Anderson:
+
+Documentação: Apresentação do projeto.
+
+### Bruno:
+
+Documentação: Crição dos Slides de apresentação.
+
+### Samara:
+
+Documentação: Criação do video de Pitch.
+
+### Trello:
+
+![trello](img/trello-etapa5.png)
+
+### Github:
+
+![github](img/github-etapa5.jpeg)
+
 # Etapa 4
 
 ## Contribuições
