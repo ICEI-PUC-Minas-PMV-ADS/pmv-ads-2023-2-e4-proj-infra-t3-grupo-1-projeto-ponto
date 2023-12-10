@@ -51,4 +51,5 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto/assets/101024834/380cdd2a-ca78-4acc-a54c-fff1cdedb1b9
+
