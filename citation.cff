@@ -1,0 +1,23 @@
+message: Aplicação criada para colaboradores registrarem seus pontos em um aplicativo mobile e o RH poder gerenciar via WEB.
+title: ClockIn
+authors:
+  - family-names: Marques Rosa
+    given-names: Anderson
+  - family-names: César Feza Rodrigues
+    given-names: Bruno
+  - family-names: Jorge Buzelin
+    given-names: Felipe
+  - family-names: Estevam Nunes Cordeiro
+    given-names: Matheus
+  - family-names: Martins Oliveira
+    given-names: Samara
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vilela Cardoso
+    given-names: Leonardo
+keywords:
+  - Registro de ponto
+  - Horario
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e4-proj-infra-t3-grupo-1-projeto-ponto
+version: 1.0.0
+date-released: 2023-12-10
